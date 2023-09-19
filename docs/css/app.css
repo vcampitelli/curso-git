@@ -1,0 +1,223 @@
+:root {
+  --r-background-color: #eff9fb;
+  --background-color-darker: #dfebec;
+  --r-code-font: Consolas, monospace;
+  --r-heading-color: #4c1e4f;
+  --r-heading-font-weight: 700;
+  --r-heading-font: var(--r-main-font);
+  --r-heading-letter-spacing: -2px;
+  --r-heading-text-transform: normal;
+  --r-link-color-hover: #f11151;
+  --r-link-color: #f44174;
+  --r-main-color: #1e3a4f;
+  --r-main-font-size: 24px;
+  --r-main-font: Roboto, sans-serif;
+  --color-purple: #4c1e4f;
+  --subheading-color: #99a2a2;
+  --border-radius: 5px;
+}
+
+.reveal .slides {
+  text-align: left;
+  letter-spacing: -1px;
+}
+.reveal-viewport {
+  background-image: radial-gradient(circle farthest-corner at 10% 20%, #eaf9f9 0.1%, #eff9fb 90.1%);
+}
+.first-slide > h1 {
+  margin-bottom: 0;
+}
+.first-slide > h2,
+.section-date {
+  color: var(--subheading-color);
+}
+p.section-date {
+  margin-bottom: 0;
+}
+p.section-date + h1 {
+  margin-top: 0;
+}
+
+/* Código */
+.reveal pre {
+  margin-left: 0;
+  letter-spacing: -0.5px;
+}
+code:not(.hljs) {
+  background-color: var(--background-color-darker);
+  color: #6874e8;
+  font-size: 0.8em;
+  padding: 1px 6px;
+  border-radius: var(--border-radius);
+}
+pre code.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 1em;
+  border-radius: var(--border-radius);
+}
+code.hljs {
+  padding: 3px 5px;
+}
+span.hljs-keyword,
+span.hljs-built_in,
+span.hljs-title,
+span.hljs-comment,
+span.hljs-emphasis,
+span.hljs-quote,
+span.hljs-selector-class,
+span.hljs-selector-attr,
+span.hljs-selector-pseudo,
+span.hljs-addition,
+span.hljs-deletion {
+  font-style: normal;
+}
+code.hljs.shell > .hljs-meta.prompt_ {
+  user-select: none;
+}
+
+/* Quote */
+.reveal blockquote {
+  margin-left: 0;
+  padding: 15px;
+  background-color: var(--background-color-darker);
+  border-radius: var(--border-radius);
+}
+
+/* Tipografia */
+.fw-bold {
+  font-weight: bold;
+}
+.text-center {
+  text-align: center;
+}
+.text-right {
+  text-align: right !important;
+}
+.text-strike {
+  text-decoration: line-through;
+}
+.text-muted {
+  color: #999;
+}
+.font-size-sm {
+  font-size: 0.85em;
+}
+.font-italic {
+  font-style: italic;
+}
+
+/* Link de referência */
+a.reference {
+  display: block;
+  margin-top: 1em;
+  font-size: 0.8em;
+}
+a.reference:before {
+  content: "[ ";
+}
+a.reference:after {
+  content: " ]";
+}
+
+/* Cabeçalho */
+h1.subtitle {
+  --r-heading1-size: 1em;
+  --r-heading-margin: 0;
+  --r-heading-color: var(--subheading-color);
+  --r-heading-font-weight: 500;
+}
+
+/* Sobre mim */
+#about-me {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 3rem;
+}
+#profile-pic {
+  margin: 0;
+  border-radius: var(--border-radius);
+}
+.about-me-links {
+  margin-top: 3rem;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  row-gap: 1.25rem;
+  justify-content: start;
+}
+.about-me-links > div {
+  flex: 33.333% 0 0;
+  display: flex;
+  align-items: center;
+  font-size: 0.8em;
+  column-gap: 0.4em;
+}
+.about-me-links > div > svg {
+  width: 40px;
+}
+.about-me-links > div > div {
+  line-height: 1;
+}
+.about-me-links > div > svg .fill {
+  fill: var(--r-link-color);
+}
+.about-me-links > div > svg .fill-bg {
+  fill: var(--r-background-color);
+}
+.about-me-links > div > div > p {
+  margin: 0;
+  font-size: 0.9em;
+  line-height: 1;
+}
+.about-me-links > div > div > a {
+  font-weight: 600;
+}
+
+/* Tabelas */
+table.table-striped > tbody > tr:nth-child(even) > td {
+  background: var(--background-color-darker);
+}
+table.table-borderless > tbody > tr > td,
+table.table-borderless > tfoot > tr > td {
+  border-bottom: 0;
+}
+table.table-striped > tfoot > tr:first-child > td {
+  font-weight: bold;
+  border-top: 1px solid;
+}
+table.table {
+  margin-left: 0;
+  width: 100%;
+}
+table.calendar > thead > tr > th,
+table.calendar > tbody > tr > td {
+  padding: 0.7em;
+}
+.calendar-date {
+  display: block;
+  margin-bottom: 0.5em;
+  font-size: 0.6em;
+  opacity: 0.7;
+}
+.calendar-slot {
+  display: block;
+  padding: 3px 7px;
+  border-radius: 3px;
+  background-color: var(--background-color-darker);
+  font-size: 0.7em;
+}
+.calendar-slot.calendar-slot-empty {
+  opacity: 0.4;
+}
+
+/* Layout */
+.d-flex {
+  display: flex;
+}
+.d-flex.cols-2 > div {
+  flex: 50% 0 1;
+}
+.mb-2 {
+  margin-bottom: 2em;
+}

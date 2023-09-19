@@ -1,0 +1,997 @@
+<!doctype html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <meta name="author" content="Vinícius Campitelli, eu@viniciuscampitelli.com">
+
+        <title>Treinamento sobre Git e GitLab</title>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href="reveal.js/dist/reset.css">
+        <link rel="stylesheet" href="reveal.js/dist/reveal.css">
+        <link rel="stylesheet" href="reveal.js/dist/theme/white.css">
+        <link rel="stylesheet" href="css/app.css">
+
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/night-owl.min.css"
+              integrity="sha512-i5X6Fdn/ZqvGSqPrdMa3FgcpXM/Nr6YccSKFYT93zljl/HZDEpvBbE5Pxp91eiWGccZLrL/LDQJd7fjTRYsVaA=="
+              crossorigin="anonymous" referrerpolicy="no-referrer">
+
+        <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon">
+    </head>
+    <body>
+        <div class="reveal">
+            <div class="slides">
+                <section class="first-slide">
+                    <h1>Treinamento sobre Git e GitLab</h1>
+                    <h2>Vinícius Campitelli</h2>
+                </section>
+
+                <section> <!-- Apresentações -->
+                    <section>
+                        <h1>Apresentações</h1>
+                    </section>
+                    <section> <!-- Sobre mim -->
+                        <h1 class="subtitle">Apresentações</h1>
+                        <h2>Sobre mim</h2>
+                        <div id="about-me">
+                            <div class="text-center">
+                                <img src="img/profile.jpg" alt="Vinícius Campitelli" id="profile-pic">
+                            </div>
+                            <ul>
+                                <li>Desenvolvedor há 15 anos</li>
+                                <li>Entusiasta em cibersegurança</li>
+                                <li>Consultor de TI e instrutor de treinamentos</li>
+                            </ul>
+                            <div class="fw-bold text-center">Vinícius<br>Campitelli</div>
+                        </div>
+                        <div>
+                            <div class="about-me-links">
+                                <div>
+                                    <svg role="img" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M15.3222 10.383C15.3796 10.9457 15.4125 11.4903 15.4125 12C15.4125 12.9541 15.2972 14.0315 15.1208 15.1208C14.0315 15.2972 12.9541 15.4125 12 15.4125C11.0502 15.4125 9.97313 15.2975 8.87911 15.1205C8.70281 14.0312 8.5875 12.954 8.5875 12C8.5875 11.4905 8.62039 10.9458 8.67789 10.383C9.82608 10.5668 10.9715 10.6875 12 10.6875C13.0286 10.6875 14.174 10.5668 15.3222 10.383Z"
+                                              class="fill"/>
+                                        <path d="M16.8752 10.0994C16.9462 10.7579 16.9875 11.399 16.9875 12C16.9875 12.8769 16.8997 13.8389 16.7599 14.8153C18.7425 14.4016 20.575 13.8731 21.5567 13.5722C21.8739 13.475 21.9986 13.4363 22.1658 13.3694C22.2494 13.336 22.326 13.302 22.4259 13.2543C22.4748 12.843 22.5 12.4244 22.5 12C22.5 10.878 22.324 9.79714 21.9982 8.78346L21.9133 8.81017C20.8868 9.12245 18.9652 9.6745 16.8752 10.0994Z"
+                                              class="fill"/>
+                                        <path d="M21.4017 7.31948C20.3698 7.63221 18.579 8.14039 16.6599 8.53603C16.2178 5.84926 15.443 3.16951 15.0702 1.95598C17.8422 2.80227 20.1273 4.76467 21.4017 7.31948Z"
+                                              class="fill"/>
+                                        <path d="M15.1117 8.82229C14.0253 8.99781 12.9513 9.1125 12 9.1125C11.0487 9.1125 9.97477 8.99781 8.88843 8.8223C9.30471 6.28005 10.0478 3.68306 10.4278 2.44333C10.525 2.12606 10.5637 2.00144 10.6306 1.83418C10.664 1.75062 10.698 1.67398 10.7457 1.57414C11.157 1.52518 11.5756 1.5 12 1.5C12.4434 1.5 12.8803 1.52748 13.3093 1.58083C13.3184 1.61564 13.3268 1.64679 13.3351 1.67626C13.3597 1.76333 13.3982 1.8857 13.4628 2.09104L13.4696 2.11261C13.7935 3.14223 14.6519 6.01401 15.1117 8.82229Z"
+                                              class="fill"/>
+                                        <path d="M7.34004 8.536C7.7801 5.86107 8.54986 3.19576 8.92192 1.98181L8.92983 1.95597C6.15777 2.80225 3.8727 4.76465 2.59835 7.31946C3.63018 7.63219 5.42095 8.14036 7.34004 8.536Z"
+                                              class="fill"/>
+                                        <path d="M2.00184 8.78345C1.67598 9.79714 1.5 10.878 1.5 12C1.5 12.4389 1.52693 12.8715 1.57923 13.2963L1.74471 13.3515L1.74603 13.3519L1.74765 13.3525L1.74879 13.3528C1.80205 13.3705 3.36305 13.886 5.41878 14.3975C5.99886 14.5418 6.61307 14.6844 7.24006 14.8151C7.10025 13.8388 7.0125 12.8769 7.0125 12C7.0125 11.3988 7.05374 10.7577 7.12472 10.0994C5.03428 9.67436 3.11218 9.12212 2.08597 8.80989L2.07883 8.80771L2.00184 8.78345Z"
+                                              class="fill"/>
+                                        <path d="M12 16.9875C12.8769 16.9875 13.8389 16.8997 14.8153 16.7599C14.4016 18.7425 13.8731 20.575 13.5722 21.5566C13.475 21.8739 13.4363 21.9985 13.3694 22.1658C13.336 22.2494 13.302 22.326 13.2543 22.4259C12.843 22.4748 12.4244 22.5 12 22.5C11.5756 22.5 11.157 22.4748 10.7457 22.4259C10.698 22.326 10.664 22.2494 10.6306 22.1658C10.5637 21.9986 10.525 21.8739 10.4278 21.5567C10.1269 20.5751 9.59846 18.7427 9.18478 16.7603C10.1579 16.8996 11.1201 16.9875 12 16.9875Z"
+                                              class="fill"/>
+                                        <path d="M5.0385 15.9259C3.73853 15.6024 2.63135 15.2775 1.95597 15.0702C2.97258 18.4002 5.59982 21.0274 8.92983 22.044L8.92192 22.0182C8.59705 20.9582 7.96897 18.7917 7.52191 16.4784C6.6525 16.3103 5.80722 16.1171 5.0385 15.9259Z"
+                                              class="fill"/>
+                                        <path d="M22.0182 15.0781C20.9582 15.403 18.7915 16.0311 16.4781 16.4781C16.0311 18.7915 15.403 20.9581 15.0781 22.0182L15.0702 22.044C18.4002 21.0274 21.0274 18.4002 22.044 15.0702L22.0182 15.0781Z"
+                                              class="fill"/>
+                                        <path d="M1.6103 13.323C1.64665 13.3277 1.67628 13.3327 1.68611 13.3349C1.69472 13.337 1.70821 13.3406 1.7131 13.3419L1.72391 13.345L1.72973 13.3468L1.73585 13.3487L1.74098 13.3503C1.7381 13.3494 1.67976 13.3348 1.6103 13.323Z"
+                                              class="fill"/>
+                                    </svg>
+                                    <div>
+                                        <p>Slides</p>
+                                        <a href="https://viniciuscampitelli.com" target="_blank" rel="noopener">
+                                            viniciuscampitelli.com
+                                        </a>
+                                    </div>
+                                </div>
+                                <div>
+                                    <svg role="img" viewBox="0 0 25 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"
+                                              class="fill"></path>
+                                    </svg>
+                                    <div>
+                                        <p>GitHub</p>
+                                        <a href="https://github.com/vcampitelli" target="_blank" rel="noopener">
+                                            vcampitelli
+                                        </a>
+                                    </div>
+                                </div>
+                                <div>
+                                    <svg role="img" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                              d="M12 18C15.3137 18 18 15.3137 18 12C18 8.68629 15.3137 6 12 6C8.68629 6 6 8.68629 6 12C6 15.3137 8.68629 18 12 18ZM12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16Z"
+                                              class="fill"/>
+                                        <path d="M18 5C17.4477 5 17 5.44772 17 6C17 6.55228 17.4477 7 18 7C18.5523 7 19 6.55228 19 6C19 5.44772 18.5523 5 18 5Z"
+                                              class="fill"/>
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                              d="M1.65396 4.27606C1 5.55953 1 7.23969 1 10.6V13.4C1 16.7603 1 18.4405 1.65396 19.7239C2.2292 20.8529 3.14708 21.7708 4.27606 22.346C5.55953 23 7.23969 23 10.6 23H13.4C16.7603 23 18.4405 23 19.7239 22.346C20.8529 21.7708 21.7708 20.8529 22.346 19.7239C23 18.4405 23 16.7603 23 13.4V10.6C23 7.23969 23 5.55953 22.346 4.27606C21.7708 3.14708 20.8529 2.2292 19.7239 1.65396C18.4405 1 16.7603 1 13.4 1H10.6C7.23969 1 5.55953 1 4.27606 1.65396C3.14708 2.2292 2.2292 3.14708 1.65396 4.27606ZM13.4 3H10.6C8.88684 3 7.72225 3.00156 6.82208 3.0751C5.94524 3.14674 5.49684 3.27659 5.18404 3.43597C4.43139 3.81947 3.81947 4.43139 3.43597 5.18404C3.27659 5.49684 3.14674 5.94524 3.0751 6.82208C3.00156 7.72225 3 8.88684 3 10.6V13.4C3 15.1132 3.00156 16.2777 3.0751 17.1779C3.14674 18.0548 3.27659 18.5032 3.43597 18.816C3.81947 19.5686 4.43139 20.1805 5.18404 20.564C5.49684 20.7234 5.94524 20.8533 6.82208 20.9249C7.72225 20.9984 8.88684 21 10.6 21H13.4C15.1132 21 16.2777 20.9984 17.1779 20.9249C18.0548 20.8533 18.5032 20.7234 18.816 20.564C19.5686 20.1805 20.1805 19.5686 20.564 18.816C20.7234 18.5032 20.8533 18.0548 20.9249 17.1779C20.9984 16.2777 21 15.1132 21 13.4V10.6C21 8.88684 20.9984 7.72225 20.9249 6.82208C20.8533 5.94524 20.7234 5.49684 20.564 5.18404C20.1805 4.43139 19.5686 3.81947 18.816 3.43597C18.5032 3.27659 18.0548 3.14674 17.1779 3.0751C16.2777 3.00156 15.1132 3 13.4 3Z"
+                                              class="fill"/>
+                                    </svg>
+                                    <div>
+                                        <p>Instagram</p>
+                                        <a href="https://instagram.com/vcampitelli" target="_blank" rel="noopener">
+                                            vcampitelli
+                                        </a>
+                                    </div>
+                                </div>
+                                <div>
+                                    <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M23.954 4.569c-.885.389-1.83.654-2.825.775 1.014-.611 1.794-1.574 2.163-2.723-.951.555-2.005.959-3.127 1.184-.896-.959-2.173-1.559-3.591-1.559-2.717 0-4.92 2.203-4.92 4.917 0 .39.045.765.127 1.124C7.691 8.094 4.066 6.13 1.64 3.161c-.427.722-.666 1.561-.666 2.475 0 1.71.87 3.213 2.188 4.096-.807-.026-1.566-.248-2.228-.616v.061c0 2.385 1.693 4.374 3.946 4.827-.413.111-.849.171-1.296.171-.314 0-.615-.03-.916-.086.631 1.953 2.445 3.377 4.604 3.417-1.68 1.319-3.809 2.105-6.102 2.105-.39 0-.779-.023-1.17-.067 2.189 1.394 4.768 2.209 7.557 2.209 9.054 0 13.999-7.496 13.999-13.986 0-.209 0-.42-.015-.63.961-.689 1.8-1.56 2.46-2.548l-.047-.02z"
+                                              class="fill"></path>
+                                    </svg>
+                                    <div>
+                                        <p>Twitter <span class="text-strike text-muted">X</span></p>
+                                        <a href="https://twitter.com/vcampitelli" target="_blank" rel="noopener">
+                                            vcampitelli
+                                        </a>
+                                    </div>
+                                </div>
+                                <div>
+                                    <svg role="img" viewBox="0 0 74 74" xmlns="http://www.w3.org/2000/svg">
+                                        <g fill="none" fill-rule="evenodd">
+                                            <path d="M8,72 L64,72 C68.418278,72 72,68.418278 72,64 L72,8 C72,3.581722 68.418278,-8.11624501e-16 64,0 L8,0 C3.581722,8.11624501e-16 -5.41083001e-16,3.581722 0,8 L0,64 C5.41083001e-16,68.418278 3.581722,72 8,72 Z"
+                                                  class="fill"/>
+                                            <path d="M62,62 L51.315625,62 L51.315625,43.8021149 C51.315625,38.8127542 49.4197917,36.0245323 45.4707031,36.0245323 C41.1746094,36.0245323 38.9300781,38.9261103 38.9300781,43.8021149 L38.9300781,62 L28.6333333,62 L28.6333333,27.3333333 L38.9300781,27.3333333 L38.9300781,32.0029283 C38.9300781,32.0029283 42.0260417,26.2742151 49.3825521,26.2742151 C56.7356771,26.2742151 62,30.7644705 62,40.051212 L62,62 Z M16.349349,22.7940133 C12.8420573,22.7940133 10,19.9296567 10,16.3970067 C10,12.8643566 12.8420573,10 16.349349,10 C19.8566406,10 22.6970052,12.8643566 22.6970052,16.3970067 C22.6970052,19.9296567 19.8566406,22.7940133 16.349349,22.7940133 Z M11.0325521,62 L21.769401,62 L21.769401,27.3333333 L11.0325521,27.3333333 L11.0325521,62 Z"
+                                                  class="fill-bg"/>
+                                        </g>
+                                    </svg>
+                                    <div>
+                                        <p>LinkedIn</p>
+                                        <a href="https://linkedin.com/in/viniciuscampitelli" target="_blank"
+                                           rel="noopener">
+                                            Vinícius Campitelli
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section> <!-- Sobre mim -->
+                    <section>
+                        <h1 class="subtitle">Apresentações</h1>
+                        <h2>Sobre a turma</h2>
+                        <p>Para cada pessoa aqui, se apresente:</p>
+                        <ul>
+                            <li>Qual seu nome?</li>
+                            <li>Quais ferramentas e/ou linguagens que mais usa?</li>
+                            <li>Qual seu grau de conhecimento e suas maiores dificuldades com o git?</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Sobre o curso</h2>
+                        <ul>
+                            <li class="fragment">As aulas ficarão gravadas para poderem assistir</li>
+                            <li class="fragment">Os slides ficarão disponíveis para poderem consultar</li>
+                            <li class="fragment">Interajam! Façam perguntas (via áudio ou mensagem no chat)</li>
+                            <li class="fragment">Acesse o grupo do WhatsApp para facilitar nossa comunicação</li>
+                            <li class="fragment">Teremos uma avaliação final</li>
+                        </ul>
+                    </section>
+                </section> <!-- Apresentações -->
+
+                <section> <!-- Agenda -->
+                    <section>
+                        <h1>Agenda</h1>
+                    </section>
+                    <section>
+                        <h1>Agenda</h1>
+                        <table class="table table-striped table-borderless font-size-sm">
+                            <thead>
+                                <tr>
+                                    <th>Tema</th>
+                                    <th class="text-right">Duração</th>
+                                </tr>
+                            </thead>
+                            <tfoot>
+                                <tr>
+                                    <td>Total</td>
+                                    <td class="text-right">45:00</td>
+                                </tr>
+                            </tfoot>
+                            <tbody>
+                                <tr>
+                                    <td>Apresentações</td>
+                                    <td class="text-right">01:00</td>
+                                </tr>
+                                <tr>
+                                    <td>Introdução</td>
+                                    <td class="text-right">01:00</td>
+                                </tr>
+                                <tr>
+                                    <td>Conceitos Fundamentais de Controle de Versão</td>
+                                    <td class="text-right">01:00</td>
+                                </tr>
+                                <tr>
+                                    <td>Configuração de um Ambiente de Controle de Versão</td>
+                                    <td class="text-right">06:00</td>
+                                </tr>
+                                <tr>
+                                    <td>Gerenciamento de Branches e Merging</td>
+                                    <td class="text-right">06:00</td>
+                                </tr>
+                                <tr>
+                                    <td>Gerenciamento de Projeto com o GitLab Community</td>
+                                    <td class="text-right">06:00</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Gerenciamento de Configuração e Versionamento de Arquivos com o Git e GitLab
+                                        Community
+                                    </td>
+                                    <td class="text-right">10:00</td>
+                                </tr>
+                                <tr>
+                                    <td>Boas Práticas e Fluxo de Trabalho Eficiente com Git e GitLab Community</td>
+                                    <td class="text-right">05:00</td>
+                                </tr>
+                                <tr>
+                                    <td>Gerenciamento de Configuração e Fluxo de Trabalho em Equipes</td>
+                                    <td class="text-right">04:00</td>
+                                </tr>
+                                <tr>
+                                    <td>Segurança e Controle de Acessos no GitLab Community</td>
+                                    <td class="text-right">03:00</td>
+                                </tr>
+                                <tr>
+                                    <td>Anti-padrões de Uso do Git e GitLab</td>
+                                    <td class="text-right">01:00</td>
+                                </tr>
+                                <tr>
+                                    <td>Avaliação final</td>
+                                    <td class="text-right">01:00</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </section>
+                    <section>
+                        <h1>Agenda</h1>
+                        <table class="table calendar">
+                            <thead>
+                                <tr class="font-size-sm">
+                                    <th>Seg</th>
+                                    <th>Ter</th>
+                                    <th>Qua</th>
+                                    <th>Qui</th>
+                                    <th>Sex</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <span class="calendar-date">18/09</span>
+                                        <span class="calendar-slot">Aula 1</span>
+                                    </td>
+                                    <td>
+                                        <span class="calendar-date">19/09</span>
+                                        <span class="calendar-slot">Aula 2</span>
+                                    </td>
+                                    <td>
+                                        <span class="calendar-date">20/09</span>
+                                        <span class="calendar-slot">Aula 3</span>
+                                    </td>
+                                    <td>
+                                        <span class="calendar-date">21/09</span>
+                                        <span class="calendar-slot">Aula 4</span>
+                                    </td>
+                                    <td>
+                                        <span class="calendar-date">22/09</span>
+                                        <span class="calendar-slot">Aula 5</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="calendar-date">25/09</span>
+                                        <span class="calendar-slot">Aula 6</span>
+                                    </td>
+                                    <td>
+                                        <span class="calendar-date">26/09</span>
+                                        <span class="calendar-slot">Aula 7</span>
+                                    </td>
+                                    <td>
+                                        <span class="calendar-date">27/09</span>
+                                        <span class="calendar-slot">Aula 8</span>
+                                    </td>
+                                    <td>
+                                        <span class="calendar-date">28/09</span>
+                                        <span class="calendar-slot calendar-slot-empty">&nbsp;</span>
+                                    </td>
+                                    <td>
+                                        <span class="calendar-date">29/09</span>
+                                        <span class="calendar-slot calendar-slot-empty">&nbsp;</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="calendar-date">02/10</span>
+                                        <span class="calendar-slot">Aula 9</span>
+                                    </td>
+                                    <td>
+                                        <span class="calendar-date">03/10</span>
+                                        <span class="calendar-slot">Aula 10</span>
+                                    </td>
+                                    <td>
+                                        <span class="calendar-date">04/10</span>
+                                        <span class="calendar-slot">Aula 11</span>
+                                    </td>
+                                    <td>
+                                        <span class="calendar-date">05/10</span>
+                                        <span class="calendar-slot calendar-slot-empty">&nbsp;</span>
+                                    </td>
+                                    <td>
+                                        <span class="calendar-date">06/10</span>
+                                        <span class="calendar-slot calendar-slot-empty">&nbsp;</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="calendar-date">09/10</span>
+                                        <span class="calendar-slot calendar-slot-empty">&nbsp;</span>
+                                    </td>
+                                    <td>
+                                        <span class="calendar-date">10/10</span>
+                                        <span class="calendar-slot calendar-slot-empty">&nbsp;</span>
+                                    </td>
+                                    <td>
+                                        <span class="calendar-date">11/10</span>
+                                        <span class="calendar-slot calendar-slot-empty">&nbsp;</span>
+                                    </td>
+                                    <td>
+                                        <span class="calendar-date">12/10</span>
+                                        <span class="calendar-slot calendar-slot-empty">&nbsp;</span>
+                                    </td>
+                                    <td>
+                                        <span class="calendar-date">13/10</span>
+                                        <span class="calendar-slot calendar-slot-empty">&nbsp;</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="calendar-date">16/10</span>
+                                        <span class="calendar-slot calendar-slot-empty">&nbsp;</span>
+                                    </td>
+                                    <td>
+                                        <span class="calendar-date">17/10</span>
+                                        <span class="calendar-slot">Aula 12</span>
+                                    </td>
+                                    <td>
+                                        <span class="calendar-date">18/10</span>
+                                        <span class="calendar-slot">Aula 13</span>
+                                    </td>
+                                    <td>
+                                        <span class="calendar-date">19/10</span>
+                                        <span class="calendar-slot">Aula 14</span>
+                                    </td>
+                                    <td>
+                                        <span class="calendar-date">20/10</span>
+                                        <span class="calendar-slot">Aula 15</span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </section>
+                </section> <!-- Agenda -->
+
+                <section> <!-- Introdução -->
+                    <section>
+                        <p class="section-date">Aula 1</p>
+                        <h1>Introdução</h1>
+                    </section>
+                    <section>
+                        <h1 class="subtitle">Introdução</h1>
+                        <h2>Gerenciamento de Configuração</h2>
+                        <blockquote>
+                            Processo de engenharia de sistemas para estabelecer a consistência dos atributos de um
+                            produto ao longo da vida dele. (...) Processo de gerenciamento de TI que monitora itens de
+                            configuração individuais de um sistema de TI.
+                        </blockquote>
+                        <a href="https://www.atlassian.com/br/microservices/microservices-architecture/configuration-management"
+                           target="_blank" rel="noopener" class="reference">Gerenciamento de configuração: definição e
+                            benefícios (Atlassian)</a>
+                    </section>
+                    <section>
+                        <h1 class="subtitle">Introdução</h1>
+                        <h2>Gerenciamento de Configuração</h2>
+                        <p>Principais benefícios:</p>
+                        <ul>
+                            <li class="fragment">Controle efetivo de versões</li>
+                            <li class="fragment">Rastreabilidade das mudanças</li>
+                            <li class="fragment">Colaboração em equipe</li>
+                            <li class="fragment">Melhoria da qualidade do código</li>
+                            <li class="fragment">Facilidade de recuperação em caso de problemas</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h1 class="subtitle">Introdução</h1>
+                        <h2>Controle de Versão</h2>
+                        <p>
+                            <b>Sistemas de Versionamento de Código</b> (em inglês: <em>"Version Control System"</em> ou
+                            VCS) são serviços responsáveis por controlar modificações e diferentes versões do código de
+                            nossos sistemas, fornecendo histórico para alterações, trabalho em equipe e separação do
+                            ambiente de trabalho entre colaboradores
+                        </p>
+                    </section>
+                    <section>
+                        <h1 class="subtitle">Conceitos Fundamentais de Controle de Versão</h1>
+                        <h2>Tipos de Controle de Versão</h2>
+                        <div class="d-flex cols-2">
+                            <div class="fragment">
+                                <h3>Centralizado</h3>
+                                <p>
+                                    Um servidor central é responsável por receber todas as modificações dos
+                                    colaboradores
+                                </p>
+                                <p>Toda alteração feita na máquina é automaticamente enviada ao servidor central</p>
+                                <p>
+                                    Vários metadados ficam apenas no servidor principal, acarretando em um único ponto
+                                    de falha
+                                </p>
+                            </div>
+                            <div class="fragment">
+                                <h3>Distribuído</h3>
+                                <p>
+                                    Mesmo havendo um servidor principal, os colaboradores possuem suas cópias
+                                    <em>offline</em> que podem servir inclusive como <em>backup</em>
+                                </p>
+                                <p>
+                                    As alterações são primeiro realizadas na cópia local do servidor e, depois, devem
+                                    ser enviadas para o servidor principal pelo colaborador
+                                </p>
+                            </div>
+                        </div>
+                        <a href="https://about.gitlab.com/blog/2020/11/19/move-to-distributed-vcs/" target="_blank"
+                           rel="noopener" class="reference"> Why you should move from centralized version control to
+                            distributed version control (GitLab.com)</a>
+                    </section>
+                    <section>
+                        <h1 class="subtitle">Conceitos Fundamentais de Controle de Versão</h1>
+                        <h2>Ferramentas de Controle de Versão</h2>
+
+                        <p>Alguns dos principais Sistemas de Controle de Versão são:</p>
+                        <ul>
+                            <li>
+                                <a href="https://en.wikipedia.org/wiki/Source_Code_Control_System" target="_blank"
+                                   rel="noopener">Source Code Control System</a> (SCSS), lançado em 1973;
+                            </li>
+                            <li>
+                                <a href="https://cvs.nongnu.org/" target="_blank" rel="noopener">
+                                    Concurrent Versions System
+                                </a> (CVS), lançado em 1986 <em>(mas que teve sua primeira
+                                versão disponível para a comunidade em 1990)</em>;
+                            </li>
+                            <li>
+                                <a href="https://subversion.apache.org/" target="_blank" rel="noopener">Subversion</a>
+                                (SVN), lançado em 2000;
+                            </li>
+                            <li>
+                                <a href="https://www.bitkeeper.org/" target="_blank" rel="noopener">BitKeeper</a>,
+                                lançado em 2000;
+                            </li>
+                            <li>
+                                <a href="https://www.mercurial-scm.org/" target="_blank" rel="noopener">Mercurial</a>
+                                (Hg), lançado em 2005;
+                            </li>
+                            <li>
+                                <a href="https://git-scm.com/" target="_blank" rel="noopener">Git</a>, lançado em 2005.
+                            </li>
+                        </ul>
+                        <a href="https://dev.to/thefern/history-of-version-control-systems-vcs-43ch" target="_blank"
+                           rel="noopener" class="reference">History of Version Control Systems VCS (dev.to)</a>
+                    </section>
+                    <section>
+                        <h1 class="subtitle">Introdução</h1>
+                        <h2>Git</h2>
+                        <p>
+                            Ferramenta criada por
+                            <a href="https://en.wikipedia.org/wiki/Linus_Torvalds" target="_blank" rel="noopener">
+                                Linus Torvalds
+                            </a> (o criador do Linux) em 2005, após a licença do BitKeeper se tornar paga,
+                            impossibilitando seu uso no Linux
+                        </p>
+                        <a href="https://www.linux.com/news/bitkeeper-and-linux-end-road/" target="_blank"
+                           rel="noopener" class="reference mb-2">BitKeeper and Linux: The end of the road?</a>
+                    </section>
+                    <section>
+                        <h1 class="subtitle">Introdução</h1>
+                        <h2>Git</h2>
+                        <iframe width="560" height="315"
+                                src="https://www.youtube.com/embed/4XpnKHJAok8?si=IbayMk1lJPMO61T2"
+                                title="YouTube video player" frameborder="0"
+                                allow="encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowfullscreen></iframe>
+                        <a href="https://www.youtube.com/watch?v=4XpnKHJAok8" target="_blank" rel="noopener"
+                           class="reference">Palestra do Linus Torvalds sobre git em 2007</a>
+                    </section>
+                    <section>
+                        <h1 class="subtitle">Introdução</h1>
+                        <h2>Git</h2>
+                        <h3>Principais conceitos</h3>
+                        <blockquote>
+                            The development of Git began on 3 April 2005. Torvalds announced the project on 6 April and
+                            became self-hosting the next day. The first merge of multiple branches took place on 18
+                            April. Torvalds achieved his performance goals; on 29 April, the nascent Git was benchmarked
+                            recording patches to the Linux kernel tree at a rate of 6.7 patches per second. On 16 June,
+                            Git managed the kernel 2.6.12 release.
+                            Torvalds turned over maintenance on 26 July 2005 to Junio Hamano, a major contributor to the
+                            project. Hamano was responsible for the 1.0 release on 21 December 2005.
+                        </blockquote>
+                        <a href="https://en.wikipedia.org/wiki/Git" target="_blank" rel="noopener" class="reference">Git
+                            (Wikipedia)</a>
+                    </section>
+                    <section>
+                        <h1 class="subtitle">Introdução</h1>
+                        <h2>Visão Geral do GitLab Community</h2>
+                        <ul>
+                            <li>
+                                Plataforma criada em 2011 para gerenciar aplicações, versões, implantações,
+                                gerenciamento de projetos e times, integração contínua, e muito mais...
+                            </li>
+                            <li>
+                                Se intitula uma plataforma de <b>DevSecOps</b>, que veremos alguns conceitos durante o
+                                treinamento
+                            </li>
+                            <li>
+                                Possui planos gratuitos e pagos
+                            </li>
+                            <li>
+                                Podemos usá-lo como SaaS <em>(Software-as-a-Service)</em> ou hospedando-o em nossos
+                                próprios servidores
+                            </li>
+                        </ul>
+                        <a href="https://about.gitlab.com/platform/" target="_blank" rel="noopener" class="reference">
+                            Platform | GitLab
+                        </a>
+                    </section>
+                    <section data-auto-animate>
+                        <h1 class="subtitle">Introdução</h1>
+                        <h2>Conceitos gerais</h2>
+                        <h3>Repositório</h3>
+                        <p>
+                            Entidade básica do versionamento, contemplando todas as versões do código,
+                            <em>branches</em>, <em>tags</em> e parâmetros de configuração do projeto que serão lidos
+                            pelo git (como quais arquivos devem ser ignorados e mantidos)
+                        </p>
+                        <p>
+                            Plataformas como o GitLab oferecem mais recursos para facilitar a manutenção do projeto,
+                            como:
+                        </p>
+                        <ul>
+                            <li>Automações de segurança;</li>
+                            <li>Esteiras de CI/CD;</li>
+                            <li>Gestão de problemas através de <em>&quot;issues&quot;</em>;</li>
+                            <li>Revisão para aprovações de mudanças <em>(merge requests)</em>;</li>
+                            <li>Wikis para manter a documentação do projeto;</li>
+                            <li>Entre muitos outros.</li>
+                        </ul>
+                    </section>
+                    <section data-auto-animate>
+                        <h1 class="subtitle">Introdução</h1>
+                        <h2>Conceitos gerais</h2>
+                        <h3><em>Branch</em></h3>
+                        <p>
+                            Ramificações do repositório, possibilitando criar "cópias" do código para podermos trabalhar
+                            em atividades diferentes da nossa aplicação ao mesmo tempo, como resolução de <em>bugs</em>
+                            ou criação de novas funcionalidades
+                        </p>
+                    </section>
+                    <section data-auto-animate>
+                        <h1 class="subtitle">Introdução</h1>
+                        <h2>Conceitos gerais</h2>
+                        <h3><em>Diff</em></h3>
+                        <p>
+                            Comparação entre dois arquivos para encontrar as mudanças entre os dois, sendo uma forma de
+                            representar alterações incrementais em um sistema
+                        </p>
+
+                        <p>Imagine então que...</p>
+                        <ul>
+                            <li>
+                                Existe uma aplicação de terceiros chamada <code>minha-aplicacao</code>
+                            </li>
+                            <li>
+                                Você gostaria de alterar algo em um arquivo <code>build</code>
+                            </li>
+                            <li>
+                                Você precisa enviar essas mudanças para que o mantenedor as incorpore
+                            </li>
+                            <li>
+                                É possível fazer isso com os comandos <code>diff</code> e <code>patch</code> do Unix,
+                                sem precisar de sistemas de controle de versão!
+                            </li>
+                        </ul>
+                        <pre><code class="shell" data-trim>
+                            $ diff -ruN minha-aplicacao/ > mudancas.path
+                            $ patch -p0 < mudancas.patch
+                        </code></pre>
+                    </section>
+                    <section data-auto-animate>
+                        <h1 class="subtitle">Introdução</h1>
+                        <h2>Conceitos gerais</h2>
+                        <h3><em>Commit</em></h3>
+                        <p>
+                            Conjunto de <em>diffs</em> de arquivos distintos, acompanhado de metadados para identificar
+                            o autor daquela ação, a data em que foi realizada e uma mensagem explicando o que foi feito
+                        </p>
+                        <p>
+                            No git, todo <em>commit</em> é representando por um <em>hash</em> SHA-1, que leva em
+                            consideração todos os metadados descritos acima, as alterações realizadas e o <em>hash</em>
+                            do <em>commit</em> anterior ("pai"), garantindo assim a <b>integridade</b> daquela ação
+                        </p>
+                        <pre><code class="shell" data-trim>
+                            32b3b430c8bf4b029422f82f164330cd91a9a2e3
+                        </code></pre>
+                        <a href="https://www.mikestreety.co.uk/blog/the-git-commit-hash/" target="_blank" rel="noopener"
+                           class="reference">The Git Commit Hash</a>
+                    </section>
+                    <section data-auto-animate>
+                        <h1 class="subtitle">Introdução</h1>
+                        <h2>Conceitos gerais</h2>
+                        <h3><em>Merge</em></h3>
+                        <p>
+                            Processo de mesclar uma <em>branch</em> em outra, incorporando os <em>commits</em>
+                            realizados na <em>branch</em> de origem em uma outra
+                        </p>
+                        <p>
+                            É feito geralmente quando terminamos o desenvolvimento de uma funcionalidade ou correção de
+                            <em>bugs</em> em uma <em>branch</em> e queremos trazer o código para a principal (por
+                            exemplo, a <code>main</code>)
+                        </p>
+                        <img src="img/gitflow-merge.svg" alt="Fluxo de merge no Git">
+                    </section>
+                    <section data-auto-animate>
+                        <h1 class="subtitle">Introdução</h1>
+                        <h2>Conceitos gerais</h2>
+                        <h3><em>Tag</em></h3>
+                        <p>
+                            Marcação que aponta para um determinado <em>commit</em>, sendo normalmente utilizada para
+                            demarcar as versões da sua aplicação
+                        </p>
+                        <p>
+                            Podem receber qualquer nome (por exemplo, <code>versao-inicial</code> ou
+                            <code>alteracao-para-o-novo-layout</code>), mas geralmente utilizamos
+                            <a href="https://semver.org/lang/pt-BR/" target="_blank" rel="noopener">
+                                Versionamento Semântico
+                            </a> para identificar as versões mais facilmente
+                        </p>
+                        <img src="img/gitflow-tag.svg" alt="Tags no Git">
+                    </section>
+                    <section data-auto-animate>
+                        <h1 class="subtitle">Introdução</h1>
+                        <h2>Conceitos gerais</h2>
+                        <h3><em>Staging</em></h3>
+                        <p>
+                            Área em que arquivos são adicionados para indicar que estão preparados para serem incluídos
+                            no <em>commit</em>
+                        </p>
+                    </section>
+                </section> <!-- Introdução -->
+
+                <section> <!-- Ambiente -->
+                    <section>
+                        <p class="section-date">Aula 2</p>
+                        <h1>Ambiente</h1>
+                    </section>
+                    <section>
+                        <h1 class="subtitle">Ambiente</h1>
+                        <h2>Acessando o laboratório</h2>
+                        <p>
+                            Acesse o GitLab disponibilizado em
+                            <a href="https://gitlab.viniciuscampitelli.com" target="_blank" rel="noopener">
+                                gitlab.viniciuscampitelli.com
+                            </a> e cadastre-se
+                        </p>
+                    </section>
+                    <section>
+                        <h1 class="subtitle">Ambiente</h1>
+                        <h2>Instalando o git</h2>
+                        <p>
+                            Instruções de instalação do git para cada Sistema Operacional:
+                        </p>
+                        <ul>
+                            <li>
+                                <a href="https://git-scm.com/download/linux" target="_blank" rel="noopener">Linux</a>
+                            </li>
+                            <li>
+                                <a href="https://git-scm.com/download/mac" target="_blank" rel="noopener">Mac</a>
+                            </li>
+                            <li>
+                                <a href="https://git-scm.com/download/win" target="_blank" rel="noopener">Windows</a>
+                                <ul>
+                                    <li>Sugiro a versão <em>Standalone Installer</em> (e provavelmente deve ser <em>64-bit
+                                        Git for Windows Setup</em>)
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <a href="https://git-scm.com/download" target="_blank" rel="noopener" class="reference">
+                            git-scm.com
+                        </a>
+                    </section>
+                    <section>
+                        <h1 class="subtitle">Ambiente</h1>
+                        <h2>Criando repositórios</h2>
+                        <h3><code>git init</code></h3>
+                        <p>
+                            Inicializa o diretório atual para ser utilizado como repositório, criando a pasta
+                            <code>.git</code>
+                        </p>
+                        <a href="https://git-scm.com/docs/git-init/pt_BR" target="_blank" rel="noopener"
+                           class="reference mb-2">Documentação oficial: git init</a>
+                        <h3><code>git remote</code></h3>
+                        <p>
+                            Gerencia os endereços dos servidores remotos para atualização e sincronização do
+                            repositório
+                        </p>
+                        <a href="https://git-scm.com/docs/git-remote/pt_BR" target="_blank" rel="noopener"
+                           class="reference">Documentação oficial: git remote</a>
+                    </section>
+                    <section>
+                        <h1 class="subtitle">Ambiente</h1>
+                        <h2>Clonando repositórios</h2>
+                        <h3><code>git clone</code></h3>
+                        <p>
+                            Processo de fazer o <em>"download"</em> de um repositório para trabalhar em sua cópia local,
+                            também sendo reconhecido pelo termo em inglês de <em>checkout</em>
+                        </p>
+                        <a href="https://git-scm.com/docs/git-clone/pt_BR" target="_blank" rel="noopener"
+                           class="reference mb-2">Documentação oficial: git clone</a>
+                        <p>
+                            No GitLab (e em outras plataformas), pode ser feito através dos protocolos HTTP e SSH
+                        </p>
+                        <a href="https://docs.gitlab.com/ee/gitlab-basics/start-using-git.html#clone-a-repository"
+                           target="_blank" rel="noopener" class="reference">Clone a repository | GitLab</a>
+                    </section>
+                    <section>
+                        <h1 class="subtitle">Ambiente</h1>
+                        <h2>Comandos básicos</h2>
+                        <h3><code>git config</code></h3>
+                        <p>
+                            Gerencia diversas configurações do seu git, podendo alterar parâmetros globais (que se
+                            aplicam a todos os repositórios que você possui em sua máquina) ou exclusivamente no
+                            repositório de onde está executando o comando
+                        </p>
+                        <pre><code class="shell" data-trim>
+                            $ git config user.name "Seu nome"
+                            $ git config user.email "seu-email-do-gitlab@exemplo.com"
+                        </code></pre>
+                        <a href="https://www.git-scm.com/book/en/v2/Customizing-Git-Git-Configuration"
+                           target="_blank" rel="noopener" class="reference">Git Configuration</a>
+                    </section>
+                    <section>
+                        <h1 class="subtitle">Ambiente</h1>
+                        <h2>Comandos básicos</h2>
+                        <h3><code>git status</code></h3>
+                        <p>
+                            Mostra o estado da árvore de trabalho <em>("working tree")</em>, exibindo arquivos que foram
+                            adicionados, modificados ou excluídos
+                        </p>
+                        <p>
+                            Também mostra arquivos que estão na área de <em>staging</em>, prontos para participarem do
+                            <em>commit</em>, e os que ainda não estão sendo "rastreados"
+                        </p>
+
+                        <pre><code class="shell" data-trim data-line-numbers="|3-5|7-10|12-14">
+                            $ git status
+                            On branch main
+                            Changes to be committed:
+                              (use "git restore --staged &lt;file&gt;..." to unstage)
+                                modified:   arquivo/que/foi/adicionado/ao/staging
+
+                            Changes not staged for commit:
+                              (use "git add &lt;file&gt;..." to update what will be committed)
+                              (use "git restore &lt;file&gt;..." to discard changes in working directory)
+                                modified:   arquivo/modificado/que/nao/esta/no/staging
+
+                            Untracked files:
+                              (use "git add &lt;file&gt;..." to include in what will be committed)
+                                arquivo/nao/adicionado
+                        </code></pre>
+                        <a href="https://git-scm.com/docs/git-status/pt_BR" target="_blank" rel="noopener"
+                           class="reference mb-2">Documentação oficial: git status</a>
+                    </section>
+                    <section>
+                        <h1 class="subtitle">Ambiente</h1>
+                        <h2>Comandos básicos</h2>
+                        <h3><code>git add</code></h3>
+                        <p>Adiciona arquivos (ou diretórios) para a área de <em>staging</em></p>
+                        <pre><code class="shell" data-trim data-line-numbers="|1-6|8-10|12-19">
+                            $ git status
+                            On branch main
+
+                            No commits yet
+
+                            nothing to commit (create/copy files and use "git add" to track)
+
+                            $ touch novo-arquivo
+
+                            $ git add novo-arquivo
+
+                            $ git status
+                            On branch main
+
+                            No commits yet
+
+                            Changes to be committed:
+                              (use "git rm --cached &lt;file&gt;..." to unstage)
+                                new file:   novo-arquivo
+                        </code></pre>
+                        <a href="https://git-scm.com/docs/git-add/pt_BR" target="_blank" rel="noopener"
+                           class="reference mb-2">Documentação oficial: git add</a>
+                    </section>
+                    <section>
+                        <h1 class="subtitle">Ambiente</h1>
+                        <h2>Comandos básicos</h2>
+                        <h3><code>git mv</code></h3>
+                        <p>
+                            Move ou renomeia um arquivo da cópia de trabalho
+                        </p>
+                        <a href="https://git-scm.com/docs/git-mv/pt_BR" target="_blank" rel="noopener"
+                           class="reference mb-2">Documentação oficial: git mv</a>
+                    </section>
+                    <section>
+                        <h1 class="subtitle">Ambiente</h1>
+                        <h2>Comandos básicos</h2>
+                        <h3><code>git rm</code></h3>
+                        <p>
+                            Remove um arquivo da cópia de trabalho
+                        </p>
+                        <a href="https://git-scm.com/docs/git-rm/pt_BR" target="_blank" rel="noopener"
+                           class="reference mb-2">Documentação oficial: git rm</a>
+                    </section>
+                    <section>
+                        <h1 class="subtitle">Ambiente</h1>
+                        <h2>Comandos básicos</h2>
+                        <h3><code>git diff</code></h3>
+                        <p>
+                            Mostra as diferenças entre os arquivos atuais e o que está no servidor remoto ou entre
+                            <em>commits</em>
+                        </p>
+                        <a href="https://git-scm.com/docs/git-diff/pt_BR" target="_blank" rel="noopener"
+                           class="reference mb-2">Documentação oficial: git diff</a>
+                    </section>
+                    <section>
+                        <h1 class="subtitle">Ambiente</h1>
+                        <h2>Comandos básicos</h2>
+                        <h3><code>git commit</code></h3>
+                        <p>
+                            "Captura" os arquivos que estão na área de <em>staging</em> em um pacote que poderá ser
+                            enviado ao servidor remoto posteriormente
+                        </p>
+                        <p>
+                            É possível adicionar todos os arquivos da área de <em>staging</em> ou apenas alguns deles
+                        </p>
+                        <p>
+                            Se não especificarmos o parâmetro <code>-m "mensagem do commit"</code> para informar a
+                            mensagem, um editor de texto será aberto para que possamos fornecê-la
+                        </p>
+                        <a href="https://git-scm.com/docs/git-commit/pt_BR" target="_blank" rel="noopener"
+                           class="reference mb-2">Documentação oficial: git commit</a>
+                    </section>
+                    <section>
+                        <h1 class="subtitle">Ambiente</h1>
+                        <h2>Comandos básicos</h2>
+                        <h3><code>git log</code></h3>
+                        <p>
+                            Mostra o histórico de <em>commits</em> naquele <em>branch</em> ou de um arquivo específico
+                        </p>
+                        <a href="https://git-scm.com/docs/git-log/pt_BR" target="_blank" rel="noopener"
+                           class="reference mb-2">Documentação oficial: git log</a>
+                    </section>
+                    <section>
+                        <h1 class="subtitle">Ambiente</h1>
+                        <h2>Comandos básicos</h2>
+                        <h3><code>git show</code></h3>
+                        <p>
+                            Exibe detalhes de um <em>commit</em>, <em>tag</em> ou de um arquivo específico
+                        </p>
+                        <a href="https://git-scm.com/docs/git-show/pt_BR" target="_blank" rel="noopener"
+                           class="reference mb-2">Documentação oficial: git show</a>
+                    </section>
+                    <section>
+                        <h1 class="subtitle">Ambiente</h1>
+                        <h2>Comandos básicos</h2>
+                        <h3><code>git push</code></h3>
+                        <p>
+                            Envia os <em>commits</em> que estão no repositório local para o servidor remoto
+                        </p>
+                        <a href="https://git-scm.com/docs/git-push/pt_BR" target="_blank" rel="noopener"
+                           class="reference mb-2">Documentação oficial: git push</a>
+                    </section>
+                    <section>
+                        <h1 class="subtitle">Ambiente</h1>
+                        <h2>Comandos básicos</h2>
+                        <h3><code>git fetch</code></h3>
+                        <p>
+                            Atualiza os metadados do repositório a partir do servidor remoto
+                        </p>
+                        <a href="https://git-scm.com/docs/git-fetch/pt_BR" target="_blank" rel="noopener"
+                           class="reference mb-2">Documentação oficial: git fetch</a>
+                    </section>
+                    <section>
+                        <h1 class="subtitle">Ambiente</h1>
+                        <h2>Comandos básicos</h2>
+                        <h3><code>git pull</code></h3>
+                        <p>
+                            Atualiza os metadados do repositório (como o <code>git pull</code>) e atualiza sua cópia
+                            local com as alterações da <em>branch</em> especificada (como o <code>git merge</code>, que
+                            veremos nas aulas a seguir)
+                        </p>
+                        <a href="https://git-scm.com/docs/git-pull/pt_BR" target="_blank" rel="noopener"
+                           class="reference mb-2">Documentação oficial: git pull</a>
+                    </section>
+                </section> <!-- Ambiente -->
+
+                <section> <!-- Referências -->
+                    <section data-auto-animate data-auto-animate-restart>
+                        <h1>Referências</h1>
+                    </section>
+                    <section data-auto-animate>
+                        <h1>Referências</h1>
+                        <ul>
+                            <li>
+                                <a href="https://www.atlassian.com/br/git/tutorials" target="_blank" rel="noopener">
+                                    Atlassian: Tutoriais do Git
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://git-scm.com/book/pt-br/v2" target="_blank" rel="noopener">
+                                    Git Book
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.git-scm.com/docs/giteveryday" target="_blank" rel="noopener">
+                                    Git
+                                    Everyday
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://githowto.com/pt-BR" target="_blank" rel="noopener">
+                                    Git How To
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://docs.github.com" target="_blank" rel="noopener">
+                                    GitHub Docs
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://githubtraining.github.io/training-manual/" target="_blank"
+                                   rel="noopener">
+                                    GitHub Training Manual
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.gitkraken.com/learn/git/tutorials" target="_blank" rel="noopener">
+                                    GitKraken - Tutorials
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://docs.gitlab.com/" target="_blank" rel="noopener">
+                                    GitLab Docs
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://training.github.com/downloads/pt_BR/github-git-cheat-sheet/"
+                                   target="_blank" rel="noopener">
+                                    GitHub: Git Cheat Sheet
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://initialcommit.com" target="_blank" rel="noopener">
+                                    Initial Commit
+                                </a>
+                            </li>
+                        </ul>
+                    </section>
+                </section> <!-- Referências -->
+            </div>
+        </div>
+
+        <script src="reveal.js/dist/reveal.js"></script>
+        <script src="reveal.js/plugin/highlight/highlight.js"></script>
+        <script>
+          Reveal.initialize({
+            hash: true,
+            mouseWheel: true,
+            overview: false,
+            history: true,
+            plugins: [RevealHighlight]
+          });
+        </script>
+    </body>
+</html>
