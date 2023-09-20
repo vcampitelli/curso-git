@@ -12,7 +12,8 @@
   --r-main-color: #1e3a4f;
   --r-main-font-size: 24px;
   --r-main-font: Roboto, sans-serif;
-  --color-purple: #4c1e4f;
+  --color-green: #11f1b1;
+  --color-purple: #6874e8;
   --subheading-color: #99a2a2;
   --border-radius: 5px;
 }
@@ -27,15 +28,8 @@
 .first-slide > h1 {
   margin-bottom: 0;
 }
-.first-slide > h2,
-.section-date {
+.first-slide > h2 {
   color: var(--subheading-color);
-}
-p.section-date {
-  margin-bottom: 0;
-}
-p.section-date + h1 {
-  margin-top: 0;
 }
 
 /* Código */
@@ -45,10 +39,14 @@ p.section-date + h1 {
 }
 code:not(.hljs) {
   background-color: var(--background-color-darker);
-  color: #6874e8;
+  color: var(--color-purple);
   font-size: 0.8em;
   padding: 1px 6px;
   border-radius: var(--border-radius);
+}
+kbd {
+  font-family: var(--r-code-font);
+  font-weight: 600;
 }
 pre code.hljs {
   display: block;
@@ -118,6 +116,19 @@ a.reference:before {
 }
 a.reference:after {
   content: " ]";
+}
+
+/* Listas */
+.margin > li + li {
+  margin-top: 0.75em;
+}
+.margin > li > ul > li,
+.margin > li > ol > li {
+  margin-top: 0.5em;
+}
+li > ul,
+li > ol {
+  font-size: 0.9em;
 }
 
 /* Cabeçalho */
@@ -207,6 +218,14 @@ table.calendar > tbody > tr > td {
   background-color: var(--background-color-darker);
   font-size: 0.7em;
 }
+a.calendar-slot {
+  background-color: var(--color-green);
+  color: var(--r-main-color);
+}
+a.calendar-slot:is(:hover, :focus) {
+  color: var(--color-green);
+  background-color: var(--r-main-color);
+}
 .calendar-slot.calendar-slot-empty {
   opacity: 0.4;
 }
@@ -216,8 +235,14 @@ table.calendar > tbody > tr > td {
   display: flex;
 }
 .d-flex.cols-2 > div {
-  flex: 50% 0 1;
+  flex: 50% 1 0;
+}
+.mt-0 {
+  margin-top: 0 !important;
+}
+.mb-0 {
+  margin-bottom: 0 !important;
 }
 .mb-2 {
-  margin-bottom: 2em;
+  margin-bottom: 2em !important;
 }

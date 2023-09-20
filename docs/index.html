@@ -255,15 +255,15 @@
                                 <tr>
                                     <td>
                                         <span class="calendar-date">18/09</span>
-                                        <span class="calendar-slot">Aula 1</span>
+                                        <a href="#/aula1" class="calendar-slot">Aula 1</a>
                                     </td>
                                     <td>
                                         <span class="calendar-date">19/09</span>
-                                        <span class="calendar-slot">Aula 2</span>
+                                        <a href="#/aula2" class="calendar-slot">Aula 2</a>
                                     </td>
                                     <td>
                                         <span class="calendar-date">20/09</span>
-                                        <span class="calendar-slot">Aula 3</span>
+                                        <a href="#/aula3" class="calendar-slot">Aula 3</a>
                                     </td>
                                     <td>
                                         <span class="calendar-date">21/09</span>
@@ -368,12 +368,11 @@
                 </section> <!-- Agenda -->
 
                 <section> <!-- Introdução -->
-                    <section>
-                        <p class="section-date">Aula 1</p>
-                        <h1>Introdução</h1>
+                    <section id="aula1">
+                        <h1>Introdução e Conceitos</h1>
                     </section>
                     <section>
-                        <h1 class="subtitle">Introdução</h1>
+                        <h1 class="subtitle">Introdução e Conceitos</h1>
                         <h2>Gerenciamento de Configuração</h2>
                         <blockquote>
                             Processo de engenharia de sistemas para estabelecer a consistência dos atributos de um
@@ -385,7 +384,7 @@
                             benefícios (Atlassian)</a>
                     </section>
                     <section>
-                        <h1 class="subtitle">Introdução</h1>
+                        <h1 class="subtitle">Introdução e Conceitos</h1>
                         <h2>Gerenciamento de Configuração</h2>
                         <p>Principais benefícios:</p>
                         <ul>
@@ -397,7 +396,7 @@
                         </ul>
                     </section>
                     <section>
-                        <h1 class="subtitle">Introdução</h1>
+                        <h1 class="subtitle">Introdução e Conceitos</h1>
                         <h2>Controle de Versão</h2>
                         <p>
                             <b>Sistemas de Versionamento de Código</b> (em inglês: <em>"Version Control System"</em> ou
@@ -474,7 +473,7 @@
                            rel="noopener" class="reference">History of Version Control Systems VCS (dev.to)</a>
                     </section>
                     <section>
-                        <h1 class="subtitle">Introdução</h1>
+                        <h1 class="subtitle">Introdução e Conceitos</h1>
                         <h2>Git</h2>
                         <p>
                             Ferramenta criada por
@@ -487,7 +486,7 @@
                            rel="noopener" class="reference mb-2">BitKeeper and Linux: The end of the road?</a>
                     </section>
                     <section>
-                        <h1 class="subtitle">Introdução</h1>
+                        <h1 class="subtitle">Introdução e Conceitos</h1>
                         <h2>Git</h2>
                         <iframe width="560" height="315"
                                 src="https://www.youtube.com/embed/4XpnKHJAok8?si=IbayMk1lJPMO61T2"
@@ -498,7 +497,7 @@
                            class="reference">Palestra do Linus Torvalds sobre git em 2007</a>
                     </section>
                     <section>
-                        <h1 class="subtitle">Introdução</h1>
+                        <h1 class="subtitle">Introdução e Conceitos</h1>
                         <h2>Git</h2>
                         <h3>Principais conceitos</h3>
                         <blockquote>
@@ -514,7 +513,7 @@
                             (Wikipedia)</a>
                     </section>
                     <section>
-                        <h1 class="subtitle">Introdução</h1>
+                        <h1 class="subtitle">Introdução e Conceitos</h1>
                         <h2>Visão Geral do GitLab Community</h2>
                         <ul>
                             <li>
@@ -537,8 +536,8 @@
                             Platform | GitLab
                         </a>
                     </section>
-                    <section data-auto-animate>
-                        <h1 class="subtitle">Introdução</h1>
+                    <section id="aula2" data-auto-animate>
+                        <h1 class="subtitle">Introdução e Conceitos</h1>
                         <h2>Conceitos gerais</h2>
                         <h3>Repositório</h3>
                         <p>
@@ -560,7 +559,7 @@
                         </ul>
                     </section>
                     <section data-auto-animate>
-                        <h1 class="subtitle">Introdução</h1>
+                        <h1 class="subtitle">Introdução e Conceitos</h1>
                         <h2>Conceitos gerais</h2>
                         <h3><em>Branch</em></h3>
                         <p>
@@ -570,7 +569,7 @@
                         </p>
                     </section>
                     <section data-auto-animate>
-                        <h1 class="subtitle">Introdução</h1>
+                        <h1 class="subtitle">Introdução e Conceitos</h1>
                         <h2>Conceitos gerais</h2>
                         <h3><em>Diff</em></h3>
                         <p>
@@ -600,7 +599,7 @@
                         </code></pre>
                     </section>
                     <section data-auto-animate>
-                        <h1 class="subtitle">Introdução</h1>
+                        <h1 class="subtitle">Introdução e Conceitos</h1>
                         <h2>Conceitos gerais</h2>
                         <h3><em>Commit</em></h3>
                         <p>
@@ -619,7 +618,7 @@
                            class="reference">The Git Commit Hash</a>
                     </section>
                     <section data-auto-animate>
-                        <h1 class="subtitle">Introdução</h1>
+                        <h1 class="subtitle">Introdução e Conceitos</h1>
                         <h2>Conceitos gerais</h2>
                         <h3><em>Merge</em></h3>
                         <p>
@@ -631,10 +630,10 @@
                             <em>bugs</em> em uma <em>branch</em> e queremos trazer o código para a principal (por
                             exemplo, a <code>main</code>)
                         </p>
-                        <img src="img/gitflow-merge.svg" alt="Fluxo de merge no Git">
+                        <img src="img/merge.svg" alt="Fluxo de merge no Git">
                     </section>
                     <section data-auto-animate>
-                        <h1 class="subtitle">Introdução</h1>
+                        <h1 class="subtitle">Introdução e Conceitos</h1>
                         <h2>Conceitos gerais</h2>
                         <h3><em>Tag</em></h3>
                         <p>
@@ -648,10 +647,10 @@
                                 Versionamento Semântico
                             </a> para identificar as versões mais facilmente
                         </p>
-                        <img src="img/gitflow-tag.svg" alt="Tags no Git">
+                        <img src="img/tags.svg" alt="Tags no Git">
                     </section>
                     <section data-auto-animate>
-                        <h1 class="subtitle">Introdução</h1>
+                        <h1 class="subtitle">Introdução e Conceitos</h1>
                         <h2>Conceitos gerais</h2>
                         <h3><em>Staging</em></h3>
                         <p>
@@ -661,13 +660,12 @@
                     </section>
                 </section> <!-- Introdução -->
 
-                <section> <!-- Ambiente -->
+                <section> <!-- Controle de Versão com Git -->
                     <section>
-                        <p class="section-date">Aula 2</p>
-                        <h1>Ambiente</h1>
+                        <h1>Controle de Versão com Git</h1>
                     </section>
                     <section>
-                        <h1 class="subtitle">Ambiente</h1>
+                        <h1 class="subtitle">Controle de Versão com Git</h1>
                         <h2>Acessando o laboratório</h2>
                         <p>
                             Acesse o GitLab disponibilizado em
@@ -677,7 +675,7 @@
                         </p>
                     </section>
                     <section>
-                        <h1 class="subtitle">Ambiente</h1>
+                        <h1 class="subtitle">Controle de Versão com Git</h1>
                         <h2>Instalando o git</h2>
                         <p>
                             Instruções de instalação do git para cada Sistema Operacional:
@@ -703,8 +701,8 @@
                         </a>
                     </section>
                     <section>
-                        <h1 class="subtitle">Ambiente</h1>
-                        <h2>Criando repositórios</h2>
+                        <h1 class="subtitle">Controle de Versão com Git</h1>
+                        <h2>Comandos básicos</h2>
                         <h3><code>git init</code></h3>
                         <p>
                             Inicializa o diretório atual para ser utilizado como repositório, criando a pasta
@@ -721,8 +719,8 @@
                            class="reference">Documentação oficial: git remote</a>
                     </section>
                     <section>
-                        <h1 class="subtitle">Ambiente</h1>
-                        <h2>Clonando repositórios</h2>
+                        <h1 class="subtitle">Controle de Versão com Git</h1>
+                        <h2>Comandos básicos</h2>
                         <h3><code>git clone</code></h3>
                         <p>
                             Processo de fazer o <em>"download"</em> de um repositório para trabalhar em sua cópia local,
@@ -737,7 +735,7 @@
                            target="_blank" rel="noopener" class="reference">Clone a repository | GitLab</a>
                     </section>
                     <section>
-                        <h1 class="subtitle">Ambiente</h1>
+                        <h1 class="subtitle">Controle de Versão com Git</h1>
                         <h2>Comandos básicos</h2>
                         <h3><code>git config</code></h3>
                         <p>
@@ -753,7 +751,7 @@
                            target="_blank" rel="noopener" class="reference">Git Configuration</a>
                     </section>
                     <section>
-                        <h1 class="subtitle">Ambiente</h1>
+                        <h1 class="subtitle">Controle de Versão com Git</h1>
                         <h2>Comandos básicos</h2>
                         <h3><code>git status</code></h3>
                         <p>
@@ -785,7 +783,7 @@
                            class="reference mb-2">Documentação oficial: git status</a>
                     </section>
                     <section>
-                        <h1 class="subtitle">Ambiente</h1>
+                        <h1 class="subtitle">Controle de Versão com Git</h1>
                         <h2>Comandos básicos</h2>
                         <h3><code>git add</code></h3>
                         <p>Adiciona arquivos (ou diretórios) para a área de <em>staging</em></p>
@@ -814,38 +812,7 @@
                            class="reference mb-2">Documentação oficial: git add</a>
                     </section>
                     <section>
-                        <h1 class="subtitle">Ambiente</h1>
-                        <h2>Comandos básicos</h2>
-                        <h3><code>git mv</code></h3>
-                        <p>
-                            Move ou renomeia um arquivo da cópia de trabalho
-                        </p>
-                        <a href="https://git-scm.com/docs/git-mv/pt_BR" target="_blank" rel="noopener"
-                           class="reference mb-2">Documentação oficial: git mv</a>
-                    </section>
-                    <section>
-                        <h1 class="subtitle">Ambiente</h1>
-                        <h2>Comandos básicos</h2>
-                        <h3><code>git rm</code></h3>
-                        <p>
-                            Remove um arquivo da cópia de trabalho
-                        </p>
-                        <a href="https://git-scm.com/docs/git-rm/pt_BR" target="_blank" rel="noopener"
-                           class="reference mb-2">Documentação oficial: git rm</a>
-                    </section>
-                    <section>
-                        <h1 class="subtitle">Ambiente</h1>
-                        <h2>Comandos básicos</h2>
-                        <h3><code>git diff</code></h3>
-                        <p>
-                            Mostra as diferenças entre os arquivos atuais e o que está no servidor remoto ou entre
-                            <em>commits</em>
-                        </p>
-                        <a href="https://git-scm.com/docs/git-diff/pt_BR" target="_blank" rel="noopener"
-                           class="reference mb-2">Documentação oficial: git diff</a>
-                    </section>
-                    <section>
-                        <h1 class="subtitle">Ambiente</h1>
+                        <h1 class="subtitle">Controle de Versão com Git</h1>
                         <h2>Comandos básicos</h2>
                         <h3><code>git commit</code></h3>
                         <p>
@@ -863,7 +830,7 @@
                            class="reference mb-2">Documentação oficial: git commit</a>
                     </section>
                     <section>
-                        <h1 class="subtitle">Ambiente</h1>
+                        <h1 class="subtitle">Controle de Versão com Git</h1>
                         <h2>Comandos básicos</h2>
                         <h3><code>git log</code></h3>
                         <p>
@@ -873,7 +840,48 @@
                            class="reference mb-2">Documentação oficial: git log</a>
                     </section>
                     <section>
-                        <h1 class="subtitle">Ambiente</h1>
+                        <h1 class="subtitle">Controle de Versão com Git</h1>
+                        <h2>Comandos básicos</h2>
+                        <h3><code>git push</code></h3>
+                        <p>
+                            Envia os <em>commits</em> que estão no repositório local para o servidor remoto
+                        </p>
+                        <a href="https://git-scm.com/docs/git-push/pt_BR" target="_blank" rel="noopener"
+                           class="reference mb-2">Documentação oficial: git push</a>
+                    </section>
+                    <section id="aula3">
+                        <h1 class="subtitle">Controle de Versão com Git</h1>
+                        <h2>Comandos básicos</h2>
+                        <h3><code>git mv</code></h3>
+                        <p>
+                            Move ou renomeia um arquivo da cópia de trabalho
+                        </p>
+                        <a href="https://git-scm.com/docs/git-mv/pt_BR" target="_blank" rel="noopener"
+                           class="reference mb-2">Documentação oficial: git mv</a>
+                    </section>
+                    <section>
+                        <h1 class="subtitle">Controle de Versão com Git</h1>
+                        <h2>Comandos básicos</h2>
+                        <h3><code>git rm</code></h3>
+                        <p>
+                            Remove um arquivo da cópia de trabalho
+                        </p>
+                        <a href="https://git-scm.com/docs/git-rm/pt_BR" target="_blank" rel="noopener"
+                           class="reference mb-2">Documentação oficial: git rm</a>
+                    </section>
+                    <section>
+                        <h1 class="subtitle">Controle de Versão com Git</h1>
+                        <h2>Comandos básicos</h2>
+                        <h3><code>git diff</code></h3>
+                        <p>
+                            Mostra as diferenças entre os arquivos atuais e o que está no servidor remoto ou entre
+                            <em>commits</em>
+                        </p>
+                        <a href="https://git-scm.com/docs/git-diff/pt_BR" target="_blank" rel="noopener"
+                           class="reference mb-2">Documentação oficial: git diff</a>
+                    </section>
+                    <section>
+                        <h1 class="subtitle">Controle de Versão com Git</h1>
                         <h2>Comandos básicos</h2>
                         <h3><code>git show</code></h3>
                         <p>
@@ -883,17 +891,7 @@
                            class="reference mb-2">Documentação oficial: git show</a>
                     </section>
                     <section>
-                        <h1 class="subtitle">Ambiente</h1>
-                        <h2>Comandos básicos</h2>
-                        <h3><code>git push</code></h3>
-                        <p>
-                            Envia os <em>commits</em> que estão no repositório local para o servidor remoto
-                        </p>
-                        <a href="https://git-scm.com/docs/git-push/pt_BR" target="_blank" rel="noopener"
-                           class="reference mb-2">Documentação oficial: git push</a>
-                    </section>
-                    <section>
-                        <h1 class="subtitle">Ambiente</h1>
+                        <h1 class="subtitle">Controle de Versão com Git</h1>
                         <h2>Comandos básicos</h2>
                         <h3><code>git fetch</code></h3>
                         <p>
@@ -903,16 +901,412 @@
                            class="reference mb-2">Documentação oficial: git fetch</a>
                     </section>
                     <section>
-                        <h1 class="subtitle">Ambiente</h1>
+                        <h1 class="subtitle">Controle de Versão com Git</h1>
                         <h2>Comandos básicos</h2>
                         <h3><code>git pull</code></h3>
                         <p>
-                            Atualiza os metadados do repositório (como o <code>git pull</code>) e atualiza sua cópia
+                            Atualiza os metadados do repositório (como o <code>git fetch</code>) e atualiza sua cópia
                             local com as alterações da <em>branch</em> especificada (como o <code>git merge</code>, que
                             veremos nas aulas a seguir)
                         </p>
                         <a href="https://git-scm.com/docs/git-pull/pt_BR" target="_blank" rel="noopener"
                            class="reference mb-2">Documentação oficial: git pull</a>
+                    </section>
+                    <section>
+                        <h1 class="subtitle">Controle de Versão com Git</h1>
+                        <h2>Configuração de um Projeto no GitLab</h2>
+                        <p>
+                            Depois de criarmos nosso repositório na aula passada, vamos ver algumas configurações
+                            possíveis para gerenciamento do projeto:
+                        </p>
+                        <ul>
+                            <li>Definindo permissões;</li>
+                            <li>Proteção de <em>branches</em>;</li>
+                            <li>Arquivos <code>README</code>;</li>
+                            <li>Criação de <em>Wikis</em>;</li>
+                            <li>Criação de <em>Issues</em>;</li>
+                            <li>Abertura e resoluções de <em>Merge requests</em>;</li>
+                            <li>Configurações de CI/CD;</li>
+                            <li>Entre outros.</li>
+                        </ul>
+                    </section>
+                </section> <!-- Controle de Versão com Git -->
+
+                <section> <!-- Comandos intermediários -->
+                    <section>
+                        <h1 class="mb-0">Controle de Versão com Git</h1>
+                        <p class="mt-0 text-muted">Continuação</p>
+                    </section>
+                    <section>
+                        <h1 class="subtitle">Controle de Versão com Git</h1>
+                        <h2>Comandos intermediários</h2>
+                        <h3><code>git --help</code></h3>
+                        <p>
+                            Todos os comandos do git possuem um parâmetro <code>--help</code> para mostrar mais detalhes
+                            sobre como podemos usá-los!
+                        </p>
+                        <a href="https://git-scm.com/docs/git/pt_BR" target="_blank" rel="noopener"
+                           class="reference mb-2">Documentação oficial: git</a>
+                    </section>
+                    <section>
+                        <h1 class="subtitle">Controle de Versão com Git</h1>
+                        <h2>Comandos intermediários</h2>
+                        <h3><code>git checkout</code></h3>
+                        <p>
+                            Altera a <em>branch</em> em que você está trabalhando, cria uma nova <em>branch</em> ou
+                            restaura um arquivo a partir da <em>branch</em> informada
+                        </p>
+                        <a href="https://git-scm.com/docs/git-checkout/pt_BR" target="_blank" rel="noopener"
+                           class="reference mb-2">Documentação oficial: git checkout</a>
+                    </section>
+                    <section>
+                        <h1 class="subtitle">Controle de Versão com Git</h1>
+                        <h2>Comandos intermediários</h2>
+                        <h3><code>git branch</code></h3>
+                        <p>
+                            Lista, cria ou exclui <em>branches</em>, podendo também mostrar as que contém ou não
+                            determinado <em>commit</em>
+                        </p>
+                        <a href="https://git-scm.com/docs/git-branch/pt_BR" target="_blank" rel="noopener"
+                           class="reference mb-2">Documentação oficial: git branch</a>
+                    </section>
+                    <section>
+                        <h1 class="subtitle">Controle de Versão com Git</h1>
+                        <h2>Comandos intermediários</h2>
+                        <h3><code>git merge</code></h3>
+                        <p>
+                            Faz a incorporação de uma <em>branch</em> em outra, podendo "achatar" todos os
+                            <em>commits</em> em um só através do parâmetro <code>--squash</code>
+                        </p>
+                        <img src="img/merge.svg" alt="Fluxo de merge no Git">
+                        <a href="https://git-scm.com/docs/git-merge/pt_BR" target="_blank" rel="noopener"
+                           class="reference mb-2">Documentação oficial: git merge</a>
+                    </section>
+                    <section data-auto-animate>
+                        <h1 class="subtitle">Controle de Versão com Git</h1>
+                        <h2>Comandos intermediários</h2>
+                        <h3><code>git log</code></h3>
+                        <p>
+                            Já vimos como usá-lo de forma mais simples, mas existem diversos argumentos para
+                            consultarmos o histórico de alterações
+                        </p>
+                        <a href="https://git-scm.com/docs/git-log/pt_BR" target="_blank" rel="noopener"
+                           class="reference mb-2" data-id="git-log-reference">Documentação oficial: git log</a>
+                    </section>
+                    <section data-auto-animate>
+                        <h1 class="subtitle">Controle de Versão com Git</h1>
+                        <h2>Comandos intermediários</h2>
+                        <h3><code>git log</code></h3>
+                        <p>
+                            Para consultar apenas os <em>commits</em> que envolvem um determinado arquivo, utilize o
+                            parâmetro <code>--follow</code>:
+                        </p>
+                        <pre><code class="shell" data-trim>
+                            $ git log --follow -- &lt;arquivo&gt;
+                        </code></pre>
+                        <a href="https://git-scm.com/docs/git-log/pt_BR" target="_blank" rel="noopener"
+                           class="reference mb-2" data-id="git-log-reference">Documentação oficial: git log</a>
+                    </section>
+                    <section data-auto-animate>
+                        <h1 class="subtitle">Controle de Versão com Git</h1>
+                        <h2>Comandos intermediários</h2>
+                        <h3><code>git log</code></h3>
+                        <p>
+                            Para ter uma visão mais compacta, podemos usar o parâmetro <code>--oneline</code>:
+                        </p>
+                        <pre><code class="shell" data-trim>
+                            $ git log --oneline
+                        </code></pre>
+                        <a href="https://git-scm.com/docs/git-log/pt_BR" target="_blank" rel="noopener"
+                           class="reference mb-2" data-id="git-log-reference">Documentação oficial: git log</a>
+                    </section>
+                    <section data-auto-animate>
+                        <h1 class="subtitle">Controle de Versão com Git</h1>
+                        <h2>Comandos intermediários</h2>
+                        <h3><code>git log</code></h3>
+                        <p>
+                            Para saber os arquivos modificados, utilize <code>--stat</code>:
+                        </p>
+                        <pre><code class="shell" data-trim>
+                            $ git log --stat
+                        </code></pre>
+                        <a href="https://git-scm.com/docs/git-log/pt_BR" target="_blank" rel="noopener"
+                           class="reference mb-2" data-id="git-log-reference">Documentação oficial: git log</a>
+                    </section>
+                    <section data-auto-animate>
+                        <h1 class="subtitle">Controle de Versão com Git</h1>
+                        <h2>Comandos intermediários</h2>
+                        <h3><code>git log</code></h3>
+                        <p>
+                            Para procurar os <em>commits</em> de um único autor, utilize <code>--author</code>:
+                        </p>
+                        <pre><code class="shell" data-trim>
+                            $ git log --author "Parte do nome ou email do autor"
+                        </code></pre>
+                        <a href="https://git-scm.com/docs/git-log/pt_BR" target="_blank" rel="noopener"
+                           class="reference mb-2" data-id="git-log-reference">Documentação oficial: git log</a>
+                    </section>
+                    <section data-auto-animate>
+                        <h1 class="subtitle">Controle de Versão com Git</h1>
+                        <h2>Comandos intermediários</h2>
+                        <h3><code>git log</code></h3>
+                        <p>
+                            Para retornar apenas os <em>commits</em> após uma certa data, utilize <code>--after</code>:
+                        </p>
+                        <pre><code class="shell" data-trim>
+                            $ git log --after "2023-01-01"
+                        </code></pre>
+                        <a href="https://git-scm.com/docs/git-log/pt_BR" target="_blank" rel="noopener"
+                           class="reference mb-2" data-id="git-log-reference">Documentação oficial: git log</a>
+                    </section>
+                    <section data-auto-animate>
+                        <h1 class="subtitle">Controle de Versão com Git</h1>
+                        <h2>Comandos intermediários</h2>
+                        <h3><code>git log</code></h3>
+                        <p>
+                            Para retornar apenas os <em>commits</em> antes de uma certa data, utilize
+                            <code>--before</code>:
+                        </p>
+                        <pre><code class="shell" data-trim>
+                            $ git log --before "2023-01-01"
+                        </code></pre>
+                        <a href="https://git-scm.com/docs/git-log/pt_BR" target="_blank" rel="noopener"
+                           class="reference mb-2" data-id="git-log-reference">Documentação oficial: git log</a>
+                    </section>
+                    <section data-auto-animate>
+                        <h1 class="subtitle">Controle de Versão com Git</h1>
+                        <h2>Comandos intermediários</h2>
+                        <h3><code>git log</code></h3>
+                        <p>
+                            Para buscar apenas os <em>commits</em> que possuem certa mensagem, utilize
+                            <code>--grep</code>:
+                        </p>
+                        <pre><code class="shell" data-trim>
+                            $ git log --grep "Parte da mensagem"
+                        </code></pre>
+                        <a href="https://git-scm.com/docs/git-log/pt_BR" target="_blank" rel="noopener"
+                           class="reference mb-2" data-id="git-log-reference">Documentação oficial: git log</a>
+                    </section>
+                    <section data-auto-animate>
+                        <h1 class="subtitle">Controle de Versão com Git</h1>
+                        <h2>Comandos intermediários</h2>
+                        <h3><code>git log</code></h3>
+                        <p>
+                            Para buscar <em>commits</em> que possuem uma certa <em>string</em> de código que foi
+                            <b>adicionada</b> ou <b>excluída</b>, utilize <code>-S</code>:
+                        </p>
+                        <pre><code class="shell" data-trim>
+                            $ git log -S "console.log"
+                        </code></pre>
+                        <p>
+                            Isso irá mostrar todos os <em>commits</em> em que houveram adições ou exclusões do texto
+                            <code>console.log</code>
+                        </p>
+                        <a href="https://git-scm.com/docs/git-log/pt_BR" target="_blank" rel="noopener"
+                           class="reference mb-2" data-id="git-log-reference">Documentação oficial: git log</a>
+                    </section>
+                    <section data-auto-animate>
+                        <h1 class="subtitle">Controle de Versão com Git</h1>
+                        <h2>Comandos intermediários</h2>
+                        <h3><code>git log</code></h3>
+                        <p>
+                            Para buscar <em>commits</em> que possuem uma certa <em>string</em> de código que foi
+                            <b>adicionada</b>, <b>excluída</b> ou <b>modificada</b>, utilize <code>-G</code>:
+                        </p>
+                        <pre><code class="shell" data-trim>
+                            $ git log -G "console.log"
+                        </code></pre>
+                        <p>
+                            Isso irá mostrar todos os <em>commits</em> em que houveram adições, exclusões ou
+                            modificações do texto <code>console.log</code>
+                        </p>
+                        <a href="https://git-scm.com/docs/git-log/pt_BR" target="_blank" rel="noopener"
+                           class="reference mb-2" data-id="git-log-reference">Documentação oficial: git log</a>
+                    </section>
+                    <section>
+                        <h1 class="subtitle">Controle de Versão com Git</h1>
+                        <h2>Comandos intermediários</h2>
+                        <h3><code>git log</code></h3>
+                        <p>
+                            Para visualizar de forma gráfica os <em>commits</em>, <em>branches</em> e <em>merges</em> do
+                            repositório, utilize <code>--graph</code>:
+                        </p>
+                        <pre><code class="shell" data-trim>
+                            $ git log --graph
+                        </code></pre>
+                        <a href="https://git-scm.com/docs/git-log/pt_BR" target="_blank" rel="noopener"
+                           class="reference mb-2">Documentação oficial: git log</a>
+                    </section>
+                    <section>
+                        <h1 class="subtitle">Controle de Versão com Git</h1>
+                        <h2>Comandos intermediários</h2>
+                        <h3><code>git log</code></h3>
+                        <p>
+                            Para buscar apenas alterações entre as linhas <kbd>50</kbd> e <kbd>100</kbd> de um arquivo
+                            <kbd>index</kbd>, execute:
+                        </p>
+                        <pre><code class="shell" data-trim>
+                            $ git log -L 50,100:index
+                        </code></pre>
+                        <a href="https://git-scm.com/docs/git-log/pt_BR" target="_blank" rel="noopener"
+                           class="reference mb-2">Documentação oficial: git log</a>
+                    </section>
+                    <section>
+                        <h1 class="subtitle">Controle de Versão com Git</h1>
+                        <h2>Comandos intermediários</h2>
+                        <h3><code>git shortlog</code></h3>
+                        <p>
+                            Forma de visualizar o histórico do <code>git log</code> de uma forma mais simples
+                        </p>
+                        <a href="https://git-scm.com/docs/git-shortlog/pt_BR" target="_blank" rel="noopener"
+                           class="reference mb-2">Documentação oficial: git shortlog</a>
+                    </section>
+                    <section>
+                        <h1 class="subtitle">Controle de Versão com Git</h1>
+                        <h2>Comandos intermediários</h2>
+                        <h3><code>git blame</code></h3>
+                        <p>
+                            Saiba qual foi a última modificação em cada linha do arquivo
+                        </p>
+                        <a href="https://git-scm.com/docs/git-blame/pt_BR" target="_blank" rel="noopener"
+                           class="reference mb-2">Documentação oficial: git blame</a>
+                    </section>
+                </section> <!-- Comandos intermediários -->
+
+                <section> <!-- Fluxos de Trabalho -->
+                    <section data-auto-animate data-auto-animate-restart>
+                        <h1>Fluxos de Trabalho</h1>
+                    </section>
+                    <section data-auto-animate>
+                        <h1>Fluxos de Trabalho</h1>
+                        <p>
+                            Para facilitar a colaboração entre pessoas diferentes em um mesmo repositório, é recomendado
+                            o seguinte fluxo para uso do <kbd>git</kbd> no dia-a-dia:
+                        </p>
+                        <ol class="margin">
+                            <li class="fragment">
+                                Antes de criar uma funcionalidade ou corrigir um <em>bug</em>, crie uma <em>branch</em>
+                                e trabalhe nela
+                            </li>
+                            <li class="fragment">
+                                Após terminar o desenvolvimento, abra um <em>merge request</em> para que outras pessoas
+                                possam avaliar aquele código <em>(code review)</em> e realizar os devidos testes
+                                <ul>
+                                    <li class="fragment">
+                                        Se forem requisitadas mudanças, altere o código e peça uma nova avaliação
+                                    </li>
+                                    <li class="fragment">
+                                        Ao ser aprovado, você ou o mantenedor do repositório deve realizar o
+                                        <em>merge</em> na <em>branch</em> principal (<code>main</code>)
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="fragment">
+                                A <em>branch</em> principal (<code>main</code>) possui códigos que estão prontos para
+                                serem publicados em produção ou disponibilizados para os clientes
+                            </li>
+                        </ol>
+                    </section>
+                    <section data-auto-animate data-auto-animate-restart>
+                        <h1 class="subtitle">Fluxos de Trabalho</h1>
+                        <h2>Git Flow</h2>
+                        <p>
+                            Lançado em 2010, tem sido <strong>desencorajado</strong> para a grande maioria dos projetos,
+                            a não ser para os que trabalham com datas fixas para o lançamento de cada versão
+                        </p>
+                        <ul class="margin">
+                            <li>
+                                Possui duas <em>branches</em> principais: <code>main</code> e <code>develop</code>
+                            </li>
+                            <li>
+                                Para cada nova funcionalidade ou correção de <em>bugs</em>, devemos criar uma
+                                <em>branch</em> a partir de <code>develop</code>, que será mesclada de volta ao fim do
+                                desenvolvimento
+                            </li>
+                            <li>
+                                Ao se aproximar da data de lançamento (ou quando houver conteúdo o suficiente para uma
+                                nova versão), uma nova <em>branch</em> chamada <code>release</code> será criada a partir
+                                da <code>develop</code>
+                            </li>
+                            <li>
+                                A partir desse momento, a <em>branch</em> <code>develop</code> não deve conter novos
+                                recursos, apenas correções de segurança, melhorias de implementação ou documentação
+                            </li>
+                            <li>
+                                Quando tudo estiver pronto, fazemos o <em>merge</em> do <code>release</code> para a
+                                <code>main</code>
+                            </li>
+                        </ul>
+                    </section>
+                    <section data-auto-animate>
+                        <h1 class="subtitle">Fluxos de Trabalho</h1>
+                        <h2>Git Flow</h2>
+                        <p>Exemplo:</p>
+                        <div class="d-flex">
+                            <div style="flex: 60% 1 0;">
+                                <img src="img/gitflow.svg" alt="Exemplo do Git Flow">
+                            </div>
+                            <div>
+                                <ul class="font-size-sm">
+                                    <li class="fragment">
+                                        Na <code>main</code>, temos a versão atual
+                                    </li>
+                                    <li class="fragment">
+                                        Criamos a <em>branch</em> <code>develop</code> a partir da <code>v1.0</code>
+                                    </li>
+                                    <li class="fragment">
+                                        Para cada desenvolvimento, criamos uma nova <em>branch</em> a partir da
+                                        <code>develop</code>
+                                    </li>
+                                    <li class="fragment">
+                                        Ao terminar cada desenvolvimento, fazemos o <em>merge</em> para a
+                                        <code>develop</code>
+                                    </li>
+                                    <li class="fragment">
+                                        Na data de congelamento do <em>release</em>, paramos de aceitar novas funções e
+                                        criamos a <em>branch</em> <code>release</code>
+                                    </li>
+                                    <li class="fragment">
+                                        Apenas correções e melhorias serão aceitas
+                                    </li>
+                                    <li class="fragment">
+                                        Quando tudo estiver testado e aceito, fazemos o <em>merge</em> da
+                                        <code>release</code> para a <code>main</code> e geramos uma nova versão para
+                                        publicar
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+                    <section>
+                        <h1 class="subtitle">Fluxos de Trabalho</h1>
+                        <h2>GitHub Flow</h2>
+                        <p>
+                            Mais simples que o <em>Git Flow</em>, permite a publicação do <em>software</em>
+                            <b>sempre</b> que terminamos o desenvolvimento de uma funcionalidade ou correção de
+                            <em>bug</em>
+                        </p>
+                        <p>
+                            Para isso, é primordial termos configurado esteiras de CI/CD para testar e integrar as
+                            alterações do sistema (que veremos em breve)
+                        </p>
+                        <img src="img/github-flow.svg" alt="GitHub Flow">
+                    </section>
+                    <section>
+                        <h1 class="subtitle">Fluxos de Trabalho</h1>
+                        <h2>GitLab Flow</h2>
+                        <p>
+                            No <em>GitHub Flow</em>, a <em>branch</em> <code>main</code> sempre representa o que está
+                            em produção
+                        </p>
+                        <p>
+                            No <em>GitLab Flow</em>, criamos uma outra <em>branch</em> chamada <code>production</code>,
+                            separando assim funcionalidades estáveis (que estão na <code>main</code>) para aquelas que
+                            estão realmente publicadas (<code>production</code>)
+                        </p>
+                        <img src="img/gitlab-flow.svg" alt="GitLab Flow">
+                    </section>
+                </section> <!-- Fluxos de Trabalho -->
                     </section>
                 </section> <!-- Ambiente -->
 
