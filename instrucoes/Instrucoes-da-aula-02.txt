@@ -1,0 +1,29 @@
+# Para criar um repositório do zero:
+mkdir nome-da-pasta
+cd nome-da-pasta
+
+# Vai criar a pasta .git (responsável pelos metadados do git)
+git init
+
+# Criou novos arquivos aqui dentro (Windows Explorer, VSCode, Notepad++)
+touch nome-do-arquivo
+
+# Adicionamos o arquivo para a área de staging
+git add nome-do-arquivo
+
+# Conferimos que o arquivo está em "Changes to be committed"
+git status
+
+# Configuramos usuário e senha
+git config --global user.name "Meu nome"
+git config --global user.email "email-privado@gitlab.viniciuscampitelli.com"
+
+# Fizemos o commit
+git commit -m "Mensagem do meu commit"
+
+# Fez o push para subir as modificações para o servidor
+git push
+
+# git reclamou porque não sabia como relacionar o branch local com o branch remoto
+# Avisou a gente o comando para parear essa branch
+git push --set-upstream origin master
