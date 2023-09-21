@@ -267,7 +267,7 @@
                                     </td>
                                     <td>
                                         <span class="calendar-date">21/09</span>
-                                        <span class="calendar-slot">Aula 4</span>
+                                        <a href="#/aula4" class="calendar-slot">Aula 4</a>
                                     </td>
                                     <td>
                                         <span class="calendar-date">22/09</span>
@@ -912,24 +912,6 @@
                         <a href="https://git-scm.com/docs/git-pull/pt_BR" target="_blank" rel="noopener"
                            class="reference mb-2">Documentação oficial: git pull</a>
                     </section>
-                    <section>
-                        <h1 class="subtitle">Controle de Versão com Git</h1>
-                        <h2>Configuração de um Projeto no GitLab</h2>
-                        <p>
-                            Depois de criarmos nosso repositório na aula passada, vamos ver algumas configurações
-                            possíveis para gerenciamento do projeto:
-                        </p>
-                        <ul>
-                            <li>Definindo permissões;</li>
-                            <li>Proteção de <em>branches</em>;</li>
-                            <li>Arquivos <code>README</code>;</li>
-                            <li>Criação de <em>Wikis</em>;</li>
-                            <li>Criação de <em>Issues</em>;</li>
-                            <li>Abertura e resoluções de <em>Merge requests</em>;</li>
-                            <li>Configurações de CI/CD;</li>
-                            <li>Entre outros.</li>
-                        </ul>
-                    </section>
                 </section> <!-- Controle de Versão com Git -->
 
                 <section> <!-- Comandos intermediários -->
@@ -947,40 +929,6 @@
                         </p>
                         <a href="https://git-scm.com/docs/git/pt_BR" target="_blank" rel="noopener"
                            class="reference mb-2">Documentação oficial: git</a>
-                    </section>
-                    <section>
-                        <h1 class="subtitle">Controle de Versão com Git</h1>
-                        <h2>Comandos intermediários</h2>
-                        <h3><code>git checkout</code></h3>
-                        <p>
-                            Altera a <em>branch</em> em que você está trabalhando, cria uma nova <em>branch</em> ou
-                            restaura um arquivo a partir da <em>branch</em> informada
-                        </p>
-                        <a href="https://git-scm.com/docs/git-checkout/pt_BR" target="_blank" rel="noopener"
-                           class="reference mb-2">Documentação oficial: git checkout</a>
-                    </section>
-                    <section>
-                        <h1 class="subtitle">Controle de Versão com Git</h1>
-                        <h2>Comandos intermediários</h2>
-                        <h3><code>git branch</code></h3>
-                        <p>
-                            Lista, cria ou exclui <em>branches</em>, podendo também mostrar as que contém ou não
-                            determinado <em>commit</em>
-                        </p>
-                        <a href="https://git-scm.com/docs/git-branch/pt_BR" target="_blank" rel="noopener"
-                           class="reference mb-2">Documentação oficial: git branch</a>
-                    </section>
-                    <section>
-                        <h1 class="subtitle">Controle de Versão com Git</h1>
-                        <h2>Comandos intermediários</h2>
-                        <h3><code>git merge</code></h3>
-                        <p>
-                            Faz a incorporação de uma <em>branch</em> em outra, podendo "achatar" todos os
-                            <em>commits</em> em um só através do parâmetro <code>--squash</code>
-                        </p>
-                        <img src="img/merge.svg" alt="Fluxo de merge no Git">
-                        <a href="https://git-scm.com/docs/git-merge/pt_BR" target="_blank" rel="noopener"
-                           class="reference mb-2">Documentação oficial: git merge</a>
                     </section>
                     <section data-auto-animate>
                         <h1 class="subtitle">Controle de Versão com Git</h1>
@@ -1171,11 +1119,78 @@
                         <a href="https://git-scm.com/docs/git-blame/pt_BR" target="_blank" rel="noopener"
                            class="reference mb-2">Documentação oficial: git blame</a>
                     </section>
+                    <section id="aula4">
+                        <h1 class="subtitle">Controle de Versão com Git</h1>
+                        <h2>Comandos intermediários</h2>
+                        <h3><code>git checkout</code></h3>
+                        <p>
+                            Altera a <em>branch</em> em que você está trabalhando, cria uma nova <em>branch</em> ou
+                            restaura um arquivo a partir da <em>branch</em> informada
+                        </p>
+                        <a href="https://git-scm.com/docs/git-checkout/pt_BR" target="_blank" rel="noopener"
+                           class="reference mb-2">Documentação oficial: git checkout</a>
+                    </section>
+                    <section data-auto-animate data-auto-animate-restart>
+                        <h1 class="subtitle">Controle de Versão com Git</h1>
+                        <h2>Comandos intermediários</h2>
+                        <h3><code>git branch</code></h3>
+                        <p>
+                            Lista, cria ou exclui <em>branches</em>, podendo também mostrar as que contém ou não
+                            determinado <em>commit</em>
+                        </p>
+                        <a href="https://git-scm.com/docs/git-branch/pt_BR" target="_blank" rel="noopener"
+                           class="reference mb-2">Documentação oficial: git branch</a>
+                    </section>
+                    <section data-auto-animate>
+                        <h1 class="subtitle">Controle de Versão com Git</h1>
+                        <h2>Comandos intermediários</h2>
+                        <h3><code>git branch</code></h3>
+                        <p>
+                            Para excluir um <em>branch</em> que está apenas na sua cópia local:
+                        </p>
+                        <pre><code class="shell" data-trim>
+                            $ git branch -d nome-do-branch   # Isso exclui apenas branches que já foram "mergeados"
+                            $ git branch -D nome-do-branch   # Para excluir branches que ainda não foram "mergeados"
+                        </code></pre>
+                        <a href="https://git-scm.com/docs/git-branch/pt_BR" target="_blank" rel="noopener"
+                           class="reference mb-2">Documentação oficial: git branch</a>
+                    </section>
+                    <section data-auto-animate>
+                        <h1 class="subtitle">Controle de Versão com Git</h1>
+                        <h2>Comandos intermediários</h2>
+                        <h3><code>git branch</code></h3>
+                        <p>
+                            Para excluir um <em>branch</em> do servidor remoto:
+                        </p>
+                        <pre><code class="shell" data-trim>
+                            $ git push -d origin nome-do-branch
+                        </code></pre>
+                        <a href="https://git-scm.com/docs/git-branch/pt_BR" target="_blank" rel="noopener"
+                           class="reference mb-2">Documentação oficial: git branch</a>
+                    </section>
                 </section> <!-- Comandos intermediários -->
 
                 <section> <!-- Fluxos de Trabalho -->
                     <section data-auto-animate data-auto-animate-restart>
                         <h1>Fluxos de Trabalho</h1>
+                    </section>
+                    <section>
+                        <h1 class="subtitle">Fluxos de Trabalho</h1>
+                        <h2>Configuração de um Projeto no GitLab</h2>
+                        <p>
+                            Antes de vermos sobre os fluxos, vamos ver algumas configurações possíveis para
+                            gerenciamento dos projetos no GitLab:
+                        </p>
+                        <ul>
+                            <li>Definindo permissões;</li>
+                            <li>Proteção de <em>branches</em>;</li>
+                            <li>Arquivos <code>README</code>;</li>
+                            <li>Criação de <em>Wikis</em>;</li>
+                            <li>Criação de <em>Issues</em>;</li>
+                            <li>Abertura e resoluções de <em>Merge requests</em>;</li>
+                            <li>Configurações de CI/CD;</li>
+                            <li>Entre outros.</li>
+                        </ul>
                     </section>
                     <section data-auto-animate>
                         <h1>Fluxos de Trabalho</h1>
@@ -1307,8 +1322,151 @@
                         <img src="img/gitlab-flow.svg" alt="GitLab Flow">
                     </section>
                 </section> <!-- Fluxos de Trabalho -->
+
+                <section> <!-- Gerenciamento de Branches -->
+                    <section>
+                        <h1>Gerenciamento de Branches</h1>
                     </section>
-                </section> <!-- Ambiente -->
+                    <section data-auto-animate>
+                        <h1 class="subtitle">Gerenciamento de Branches</h1>
+                        <h2><em>Merging</em></h2>
+                        <p>
+                            O <em>merge</em> é utilizado quando queremos incorporar todas as modificações efetuadas em
+                            uma <em>branch</em> em uma outra
+                        </p>
+                    </section>
+                    <section data-auto-animate>
+                        <h1 class="subtitle">Gerenciamento de Branches</h1>
+                        <h2><em>Merging</em></h2>
+                        <h3><code>git merge</code></h3>
+                        <p>
+                            Faz a incorporação de uma <em>branch</em> em outra, podendo "achatar" todos os
+                            <em>commits</em> em um só através do parâmetro <code>--squash</code>
+                        </p>
+                        <img src="img/merge.svg" alt="Fluxo de merge no Git">
+                        <a href="https://git-scm.com/docs/git-merge/pt_BR" target="_blank" rel="noopener"
+                           class="reference mb-2">Documentação oficial: git merge</a>
+                    </section>
+                    <section data-auto-animate data-auto-animate-restart>
+                        <h1 class="subtitle">Gerenciamento de Branches</h1>
+                        <h2>Resolução de Conflitos</h2>
+                        <p>
+                            Ao executarmos o <code>git merge</code>, se alguma das <em>branches</em> possuir
+                            modificações nas mesmas linhas de um arquivo (ou se uma <em>branch</em> editou um arquivo e
+                            a outra o removeu), o <kbd>git</kbd> irá exibir uma mensagem de <b>conflito</b>, pois não
+                            sabe qual dessas modificações deve aplicar
+                        </p>
+                        <img src="img/merge-conflito.svg" alt="Conflitos no merge">
+                    </section>
+                    <section data-auto-animate>
+                        <h1 class="subtitle">Gerenciamento de Branches</h1>
+                        <h2>Resolução de Conflitos</h2>
+                        <pre><code class="shell" data-trim>
+                            $ git merge develop
+                            Auto-merging README
+                            CONFLICT (content): Merge conflict in README
+                            Automatic merge failed; fix conflicts and then commit the result.
+
+                            $ git status
+                            On branch main
+                            You have unmerged paths.
+                              (fix conflicts and run "git commit")
+                              (use "git merge --abort" to abort the merge)
+
+                            Unmerged paths:
+                              (use "git add/rm &lt;file&gt;..." to mark resolution)
+                            	both modified:   README
+                        </code></pre>
+                    </section>
+                    <section data-auto-animate>
+                        <h1 class="subtitle">Gerenciamento de Branches</h1>
+                        <h2>Resolução de Conflitos</h2>
+                        <p>
+                            Ao abrir o arquivo com conflitos em um editor de textos, você verá marcações como essas:
+                        </p>
+                        <pre><code class="plaintext" data-trim>
+                            Linha 1
+                            <<<<<<< HEAD
+                            Linha 2 <-- alterando linha 2 na main
+                            =======
+                            Linha 2 <-- alterado na develop
+                            >>>>>>> develop
+                            Linha 3
+                        </code></pre>
+                        <p>
+                            Essas marcações ao redor das linhas <em>&quot;Linha 2&quot;</em> indicam os blocos com
+                            alterações conflitantes:
+                        </p>
+                        <ul class="margin">
+                            <li>
+                                O primeiro bloco, que começa em <code>&lt;&lt;&lt;&lt;&lt;&lt;&lt;</code> e vai até
+                                <code>=======</code>, mostra o que temos atualmente no <code>HEAD</code>
+                            </li>
+                            <li>
+                                O segundo bloco (entre o mesmo <code>=======</code> até o próximo
+                                <code>&gt;&gt;&gt;&gt;&gt;&gt;&gt;</code>) nos informa o que está vindo da
+                                <code>develop</code>
+                            </li>
+                        </ul>
+                    </section>
+                    <section data-auto-animate>
+                        <h1 class="subtitle">Gerenciamento de Branches</h1>
+                        <h2>Resolução de Conflitos</h2>
+                        <p>
+                            Para resolver o conflito manualmente, devemos resolver todo o código entre
+                            <code>&lt;&lt;&lt;&lt;&lt;&lt;&lt;</code> e <code>&gt;&gt;&gt;&gt;&gt;&gt;&gt;</code>,
+                            removendo essas marcações
+                        </p>
+                        <pre data-id="pre"><code class="plaintext" data-trim data-line-numbers>
+                            Linha 1
+                            <<<<<<< HEAD
+                            Linha 2 <-- alterando linha 2 na main
+                            =======
+                            Linha 2 <-- alterado na develop
+                            >>>>>>> develop
+                            Linha 3
+                        </code></pre>
+                    </section>
+                    <section data-auto-animate>
+                        <h1 class="subtitle">Gerenciamento de Branches</h1>
+                        <h2>Resolução de Conflitos</h2>
+                        <p>
+                            Para resolver o conflito manualmente, devemos resolver todo o código entre
+                            <code>&lt;&lt;&lt;&lt;&lt;&lt;&lt;</code> e <code>&gt;&gt;&gt;&gt;&gt;&gt;&gt;</code>,
+                            removendo essas marcações
+                        </p>
+                        <pre data-id="pre"><code class="plaintext" data-trim data-line-numbers>
+                            Linha 1
+                            Linha 2 <-- mesclando alterações da main e da develop
+                            Linha 3
+                        </code></pre>
+                    </section>
+                    <section data-auto-animate>
+                        <h1 class="subtitle">Gerenciamento de Branches</h1>
+                        <h2>Resolução de Conflitos</h2>
+                        <p>
+                            Pode se tornar difícil resolver esses conflitos manualmente, então dê preferência a
+                            resolvê-los com algumas ferramentas:
+                        </p>
+                        <ul class="margin">
+                            <li>
+                                Sua própria IDE ou editor de texto, como o
+                                <a href="https://learn.microsoft.com/en-us/visualstudio/version-control/git-resolve-conflicts?view=vs-2022"
+                                   target="_blank" rel="noopener">Visual Studio Code</a>
+                            </li>
+                            <li>
+                                Interfaces gráficas do Git, que podem ser baixadas em
+                                <a href="https://git-scm.com/downloads/guis">git-scm.com/downloads/guis</a>
+                            </li>
+                            <li>
+                                Aplicações especializadas de comparação, como as
+                                <a href="https://www.git-tower.com/blog/diff-tools-windows" target="_blank" rel="noopener">
+                                    apresentadas nesta lista
+                                </a>
+                            </li>
+                        </ul>
+                    </section>
+                </section> <!-- Gerenciamento de Branches -->
 
                 <section> <!-- Referências -->
                     <section data-auto-animate data-auto-animate-restart>

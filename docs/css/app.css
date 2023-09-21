@@ -70,8 +70,15 @@ span.hljs-addition,
 span.hljs-deletion {
   font-style: normal;
 }
-code.hljs.shell > .hljs-meta.prompt_ {
+code.hljs.shell .hljs-meta.prompt_,
+code.hljs.shell .language-bash > .hljs-comment {
   user-select: none;
+}
+code.hljs.shell {
+  color: #767e8b;
+}
+code.hljs.shell .language-bash {
+  color: #d6deeb;
 }
 
 /* Quote */
