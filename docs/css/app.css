@@ -43,6 +43,7 @@ code:not(.hljs) {
   font-size: 0.8em;
   padding: 1px 6px;
   border-radius: var(--border-radius);
+  vertical-align: text-bottom;
 }
 kbd {
   font-family: var(--r-code-font);
@@ -128,6 +129,9 @@ a.reference:after {
 /* Listas */
 .margin > li + li {
   margin-top: 0.75em;
+}
+.margin.margin-sm > li + li {
+  margin-top: 0.5em;
 }
 .margin > li > ul > li,
 .margin > li > ol > li {
@@ -242,13 +246,22 @@ a.calendar-slot:is(:hover, :focus) {
   display: flex;
 }
 .d-flex.cols-2 > div {
-  flex: 50% 1 0;
+  flex: 1 0 50%;
+}
+.d-flex > .col {
+  flex-basis: 100%;
+}
+.d-flex.gap-1 {
+  column-gap: 1em;
 }
 .mt-0 {
   margin-top: 0 !important;
 }
 .mb-0 {
   margin-bottom: 0 !important;
+}
+p.mb-1 {
+  margin-bottom: 0.5em !important;
 }
 .mb-2 {
   margin-bottom: 2em !important;

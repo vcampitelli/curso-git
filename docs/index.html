@@ -271,7 +271,7 @@
                                     </td>
                                     <td>
                                         <span class="calendar-date">22/09</span>
-                                        <span class="calendar-slot">Aula 5</span>
+                                        <a href="#/aula5" class="calendar-slot">Aula 5</a>
                                     </td>
                                 </tr>
                                 <tr>
@@ -1192,7 +1192,7 @@
                             <li>Entre outros.</li>
                         </ul>
                     </section>
-                    <section data-auto-animate>
+                    <section id="aula5" data-auto-animate>
                         <h1>Fluxos de Trabalho</h1>
                         <p>
                             Para facilitar a colaboração entre pessoas diferentes em um mesmo repositório, é recomendado
@@ -1467,6 +1467,93 @@
                         </ul>
                     </section>
                 </section> <!-- Gerenciamento de Branches -->
+
+                <section> <!-- Exercício: Fluxo de Trabalho -->
+                    <section>
+                        <h1 class="subtitle">Exercício</h1>
+                        <h2>Fluxo de Trabalho</h2>
+                    </section>
+                    <section>
+                        <h1 class="subtitle">Exercício</h1>
+                        <h2>Fluxo de Trabalho</h2>
+                        <p>Dividam-se em grupos e...</p>
+                        <div class="d-flex font-size-sm gap-1">
+                            <div class="col">
+                                <p class="fw-bold mt-0 mb-1">Pessoa 1</p>
+                                <ol class="margin margin-sm">
+                                    <li class="fragment" data-fragment-index="0">
+                                        Acesse o repositório <code>vcampitelli/exercicios</code> no GitLab
+                                    </li>
+                                    <li class="fragment" data-fragment-index="1">
+                                        Clone o repositório em sua máquina
+                                    </li>
+                                    <li class="fragment" data-fragment-index="3">
+                                        Crie uma nova <em>branch</em> chamada <code>sprint-grupo-X</code>, substituindo
+                                        <kbd>X</kbd> pelo número do seu grupo
+                                    </li>
+                                    <li class="fragment" data-fragment-index="4">
+                                        Faça o <em>push</em> dessa <em>branch</em>
+                                    </li>
+                                    <li class="fragment" data-fragment-index="9">
+                                        <b>⚠️ BUGS EM PRODUÇÃO!</b> Crie duas <em>issues</em> para as duas <b>Pessoas</b>
+                                        e peça para resolverem algo
+                                    </li>
+                                    <li class="fragment" data-fragment-index="11">
+                                        Avalie a <em>merge request</em> dos <em>bugs</em>, aprove-as e faça o
+                                        <em>merge</em>
+                                    </li>
+                                    <li class="fragment" data-fragment-index="13">
+                                        Avalie a <em>merge request</em> das duas funcionalidades, aprove-as e faça o
+                                        <em>merge</em>
+                                        <ul>
+                                            <li>
+                                                Se necessário, peça para a <b>Pessoa</b> resolver os conflitos
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="fragment" data-fragment-index="16">
+                                        Após fazer o <em>merge</em> de todas as funcionalidades da <em>sprint</em>, crie
+                                        uma <em>merge request</em> da <code>sprint</code> para a <code>main</code>
+                                    </li>
+                                </ol>
+                            </div>
+                            <div class="col">
+                                <p class="fw-bold mt-0 mb-1">Pessoas 2 e 3</p>
+                                <ol class="margin margin-sm">
+                                    <li class="fragment" data-fragment-index="5">
+                                        Crie uma <em>issue</em> para uma funcionalidade fictícia
+                                    </li>
+                                    <li class="fragment" data-fragment-index="6">
+                                        Clone o repositório em sua máquina
+                                    </li>
+                                    <li class="fragment" data-fragment-index="7">
+                                        Crie uma nova <em>branch</em> a partir da <code>sprint-grupo-X</code>
+                                    </li>
+                                    <li class="fragment" data-fragment-index="8">
+                                        Trabalhe nesse arquivo com códigos fictícios
+                                    </li>
+                                    <li class="fragment" data-fragment-index="10">
+                                        <b>⚠️ BUG EM PRODUÇÃO!</b> Faça o <em>commit</em> parcial do seu trabalho, volte
+                                        para a <code>main</code>, crie uma <em>branch</em> com o nome
+                                        <code>fix/número-da-issue</code>, corrija o <em>bug</em> e abra uma
+                                        <em>merge request</em>
+                                    </li>
+                                    <li class="fragment" data-fragment-index="12">
+                                        Volte para sua <em>branch</em> de desenvolvimento, termine o trabalho, faça o
+                                        <em>push</em> e abra uma <em>merge request</em>
+                                    </li>
+                                    <li class="fragment" data-fragment-index="14">
+                                        Se preciso, resolva os conflitos e faça o <em>push</em> novamente
+                                    </li>
+                                    <li class="fragment" data-fragment-index="15">
+                                        Se ainda houver tempo, crie outra <em>issue</em> e faça o processo inteiro
+                                        novamente
+                                    </li>
+                                </ol>
+                            </div>
+                        </div>
+                    </section>
+                </section> <!-- Exercício: Fluxo de Trabalho -->
 
                 <section> <!-- Referências -->
                     <section data-auto-animate data-auto-animate-restart>
