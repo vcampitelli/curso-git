@@ -277,7 +277,7 @@
                                 <tr>
                                     <td>
                                         <span class="calendar-date">25/09</span>
-                                        <span class="calendar-slot">Aula 6</span>
+                                        <a href="#/aula6" class="calendar-slot">Aula 6</a>
                                     </td>
                                     <td>
                                         <span class="calendar-date">26/09</span>
@@ -1375,7 +1375,7 @@
 
                             Unmerged paths:
                               (use "git add/rm &lt;file&gt;..." to mark resolution)
-                            	both modified:   README
+                                both modified:   README
                         </code></pre>
                     </section>
                     <section data-auto-animate>
@@ -1468,7 +1468,7 @@
                     </section>
                 </section> <!-- Gerenciamento de Branches -->
 
-                <section> <!-- Exercício: Fluxo de Trabalho -->
+                <section id="aula6"> <!-- Exercício: Fluxo de Trabalho -->
                     <section>
                         <h1 class="subtitle">Exercício</h1>
                         <h2>Fluxo de Trabalho</h2>
@@ -1511,7 +1511,7 @@
                                             </li>
                                         </ul>
                                     </li>
-                                    <li class="fragment" data-fragment-index="16">
+                                    <li class="fragment" data-fragment-index="15">
                                         Após fazer o <em>merge</em> de todas as funcionalidades da <em>sprint</em>, crie
                                         uma <em>merge request</em> da <code>sprint</code> para a <code>main</code>
                                     </li>
@@ -1521,16 +1521,18 @@
                                 <p class="fw-bold mt-0 mb-1">Pessoas 2 e 3</p>
                                 <ol class="margin margin-sm">
                                     <li class="fragment" data-fragment-index="5">
-                                        Crie uma <em>issue</em> para uma funcionalidade fictícia
+                                        Crie uma <em>issue</em> para uma funcionalidade fictícia para alterar algo na
+                                        <em>procedure</em> de envio de e-mails
                                     </li>
                                     <li class="fragment" data-fragment-index="6">
                                         Clone o repositório em sua máquina
                                     </li>
                                     <li class="fragment" data-fragment-index="7">
-                                        Crie uma nova <em>branch</em> a partir da <code>sprint-grupo-X</code>
+                                        Crie uma nova <em>branch</em> a partir da <code>sprint-grupo-X</code> com o
+                                        número da <em>issue</em>
                                     </li>
                                     <li class="fragment" data-fragment-index="8">
-                                        Trabalhe nesse arquivo com códigos fictícios
+                                        Implemente as alterações no arquivo <code>pr_envia_email.sql</code>
                                     </li>
                                     <li class="fragment" data-fragment-index="10">
                                         <b>⚠️ BUG EM PRODUÇÃO!</b> Faça o <em>commit</em> parcial do seu trabalho, volte
@@ -1545,15 +1547,220 @@
                                     <li class="fragment" data-fragment-index="14">
                                         Se preciso, resolva os conflitos e faça o <em>push</em> novamente
                                     </li>
-                                    <li class="fragment" data-fragment-index="15">
-                                        Se ainda houver tempo, crie outra <em>issue</em> e faça o processo inteiro
-                                        novamente
-                                    </li>
                                 </ol>
                             </div>
                         </div>
                     </section>
                 </section> <!-- Exercício: Fluxo de Trabalho -->
+
+                <section> <!-- Mais comandos -->
+                    <section>
+                        <h1>Mais comandos</h1>
+                    </section>
+                    <section>
+                        <h1 class="subtitle">Mais comandos</h1>
+                        <h2>Desfazendo alterações</h2>
+                        <h3><code>git restore</code></h3>
+                        <p>Desfaz as modificações em um arquivo, revertendo à versão do último <em>commit</em></p>
+                        <pre><code class="shell" data-trim>
+                            $ git status
+                            On branch main
+                            Changes not staged for commit:
+                              (use "git add &lt;file&gt;..." to update what will be committed)
+                              (use "git restore &lt;file&gt;..." to discard changes in working directory)
+                                modified:   arquivo
+
+                            no changes added to commit (use "git add" and/or "git commit -a")
+
+                            $ git restore arquivo
+
+                            $ git status
+                            On branch main
+                            nothing to commit, working tree clean
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h1 class="subtitle">Mais comandos</h1>
+                        <h2>Desfazendo alterações</h2>
+                        <h3><code>git restore --staged</code></h3>
+                        <p>Retira um arquivo da área de <em>staging</em></p>
+                        <pre><code class="shell" data-trim>
+                            $ git add arquivo
+
+                            $ git status
+                            On branch main
+                            Changes to be committed:
+                              (use "git restore --staged &lt;file&gt;..." to unstage)
+                                modified:   arquivo
+
+                            $ git restore --staged arquivo
+
+                            $ git status
+                            On branch main
+                            Changes not staged for commit:
+                              (use "git add &lt;file&gt;..." to update what will be committed)
+                              (use "git restore &lt;file&gt;..." to discard changes in working directory)
+                                modified:   arquivo
+
+                            no changes added to commit (use "git add" and/or "git commit -a")
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h1 class="subtitle">Mais comandos</h1>
+                        <h2>Desfazendo alterações</h2>
+                        <h3><code>git reset &lt;referência&gt;</code></h3>
+                        <p>
+                            Traz todo o estado do <em>commit</em> especificado para o projeto atual, mantendo as
+                            modificações locais
+                        </p>
+                        <pre><code class="shell" data-trim>
+                            $ git log --oneline
+                            9581191 (HEAD -> main) Versão nova
+                            5287db4 Versão antiga
+
+                            $ git reset 5287db4
+                            Unstaged changes after reset:
+                            M    arquivo
+
+                            $ git log --oneline
+                            5287db4 (HEAD -> main) Versão antiga
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h1 class="subtitle">Mais comandos</h1>
+                        <h2>Desfazendo alterações</h2>
+                        <h3><code>git reset --hard &lt;referência&gt;</code></h3>
+                        <p>
+                            Traz todo o estado do <em>commit</em> especificado para o projeto atual, descartando as
+                            modificações locais
+                        </p>
+                        <pre><code class="shell" data-trim>
+                            $ git log --oneline
+                            9581191 (HEAD -> main) Versão nova
+                            5287db4 Versão antiga
+
+                            $ git reset --hard 5287db4
+                            HEAD is now at 5287db4 Versão antiga
+
+                            $ git log --oneline
+                            5287db4 (HEAD -> main) Versão antiga
+
+                            $ git status
+                            On branch main
+                            nothing to commit, working tree clean
+                        </code></pre>
+                    </section>
+                    <section data-auto-animate>
+                        <h1 class="subtitle">Mais comandos</h1>
+                        <h2>Desfazendo alterações</h2>
+                        <h3><code>git revert &lt;sha1-do-commit&gt;</code></h3>
+                        <p>
+                            Ao invés de descartar os <em>commits</em>, esse comando cria um outro <em>commit</em> com as
+                            alterações "reversas"
+                        </p>
+                        <p>
+                            Ou seja: linhas que foram adicionadas serão removidas, as que foram removidas serão
+                            adicionadas de volta, arquivos que foram criados serão excluídos, etc...
+                        </p>
+                        <pre data-id="pre"><code class="shell" data-trim>
+                            $ git log --oneline
+                            7d4abd6 (HEAD -> main) Mudanças do arquivo
+
+                            $ git show 7d4abd6 --oneline
+                            7d4abd6 Mudanças do arquivo
+                            diff --git a/arquivo b/arquivo
+                            index 7898192..3dcb048 100644
+                            --- a/arquivo
+                            +++ b/arquivo
+                            @@ -1 +1 @@
+                            -Versão anterior
+                            +Mudanças do arquivo
+                        </code></pre>
+                    </section>
+                    <section data-auto-animate>
+                        <h1 class="subtitle">Mais comandos</h1>
+                        <h2>Desfazendo alterações</h2>
+                        <h3><code>git revert &lt;sha1-do-commit&gt;</code></h3>
+                        <p>
+                            Ao invés de descartar os <em>commits</em>, esse comando cria um outro <em>commit</em> com as
+                            alterações "reversas"
+                        </p>
+                        <p>
+                            Ou seja: linhas que foram adicionadas serão removidas, as que foram removidas serão
+                            adicionadas de volta, arquivos que foram criados serão excluídos, etc...
+                        </p>
+                        <pre data-id="pre"><code class="shell" data-trim>
+                            $ git revert 7d4abd6
+                            [main 26b83e6] Revert "Mudanças do arquivo"
+                            1 file changed, 1 insertion(+), 1 deletion(-)
+
+                            $ git log --oneline
+                            26b83e6 (HEAD -> main) Revert "Mudanças do arquivo"
+                            7d4abd6 Mudanças do arquivo
+
+                            $ git show 26b83e6 --oneline
+                            26b83e6 (HEAD -> main) Revert "Mudanças do arquivo"
+                            diff --git a/arquivo b/arquivo
+                            index 3dcb048..7898192 100644
+                            --- a/arquivo
+                            +++ b/arquivo
+                            @@ -1 +1 @@
+                            -Mudanças do arquivo
+                            +Versão anterior
+                        </code></pre>
+                    </section>
+                    <section data-auto-animate data-auto-animate-restart>
+                        <h1 class="subtitle">Mais comandos</h1>
+                        <h2>Atualizando o início da <em>branch</em></h2>
+                        <h3><code>git rebase &lt;nome-da-branch&gt;</code></h3>
+                        <p>
+                            "Move" o início da sua <em>branch</em> para outro lugar no histórico de <em>commits</em>,
+                            útil para trazer as modificações da <kbd>main</kbd>, por exemplo
+                        </p>
+                        <img src="img/rebase.svg" alt="Branch pré-rebase" class="insert-svg" data-id="svg">
+                    </section>
+                    <section data-auto-animate>
+                        <h1 class="subtitle">Mais comandos</h1>
+                        <h2>Atualizando o início da <em>branch</em></h2>
+                        <h3><code>git rebase &lt;nome-da-branch&gt;</code></h3>
+                        <p>
+                            "Move" o início da sua <em>branch</em> para outro lugar no histórico de <em>commits</em>,
+                            útil para trazer as modificações da <kbd>main</kbd>, por exemplo
+                        </p>
+                        <img src="img/rebase-pos.svg" alt="Branch pós-rebase" class="insert-svg" data-id="svg">
+                    </section>
+                    <section>
+                        <h1 class="subtitle">Mais comandos</h1>
+                        <h2>Fazendo <em>fork</em> do repositório</h2>
+                        <p>
+                            Cria uma cópia de um repositório para a sua conta, permitindo trabalhar em projetos que você
+                            não possui acesso de escrita
+                        </p>
+                        <p>
+                            Após o término do desenvolvimento, é possível abrir <em>merge requests</em> do seu
+                            repositório para o do projeto "real"
+                        </p>
+                    </section>
+                    <section>
+                        <h1 class="subtitle">Mais comandos</h1>
+                        <h2>Lidando com servidores remotos</h2>
+                        <h3><code>git remote</code></h3>
+                        <pre><code class="shell" data-trim>
+                            $ git clone https://endereço.de.um.fork/repositorio
+                            $ cd repositorio
+                            $ git remote add fork https://endereço.do.repositório.original/repositorio
+                            $ git pull fork main
+                            From endereço.do.repositório.original/repositorio
+                             * branch            main       -> FETCH_HEAD
+                            Updating 4376dc6..4d5f660
+                            Fast-forward
+                             README.md | 1 +
+                             1 file changed, 1 insertion(+)
+                             create mode 100644 README.md
+                            $ git push origin main
+                        </code></pre>
+                    </section>
+                </section> <!-- Mais comandos -->
 
                 <section> <!-- Referências -->
                     <section data-auto-animate data-auto-animate-restart>
@@ -1624,6 +1831,22 @@
         <script src="reveal.js/dist/reveal.js"></script>
         <script src="reveal.js/plugin/highlight/highlight.js"></script>
         <script>
+          document.querySelectorAll('img.insert-svg').forEach(($img) => {
+            fetch($img.src).then(response => {
+              if (!response.ok) {
+                return;
+              }
+              response.text().then(contents => {
+                const $wrapper = document.createElement('div');
+                $wrapper.classList.add('svg-wrapper');
+                if ($img.dataset.id) {
+                  contents = contents.replace("<svg", '<svg data-id="' + encodeURIComponent($img.dataset.id) + '"');
+                }
+                $wrapper.innerHTML = contents.replace('<?xml version="1.0" encoding="UTF-8"?>', '');
+                $img.parentNode.replaceChild($wrapper, $img);
+              });
+            });
+          });
           Reveal.initialize({
             hash: true,
             mouseWheel: true,
