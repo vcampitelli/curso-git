@@ -281,7 +281,7 @@
                                     </td>
                                     <td>
                                         <span class="calendar-date">26/09</span>
-                                        <span class="calendar-slot">Aula 7</span>
+                                        <a href="#/aula7" class="calendar-slot">Aula 7</a>
                                     </td>
                                     <td>
                                         <span class="calendar-date">27/09</span>
@@ -1553,14 +1553,62 @@
                     </section>
                 </section> <!-- Exercício: Fluxo de Trabalho -->
 
-                <section> <!-- Mais comandos -->
+                <section id="aula7"> <!-- Mais comandos -->
                     <section>
-                        <h1>Mais comandos</h1>
+                        <h1 class="subtitle">Controle de Versão com Git</h1>
+                        <h2>Mais comandos</h2>
                     </section>
                     <section>
-                        <h1 class="subtitle">Mais comandos</h1>
-                        <h2>Desfazendo alterações</h2>
+                        <h1 class="subtitle">Controle de Versão com Git</h1>
+                        <h2>Mais comandos</h2>
+                        <h3><code>git tag &lt;nome-da-tag&gt;</code></h3>
+                        <div class="d-flex cols-2 gap-1">
+                            <div>
+                                <p>
+                                    Marcação que aponta para um determinado <em>commit</em>, sendo normalmente utilizada
+                                    para demarcar as versões da sua aplicação
+                                </p>
+                                <p>
+                                    Podem receber qualquer nome (por exemplo, <code>versao-inicial</code> ou
+                                    <code>alteracao-para-o-novo-layout</code>), mas geralmente utilizamos
+                                    <a href="https://semver.org/lang/pt-BR/" target="_blank" rel="noopener">
+                                        Versionamento Semântico
+                                    </a> para identificar as versões mais facilmente
+                                </p>
+                            </div>
+                            <div>
+                                <pre><code class="shell" data-trim>
+                                    $ git commit -m 'Meu primeiro commit'
+                                    $ git tag v1.0.0
+                                    $ git log --oneline
+                                    be598a0 (HEAD -> main, tag: v1.0.0) Meu primeiro commit
+                                </code></pre>
+                                <img src="img/tags.svg" alt="Tags no Git">
+                            </div>
+                        </div>
+                    </section>
+                    <section>
+                        <h1 class="subtitle">Controle de Versão com Git</h1>
+                        <h2>Mais comandos</h2>
+                        <h3><code>git checkout &lt;commit-ou-tag&gt;</code></h3>
+                        <p>Altera o estado para um <em>commit</em> específico</p>
+                        <pre><code class="shell" data-trim>
+                            $ git log --oneline
+                            f5c16a7 (HEAD -> main) Meu segundo commit
+                            be598a0 (tag: v1.0) Meu primeiro commit
+
+                            $ git checkout be598a0
+                            Note: switching to 'be598a0'.
+
+                            $ git status
+                            HEAD detached at be598a0
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h1 class="subtitle">Controle de Versão com Git</h1>
+                        <h2>Mais comandos</h2>
                         <h3><code>git restore</code></h3>
+                        <p>Desfazendo alterações</p>
                         <p>Desfaz as modificações em um arquivo, revertendo à versão do último <em>commit</em></p>
                         <pre><code class="shell" data-trim>
                             $ git status
@@ -1580,9 +1628,10 @@
                         </code></pre>
                     </section>
                     <section>
-                        <h1 class="subtitle">Mais comandos</h1>
-                        <h2>Desfazendo alterações</h2>
+                        <h1 class="subtitle">Controle de Versão com Git</h1>
+                        <h2>Mais comandos</h2>
                         <h3><code>git restore --staged</code></h3>
+                        <p>Desfazendo alterações</p>
                         <p>Retira um arquivo da área de <em>staging</em></p>
                         <pre><code class="shell" data-trim>
                             $ git add arquivo
@@ -1606,9 +1655,10 @@
                         </code></pre>
                     </section>
                     <section>
-                        <h1 class="subtitle">Mais comandos</h1>
-                        <h2>Desfazendo alterações</h2>
+                        <h1 class="subtitle">Controle de Versão com Git</h1>
+                        <h2>Mais comandos</h2>
                         <h3><code>git reset &lt;referência&gt;</code></h3>
+                        <p>Desfazendo alterações</p>
                         <p>
                             Traz todo o estado do <em>commit</em> especificado para o projeto atual, mantendo as
                             modificações locais
@@ -1627,9 +1677,10 @@
                         </code></pre>
                     </section>
                     <section>
-                        <h1 class="subtitle">Mais comandos</h1>
-                        <h2>Desfazendo alterações</h2>
+                        <h1 class="subtitle">Controle de Versão com Git</h1>
+                        <h2>Mais comandos</h2>
                         <h3><code>git reset --hard &lt;referência&gt;</code></h3>
+                        <p>Desfazendo alterações</p>
                         <p>
                             Traz todo o estado do <em>commit</em> especificado para o projeto atual, descartando as
                             modificações locais
@@ -1651,9 +1702,10 @@
                         </code></pre>
                     </section>
                     <section data-auto-animate>
-                        <h1 class="subtitle">Mais comandos</h1>
-                        <h2>Desfazendo alterações</h2>
+                        <h1 class="subtitle">Controle de Versão com Git</h1>
+                        <h2>Mais comandos</h2>
                         <h3><code>git revert &lt;sha1-do-commit&gt;</code></h3>
+                        <p>Desfazendo alterações</p>
                         <p>
                             Ao invés de descartar os <em>commits</em>, esse comando cria um outro <em>commit</em> com as
                             alterações "reversas"
@@ -1678,9 +1730,10 @@
                         </code></pre>
                     </section>
                     <section data-auto-animate>
-                        <h1 class="subtitle">Mais comandos</h1>
-                        <h2>Desfazendo alterações</h2>
+                        <h1 class="subtitle">Controle de Versão com Git</h1>
+                        <h2>Mais comandos</h2>
                         <h3><code>git revert &lt;sha1-do-commit&gt;</code></h3>
+                        <p>Desfazendo alterações</p>
                         <p>
                             Ao invés de descartar os <em>commits</em>, esse comando cria um outro <em>commit</em> com as
                             alterações "reversas"
@@ -1710,9 +1763,10 @@
                         </code></pre>
                     </section>
                     <section data-auto-animate data-auto-animate-restart>
-                        <h1 class="subtitle">Mais comandos</h1>
-                        <h2>Atualizando o início da <em>branch</em></h2>
+                        <h1 class="subtitle">Controle de Versão com Git</h1>
+                        <h2>Mais comandos</h2>
                         <h3><code>git rebase &lt;nome-da-branch&gt;</code></h3>
+                        <p>Atualizando o início da <em>branch</em></p>
                         <p>
                             "Move" o início da sua <em>branch</em> para outro lugar no histórico de <em>commits</em>,
                             útil para trazer as modificações da <kbd>main</kbd>, por exemplo
@@ -1720,9 +1774,10 @@
                         <img src="img/rebase.svg" alt="Branch pré-rebase" class="insert-svg" data-id="svg">
                     </section>
                     <section data-auto-animate>
-                        <h1 class="subtitle">Mais comandos</h1>
-                        <h2>Atualizando o início da <em>branch</em></h2>
+                        <h1 class="subtitle">Controle de Versão com Git</h1>
+                        <h2>Mais comandos</h2>
                         <h3><code>git rebase &lt;nome-da-branch&gt;</code></h3>
+                        <p>Atualizando o início da <em>branch</em></p>
                         <p>
                             "Move" o início da sua <em>branch</em> para outro lugar no histórico de <em>commits</em>,
                             útil para trazer as modificações da <kbd>main</kbd>, por exemplo
@@ -1730,7 +1785,7 @@
                         <img src="img/rebase-pos.svg" alt="Branch pós-rebase" class="insert-svg" data-id="svg">
                     </section>
                     <section>
-                        <h1 class="subtitle">Mais comandos</h1>
+                        <h1 class="subtitle">Controle de Versão com Git</h1>
                         <h2>Fazendo <em>fork</em> do repositório</h2>
                         <p>
                             Cria uma cópia de um repositório para a sua conta, permitindo trabalhar em projetos que você
@@ -1742,9 +1797,10 @@
                         </p>
                     </section>
                     <section>
-                        <h1 class="subtitle">Mais comandos</h1>
-                        <h2>Lidando com servidores remotos</h2>
+                        <h1 class="subtitle">Controle de Versão com Git</h1>
+                        <h2>Mais comandos</h2>
                         <h3><code>git remote</code></h3>
+                        <p>Lidando com servidores remotos</p>
                         <pre><code class="shell" data-trim>
                             $ git clone https://endereço.de.um.fork/repositorio
                             $ cd repositorio
@@ -1761,6 +1817,143 @@
                         </code></pre>
                     </section>
                 </section> <!-- Mais comandos -->
+
+                <section> <!-- CI/CD -->
+                    <section data-auto-animate data-auto-animate-restart>
+                        <h1>CI/CD</h1>
+                    </section>
+                    <section data-auto-animate>
+                        <h1 class="subtitle">CI/CD</h1>
+                        <h2>Conceitos</h2>
+                        <blockquote>
+                            CI/CD, continuous integration/continuous delivery, é um método para entregar aplicações com
+                            frequência aos clientes. Para isso, é aplicada a automação nas etapas do desenvolvimento de
+                            aplicações. Os principais conceitos atribuídos a esse método são a integração, entrega e
+                            implantação contínuas.
+                        </blockquote>
+                        <a href="https://www.redhat.com/pt-br/topics/devops/what-is-ci-cd" target="_blank"
+                           rel="noopener" class="reference">O que é CI/CD? (Red Hat)</a>
+                    </section>
+                    <section data-auto-animate>
+                        <h1 class="subtitle">CI/CD</h1>
+                        <h2>Conceitos</h2>
+                        <blockquote>
+                            Especificamente, o CI/CD aplica monitoramento e automação contínuos em todo o ciclo de vida
+                            das aplicações, incluindo as etapas de teste e integração, além da entrega e implantação.
+                            Juntas, essas práticas relacionadas são muitas vezes chamadas de "pipeline de CI/CD" e são
+                            compatíveis com o trabalho conjunto das equipes de operações e desenvolvimento com métodos
+                            ágeis.
+                        </blockquote>
+                        <a href="https://www.redhat.com/pt-br/topics/devops/what-is-ci-cd" target="_blank"
+                           rel="noopener" class="reference">O que é CI/CD? (Red Hat)</a>
+                    </section>
+                    <section data-auto-animate>
+                        <h1 class="subtitle">CI/CD</h1>
+                        <h2>Conceitos</h2>
+                        <blockquote>
+                            O acrônimo CI/CD tem alguns significados. "CI" sempre se refere à integração contínua,
+                            que é um processo de automação para desenvolvedores. "CD" se refere à entrega contínua
+                            e/ou à implantação contínua, conceitos relacionados e usados alternadamente às vezes.
+                        </blockquote>
+                        <img src="img/ci-cd-flow-redhat.png" alt="CI/CD">
+                        <a href="https://www.redhat.com/pt-br/topics/devops/what-is-ci-cd" target="_blank"
+                           rel="noopener" class="reference">O que é CI/CD? (Red Hat)</a>
+                    </section>
+                    <section>
+                        <h1 class="subtitle">CI/CD</h1>
+                        <h2>Ferramentas de CI</h2>
+                        <div class="d-flex cols-2">
+                            <div>
+                                <ul class="margin">
+                                    <li>
+                                        Versionamento
+                                        <ul>
+                                            <li>
+                                                <a href="https://bitbucket.org/product/features/pipelines"
+                                                   target="_blank" rel="noopener">
+                                                    Bitbucket Pipelines
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="https://docs.github.com/en/actions" target="_blank"
+                                                   rel="noopener">
+                                                    GitHub Actions
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="https://docs.gitlab.com/ee/ci/" target="_blank" rel="noopener">
+                                                    GitLab CI/CD
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        Cloud
+                                        <ul>
+                                            <li>
+                                                <a href="https://aws.amazon.com/codepipeline/" target="_blank"
+                                                   rel="noopener">
+                                                    AWS CodePipeline
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="https://azure.microsoft.com/en-us/services/devops/"
+                                                   target="_blank"
+                                                   rel="noopener">
+                                                    Azure DevOps
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="https://cloud.google.com/solutions/continuous-integration/"
+                                                   target="_blank"
+                                                   rel="noopener">
+                                                    Google Cloud CI
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div>
+                                <ul class="margin">
+                                    <li>
+                                        Ferramentas avulsas
+                                        <ul>
+                                            <li>
+                                                <a href="https://www.atlassian.com/software/bamboo" target="_blank"
+                                                   rel="noopener">
+                                                    Bamboo
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="https://circleci.com/" target="_blank" rel="noopener">
+                                                    CircleCI
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="https://www.jenkins.io/" target="_blank" rel="noopener">
+                                                    Jenkins
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="https://www.jetbrains.com/teamcity/" target="_blank"
+                                                   rel="noopener">
+                                                    TeamCity
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="https://www.ibm.com/cloud/urbancode" target="_blank"
+                                                   rel="noopener">
+                                                    UrbanCode
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+                </section> <!-- CI/CD -->
 
                 <section> <!-- Referências -->
                     <section data-auto-animate data-auto-animate-restart>
