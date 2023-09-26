@@ -1700,7 +1700,7 @@
                     <section data-auto-animate>
                         <h1 class="subtitle">Controle de Versão com Git</h1>
                         <h2>Mais comandos</h2>
-                        <h3><code>git revert &lt;sha1-do-commit&gt;</code></h3>
+                        <h3><code>git revert &lt;hash-do-commit&gt;</code></h3>
                         <p>
                             Ao invés de descartar os <em>commits</em>, esse comando cria um outro <em>commit</em> com as
                             alterações "reversas"
@@ -1727,7 +1727,7 @@
                     <section data-auto-animate>
                         <h1 class="subtitle">Controle de Versão com Git</h1>
                         <h2>Mais comandos</h2>
-                        <h3><code>git revert &lt;sha1-do-commit&gt;</code></h3>
+                        <h3><code>git revert &lt;hash-do-commit&gt;</code></h3>
                         <p>
                             Ao invés de descartar os <em>commits</em>, esse comando cria um outro <em>commit</em> com as
                             alterações "reversas"
@@ -1776,7 +1776,63 @@
                                         Incorpore as mudanças da <b>Pessoa 2</b> executando
                                         <code>git fetch</code> e <code>git merge branch-da-pessoa-2</code>
                                     </li>
-                                    <li>
+                                    <li class="fragment" data-fragment-index="5">
+                                        Faça o <em>push</em> da sua <em>branch</em>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div>
+                                <p class="fw-bold">Pessoa 2</p>
+                                <ul>
+                                    <li class="fragment" data-fragment-index="2">
+                                        Crie uma <em>branch</em> do repositório, altere algo diferente da
+                                        <b>Pessoa 1</b> e faça <em>commit</em> e <em>push</em>
+                                    </li>
+                                    <li class="fragment" data-fragment-index="3">
+                                        Avise a <b>Pessoa 1</b> que você terminou
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+                    <section data-auto-animate data-auto-animate>
+                        <h1 class="subtitle">Controle de Versão com Git</h1>
+                        <h2>Incorporando mudanças</h2>
+                        <h3><code>git cherry-pick &lt;referência&gt;</code></h3>
+                        <p>Busca um <em>commit</em> exato e traz para a sua <em>branch</em></p>
+                        <pre><code class="shell" data-trim>
+                            $ git log --oneline
+                            91e2609 (HEAD -> branch1) Estou na branch 1
+
+                            $ git cherry-pick 7d9af37
+
+                            $ git log --oneline
+                            236b1fc (HEAD -> branch1) Mudanças no arquivo na branch2
+                            91e2609 Estou na branch 1
+
+                        </code></pre>
+                    </section>
+                    <section data-auto-animate>
+                        <h1 class="subtitle">Controle de Versão com Git</h1>
+                        <h2>Incorporando mudanças</h2>
+                        <h3><code>git cherry-pick &lt;referência&gt;</code></h3>
+                        <p>Exercício</p>
+                        <div class="d-flex">
+                            <div>
+                                <p class="fw-bold">Pessoa 1</p>
+                                <ul>
+                                    <li class="fragment" data-fragment-index="0">
+                                        Crie uma <em>branch</em> do repositório, altere algo e faça <em>commit</em> e
+                                        <em>push</em>
+                                    </li>
+                                    <li class="fragment" data-fragment-index="1">
+                                        Aguarde a <b>Pessoa 2</b> fazer o trabalho dela
+                                    </li>
+                                    <li class="fragment" data-fragment-index="4">
+                                        Incorpore as mudanças da <b>Pessoa 2</b> executando
+                                        <code>git fetch</code> e <code>git cherry-pick &lt;hash-do-commit&gt;</code>
+                                    </li>
+                                    <li class="fragment" data-fragment-index="5">
                                         Faça o <em>push</em> da sua <em>branch</em>
                                     </li>
                                 </ul>
@@ -1835,6 +1891,9 @@
                                         Incorpore as mudanças da <b>Pessoa 2</b> executando
                                         <code>git fetch</code> e <code>git rebase branch-da-pessoa-2</code>
                                     </li>
+                                    <li class="fragment" data-fragment-index="5">
+                                        Faça o <em>push</em> da sua <em>branch</em>
+                                    </li>
                                 </ul>
                             </div>
                             <div>
@@ -1845,7 +1904,7 @@
                                         <b>Pessoa 1</b> e faça <em>commit</em> e <em>push</em>
                                     </li>
                                     <li class="fragment" data-fragment-index="3">
-                                        Avise a <b>Pessoa 2</b> que você terminou
+                                        Avise a <b>Pessoa 1</b> que você terminou
                                     </li>
                                 </ul>
                             </div>
