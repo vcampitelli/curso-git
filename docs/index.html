@@ -1608,7 +1608,6 @@
                         <h1 class="subtitle">Controle de Versão com Git</h1>
                         <h2>Mais comandos</h2>
                         <h3><code>git restore</code></h3>
-                        <p>Desfazendo alterações</p>
                         <p>Desfaz as modificações em um arquivo, revertendo à versão do último <em>commit</em></p>
                         <pre><code class="shell" data-trim>
                             $ git status
@@ -1631,7 +1630,6 @@
                         <h1 class="subtitle">Controle de Versão com Git</h1>
                         <h2>Mais comandos</h2>
                         <h3><code>git restore --staged</code></h3>
-                        <p>Desfazendo alterações</p>
                         <p>Retira um arquivo da área de <em>staging</em></p>
                         <pre><code class="shell" data-trim>
                             $ git add arquivo
@@ -1658,7 +1656,6 @@
                         <h1 class="subtitle">Controle de Versão com Git</h1>
                         <h2>Mais comandos</h2>
                         <h3><code>git reset &lt;referência&gt;</code></h3>
-                        <p>Desfazendo alterações</p>
                         <p>
                             Traz todo o estado do <em>commit</em> especificado para o projeto atual, mantendo as
                             modificações locais
@@ -1680,7 +1677,6 @@
                         <h1 class="subtitle">Controle de Versão com Git</h1>
                         <h2>Mais comandos</h2>
                         <h3><code>git reset --hard &lt;referência&gt;</code></h3>
-                        <p>Desfazendo alterações</p>
                         <p>
                             Traz todo o estado do <em>commit</em> especificado para o projeto atual, descartando as
                             modificações locais
@@ -1705,7 +1701,6 @@
                         <h1 class="subtitle">Controle de Versão com Git</h1>
                         <h2>Mais comandos</h2>
                         <h3><code>git revert &lt;sha1-do-commit&gt;</code></h3>
-                        <p>Desfazendo alterações</p>
                         <p>
                             Ao invés de descartar os <em>commits</em>, esse comando cria um outro <em>commit</em> com as
                             alterações "reversas"
@@ -1733,7 +1728,6 @@
                         <h1 class="subtitle">Controle de Versão com Git</h1>
                         <h2>Mais comandos</h2>
                         <h3><code>git revert &lt;sha1-do-commit&gt;</code></h3>
-                        <p>Desfazendo alterações</p>
                         <p>
                             Ao invés de descartar os <em>commits</em>, esse comando cria um outro <em>commit</em> com as
                             alterações "reversas"
@@ -1762,11 +1756,46 @@
                             +Versão anterior
                         </code></pre>
                     </section>
+                    <section>
+                        <h1 class="subtitle">Controle de Versão com Git</h1>
+                        <h2>Incorporando mudanças</h2>
+                        <h3><code>git merge &lt;nome-da-branch&gt;</code></h3>
+                        <p>Exercício</p>
+                        <div class="d-flex">
+                            <div>
+                                <p class="fw-bold">Pessoa 1</p>
+                                <ul>
+                                    <li class="fragment" data-fragment-index="0">
+                                        Crie uma <em>branch</em> do repositório, altere algo e faça <em>commit</em> e
+                                        <em>push</em>
+                                    </li>
+                                    <li class="fragment" data-fragment-index="1">
+                                        Aguarde a <b>Pessoa 2</b> fazer o trabalho dela
+                                    </li>
+                                    <li class="fragment" data-fragment-index="4">
+                                        Incorpore as mudanças da <b>Pessoa 2</b> executando
+                                        <code>git fetch</code> e <code>git merge branch-da-pessoa-2</code>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div>
+                                <p class="fw-bold">Pessoa 2</p>
+                                <ul>
+                                    <li class="fragment" data-fragment-index="2">
+                                        Crie uma <em>branch</em> do repositório, altere algo diferente da
+                                        <b>Pessoa 1</b> e faça <em>commit</em> e <em>push</em>
+                                    </li>
+                                    <li class="fragment" data-fragment-index="3">
+                                        Avise a <b>Pessoa 2</b> que você terminou
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
                     <section data-auto-animate data-auto-animate-restart>
                         <h1 class="subtitle">Controle de Versão com Git</h1>
-                        <h2>Mais comandos</h2>
+                        <h2>Incorporando mudanças</h2>
                         <h3><code>git rebase &lt;nome-da-branch&gt;</code></h3>
-                        <p>Atualizando o início da <em>branch</em></p>
                         <p>
                             "Move" o início da sua <em>branch</em> para outro lugar no histórico de <em>commits</em>,
                             útil para trazer as modificações da <kbd>main</kbd>, por exemplo
@@ -1775,14 +1804,49 @@
                     </section>
                     <section data-auto-animate>
                         <h1 class="subtitle">Controle de Versão com Git</h1>
-                        <h2>Mais comandos</h2>
+                        <h2>Incorporando mudanças</h2>
                         <h3><code>git rebase &lt;nome-da-branch&gt;</code></h3>
-                        <p>Atualizando o início da <em>branch</em></p>
                         <p>
                             "Move" o início da sua <em>branch</em> para outro lugar no histórico de <em>commits</em>,
                             útil para trazer as modificações da <kbd>main</kbd>, por exemplo
                         </p>
                         <img src="img/rebase-pos.svg" alt="Branch pós-rebase" class="insert-svg" data-id="svg">
+                    </section>
+                    <section data-auto-animate>
+                        <h1 class="subtitle">Controle de Versão com Git</h1>
+                        <h2>Incorporando mudanças</h2>
+                        <h3><code>git rebase &lt;nome-da-branch&gt;</code></h3>
+                        <p>Exercício</p>
+                        <div class="d-flex">
+                            <div>
+                                <p class="fw-bold">Pessoa 1</p>
+                                <ul>
+                                    <li class="fragment" data-fragment-index="0">
+                                        Crie uma <em>branch</em> do repositório, altere algo e faça <em>commit</em> e
+                                        <em>push</em>
+                                    </li>
+                                    <li class="fragment" data-fragment-index="1">
+                                        Aguarde a <b>Pessoa 2</b> fazer o trabalho dela
+                                    </li>
+                                    <li class="fragment" data-fragment-index="4">
+                                        Incorpore as mudanças da <b>Pessoa 2</b> executando
+                                        <code>git fetch</code> e <code>git rebase branch-da-pessoa-2</code>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div>
+                                <p class="fw-bold">Pessoa 2</p>
+                                <ul>
+                                    <li class="fragment" data-fragment-index="2">
+                                        Crie uma <em>branch</em> do repositório, altere algo diferente da
+                                        <b>Pessoa 1</b> e faça <em>commit</em> e <em>push</em>
+                                    </li>
+                                    <li class="fragment" data-fragment-index="3">
+                                        Avise a <b>Pessoa 2</b> que você terminou
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
                     </section>
                     <section>
                         <h1 class="subtitle">Controle de Versão com Git</h1>
