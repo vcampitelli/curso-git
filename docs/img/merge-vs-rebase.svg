@@ -1,0 +1,76 @@
+<svg aria-roledescription="gitGraph" role="graphics-document document" viewBox="-159.75 -19 717.75 220" height="100%" xmlns="http://www.w3.org/2000/svg" width="717.75" id="graph-div" style="max-width: 100%;" xmlns:xlink="http://www.w3.org/1999/xlink"><style>@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css");'</style><style>#graph-div{font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;fill:#333;}#graph-div .error-icon{fill:#552222;}#graph-div .error-text{fill:#552222;stroke:#552222;}#graph-div .edge-thickness-normal{stroke-width:2px;}#graph-div .edge-thickness-thick{stroke-width:3.5px;}#graph-div .edge-pattern-solid{stroke-dasharray:0;}#graph-div .edge-pattern-dashed{stroke-dasharray:3;}#graph-div .edge-pattern-dotted{stroke-dasharray:2;}#graph-div .marker{fill:#333333;stroke:#333333;}#graph-div .marker.cross{stroke:#333333;}#graph-div svg{font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;}#graph-div .commit-id,#graph-div .commit-msg,#graph-div .branch-label{fill:lightgrey;color:lightgrey;font-family:'trebuchet ms',verdana,arial,sans-serif;font-family:var(--mermaid-font-family);}#graph-div .branch-label0{fill:#ffffff;}#graph-div .commit0{stroke:hsl(240, 100%, 46.2745098039%);fill:hsl(240, 100%, 46.2745098039%);}#graph-div .commit-highlight0{stroke:#f44174;fill:#f44174;}#graph-div .label0{fill:hsl(240, 100%, 46.2745098039%);}#graph-div .arrow0{stroke:hsl(240, 100%, 46.2745098039%);}#graph-div .branch-label1{fill:#fff;}#graph-div .commit1{stroke:#f44174;fill:#f44174;}#graph-div .commit-highlight1{stroke:rgb(0, 0, 160.5);fill:rgb(0, 0, 160.5);}#graph-div .label1{fill:#f44174;}#graph-div .arrow1{stroke:#f44174;}#graph-div .branch-label2{fill:black;}#graph-div .commit2{stroke:hsl(80, 100%, 46.2745098039%);fill:hsl(80, 100%, 46.2745098039%);}#graph-div .commit-highlight2{stroke:rgb(48.8333333334, 0, 146.5000000001);fill:rgb(48.8333333334, 0, 146.5000000001);}#graph-div .label2{fill:hsl(80, 100%, 46.2745098039%);}#graph-div .arrow2{stroke:hsl(80, 100%, 46.2745098039%);}#graph-div .branch-label3{fill:#ffffff;}#graph-div .commit3{stroke:hsl(210, 100%, 46.2745098039%);fill:hsl(210, 100%, 46.2745098039%);}#graph-div .commit-highlight3{stroke:rgb(146.5000000001, 73.2500000001, 0);fill:rgb(146.5000000001, 73.2500000001, 0);}#graph-div .label3{fill:hsl(210, 100%, 46.2745098039%);}#graph-div .arrow3{stroke:hsl(210, 100%, 46.2745098039%);}#graph-div .branch-label4{fill:black;}#graph-div .commit4{stroke:hsl(180, 100%, 46.2745098039%);fill:hsl(180, 100%, 46.2745098039%);}#graph-div .commit-highlight4{stroke:rgb(146.5000000001, 0, 0);fill:rgb(146.5000000001, 0, 0);}#graph-div .label4{fill:hsl(180, 100%, 46.2745098039%);}#graph-div .arrow4{stroke:hsl(180, 100%, 46.2745098039%);}#graph-div .branch-label5{fill:black;}#graph-div .commit5{stroke:hsl(150, 100%, 46.2745098039%);fill:hsl(150, 100%, 46.2745098039%);}#graph-div .commit-highlight5{stroke:rgb(146.5000000001, 0, 73.2500000001);fill:rgb(146.5000000001, 0, 73.2500000001);}#graph-div .label5{fill:hsl(150, 100%, 46.2745098039%);}#graph-div .arrow5{stroke:hsl(150, 100%, 46.2745098039%);}#graph-div .branch-label6{fill:black;}#graph-div .commit6{stroke:hsl(300, 100%, 46.2745098039%);fill:hsl(300, 100%, 46.2745098039%);}#graph-div .commit-highlight6{stroke:rgb(0, 146.5000000001, 0);fill:rgb(0, 146.5000000001, 0);}#graph-div .label6{fill:hsl(300, 100%, 46.2745098039%);}#graph-div .arrow6{stroke:hsl(300, 100%, 46.2745098039%);}#graph-div .branch-label7{fill:black;}#graph-div .commit7{stroke:hsl(0, 100%, 46.2745098039%);fill:hsl(0, 100%, 46.2745098039%);}#graph-div .commit-highlight7{stroke:rgb(0, 146.5000000001, 146.5000000001);fill:rgb(0, 146.5000000001, 146.5000000001);}#graph-div .label7{fill:hsl(0, 100%, 46.2745098039%);}#graph-div .arrow7{stroke:hsl(0, 100%, 46.2745098039%);}#graph-div .branch{stroke-width:1;stroke:#333333;stroke-dasharray:2;}#graph-div .commit-label{font-size:10px;fill:#000021;}#graph-div .commit-label-bkg{font-size:10px;fill:#ffffde;opacity:0.5;}#graph-div .tag-label{font-size:10px;fill:#131300;}#graph-div .tag-label-bkg{fill:#ECECFF;stroke:hsl(240, 60%, 86.2745098039%);}#graph-div .tag-hole{fill:#333;}#graph-div .commit-merge{stroke:#ECECFF;fill:#ECECFF;}#graph-div .commit-reverse{stroke:#ECECFF;fill:#ECECFF;stroke-width:3;}#graph-div .commit-highlight-inner{stroke:#ECECFF;fill:#ECECFF;}#graph-div .arrow{stroke-width:8;stroke-linecap:round;fill:none;}#graph-div .gitTitleText{text-anchor:middle;font-size:18px;fill:#333;}#graph-div :root{--mermaid-font-family:"trebuchet ms",verdana,arial,sans-serif;}</style>
+    <g></g>
+    <g class="commit-bullets"></g>
+    <g class="commit-labels"></g>
+    <g>
+        <line class="branch branch0" y2="0" x2="550" y1="0" x1="0"></line>
+        <rect transform="translate(-19, -9.5)" height="23" width="52.68333435058594" y="-1.5" x="-68.68333435058594"
+              ry="4" rx="4" class="branchLabelBkg label0"></rect>
+        <g class="branchLabel">
+            <g transform="translate(-78.68333435058594, -10.5)" class="label branch-label0">
+                <text>
+                    <tspan class="row" x="0" dy="1em" xml:space="preserve">main</tspan>
+                </text>
+            </g>
+        </g>
+        <line class="branch branch1" y2="90" x2="550" y1="90" x1="0"></line>
+        <rect transform="translate(-19, 80.5)" height="23" width="116.75" y="-1.5" x="-132.75" ry="4" rx="4"
+              class="branchLabelBkg label1"></rect>
+        <g class="branchLabel">
+            <g transform="translate(-142.75, 79.5)" class="label branch-label1">
+                <text>
+                    <tspan class="row" x="0" dy="1em" xml:space="preserve">minha-feature</tspan>
+                </text>
+            </g>
+        </g>
+        <line class="branch branch2" y2="180" x2="550" y1="180" x1="0"></line>
+        <rect transform="translate(-19, 170.5)" height="23" width="109.6500015258789" y="-1.5" x="-125.6500015258789"
+              ry="4" rx="4" class="branchLabelBkg label2"></rect>
+        <g class="branchLabel">
+            <g transform="translate(-135.6500015258789, 169.5)" class="label branch-label2">
+                <text>
+                    <tspan class="row" x="0" dy="1em" xml:space="preserve">outra-feature</tspan>
+                </text>
+            </g>
+        </g>
+    </g>
+    <g class="commit-arrows">
+        <path class="arrow arrow0" d="M 10 0 L 10 0  10 0 L 60 0"></path>
+        <path class="arrow arrow1" d="M 60 0 L 60 70 A 20 20, 0, 0, 0, 80 90 L 110 90"></path>
+        <path class="arrow arrow0" d="M 60 0 L 60 0  60 0 L 160 0"></path>
+        <path class="arrow arrow2" d="M 160 0 L 160 160 A 20 20, 0, 0, 0, 180 180 L 210 180"></path>
+        <path class="arrow arrow2" d="M 210 180 L 210 180  210 180 L 260 180"></path>
+        <path class="arrow arrow0" d="M 160 0 L 160 0  160 0 L 310 0"></path>
+        <path class="arrow arrow2" d="M 260 180 L 290 180 A 20 20, 0, 0, 0, 310 160 L 310 0"></path>
+        <path class="arrow arrow0" d="M 310 0 L 310 0  310 0 L 360 0"></path>
+        <path class="arrow arrow1" d="M 110 90 L 110 90  110 90 L 410 90"></path>
+        <path class="arrow arrow1" d="M 360 0 L 360 70 A 20 20, 0, 0, 0, 380 90 L 410 90"></path>
+        <path class="arrow arrow1" d="M 410 90 L 410 90  410 90 L 460 90"></path>
+        <path class="arrow arrow0" d="M 360 0 L 360 0  360 0 L 510 0"></path>
+        <path class="arrow arrow1" d="M 460 90 L 490 90 A 20 20, 0, 0, 0, 510 70 L 510 0"></path>
+    </g>
+    <g class="commit-bullets">
+        <circle class="commit 0-d29f637 commit0" r="10" cy="0" cx="10"></circle>
+        <circle class="commit 1-8e5001e commit0" r="10" cy="0" cx="60"></circle>
+        <circle class="commit 3-dc3c154 commit0" r="10" cy="0" cx="160"></circle>
+        <circle class="commit 4-a29fb7d commit2" r="10" cy="180" cx="210"></circle>
+        <circle class="commit 5-2e20a7a commit2" r="10" cy="180" cx="260"></circle>
+        <circle class="commit 6-3d889c3 commit0" r="9" cy="0" cx="310"></circle>
+        <circle class="commit commit-merge 6-3d889c3 commit0" r="6" cy="0" cx="310"></circle>
+        <circle class="commit 7-ead95f7 commit0" r="10" cy="0" cx="360"></circle>
+        <circle class="commit 8-c0fb699 commit1" r="9" cy="90" cx="410"></circle>
+        <circle class="commit commit-merge 8-c0fb699 commit1" r="6" cy="90" cx="410"></circle>
+        <circle class="commit 9-c5364d0 commit1" r="10" cy="90" cx="460"></circle>
+        <circle class="commit 10-4fefa76 commit0" r="9" cy="0" cx="510"></circle>
+        <circle class="commit commit-merge 10-4fefa76 commit0" r="6" cy="0" cx="510"></circle>
+    </g>
+    <g class="commit-labels">
+        <polygon points="364.90833282470703,72.8
+          364.90833282470703,68.8
+          372.90833282470703,62.3
+          447.09166717529297,62.3
+          447.09166717529297,79.3
+          372.90833282470703,79.3" class="tag-label-bkg"></polygon>
+        <text x="376.90833282470703" class="tag-label" y="74" style="font-size: 12px">merge main</text>
+    </g>
+</svg>

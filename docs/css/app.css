@@ -1,7 +1,7 @@
 :root {
   --r-background-color: #eff9fb;
   --background-color-darker: #dfebec;
-  --r-code-font: Consolas, monospace;
+  --r-code-font: "Roboto Mono", monospace;
   --r-heading-color: #4c1e4f;
   --r-heading-font-weight: 700;
   --r-heading-font: var(--r-main-font);
@@ -37,17 +37,33 @@
   margin-left: 0;
   letter-spacing: -0.5px;
 }
+code:not(.hljs),
+.badge {
+  font-size: 0.8em;
+  border-radius: var(--border-radius);
+  vertical-align: text-top;
+}
 code:not(.hljs) {
+  padding: 1px 6px;
   background-color: var(--background-color-darker);
   color: var(--color-purple);
-  font-size: 0.8em;
-  padding: 1px 6px;
-  border-radius: var(--border-radius);
-  vertical-align: text-bottom;
+}
+.badge {
+  padding: 2px 6px;
+}
+.badge.badge-bg-1 {
+  background-color: var(--color-green);
+}
+.badge.badge-bg-2 {
+  background-color: var(--color-purple);
+  color: var(--background-color-darker);
 }
 kbd {
+  color: var(--subheading-color);
+  font-size: 0.9em;
   font-family: var(--r-code-font);
   font-weight: 600;
+  letter-spacing: -1.5px;
 }
 pre code.hljs {
   display: block;
@@ -104,13 +120,24 @@ code.hljs.shell .language-bash {
   text-decoration: line-through;
 }
 .text-muted {
-  color: #999;
+  color: var(--subheading-color);
 }
 .font-size-sm {
   font-size: 0.85em;
 }
 .font-italic {
   font-style: italic;
+}
+section > section:first-child > h1 {
+  margin-top: 0;
+}
+section > section:first-child > h1 > .text-muted {
+  font-size: 0.5em;
+  vertical-align: middle;
+}
+section > section:first-child > p {
+  margin-bottom: 0;
+  color: var(--subheading-color);
 }
 
 /* Link de referência */
@@ -246,7 +273,7 @@ a.calendar-slot:is(:hover, :focus) {
   display: flex;
 }
 .d-flex.cols-2 > div {
-  flex: 1 0 50%;
+  flex: 0 1 50%;
 }
 .d-flex > .col {
   flex-basis: 100%;
@@ -265,4 +292,8 @@ p.mb-1 {
 }
 .mb-2 {
   margin-bottom: 2em !important;
+}
+
+svg {
+  letter-spacing: 0;
 }

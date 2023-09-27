@@ -9,7 +9,7 @@
 
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Roboto+Mono:wght@400&display=swap" rel="stylesheet">
 
         <link rel="stylesheet" href="reveal.js/dist/reset.css">
         <link rel="stylesheet" href="reveal.js/dist/reveal.css">
@@ -285,7 +285,7 @@
                                     </td>
                                     <td>
                                         <span class="calendar-date">27/09</span>
-                                        <span class="calendar-slot">Aula 8</span>
+                                        <a href="#/aula8" class="calendar-slot">Aula 8</a>
                                     </td>
                                     <td>
                                         <span class="calendar-date">28/09</span>
@@ -367,8 +367,9 @@
                     </section>
                 </section> <!-- Agenda -->
 
-                <section> <!-- Introdução -->
+                <section> <!-- Aula 1 -->
                     <section id="aula1">
+                        <p>Aula 1</p>
                         <h1>Introdução e Conceitos</h1>
                     </section>
                     <section>
@@ -491,7 +492,7 @@
                         <iframe width="560" height="315"
                                 src="https://www.youtube.com/embed/4XpnKHJAok8?si=IbayMk1lJPMO61T2"
                                 title="YouTube video player" frameborder="0"
-                                allow="encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allow="encrypted-media; picture-in-picture; web-share"
                                 allowfullscreen></iframe>
                         <a href="https://www.youtube.com/watch?v=4XpnKHJAok8" target="_blank" rel="noopener"
                            class="reference">Palestra do Linus Torvalds sobre git em 2007</a>
@@ -536,7 +537,17 @@
                             Platform | GitLab
                         </a>
                     </section>
-                    <section id="aula2" data-auto-animate>
+                </section> <!-- Aula 1 -->
+
+                <section> <!-- Aula 2 -->
+                    <section id="aula2">
+                        <p>Aula 2</p>
+                        <h1>
+                            Introdução e Conceitos <em class="text-muted">(cont.)</em><br>
+                            Controle de Versão com Git
+                        </h1>
+                    </section>
+                    <section data-auto-animate>
                         <h1 class="subtitle">Introdução e Conceitos</h1>
                         <h2>Conceitos gerais</h2>
                         <h3>Repositório</h3>
@@ -658,9 +669,6 @@
                             no <em>commit</em>
                         </p>
                     </section>
-                </section> <!-- Introdução -->
-
-                <section> <!-- Controle de Versão com Git -->
                     <section>
                         <h1>Controle de Versão com Git</h1>
                     </section>
@@ -849,7 +857,16 @@
                         <a href="https://git-scm.com/docs/git-push/pt_BR" target="_blank" rel="noopener"
                            class="reference mb-2">Documentação oficial: git push</a>
                     </section>
+                </section> <!--- Aula 2 -->
+
+                <section> <!-- Aula 3 -->
                     <section id="aula3">
+                        <p>Aula 3</p>
+                        <h1>
+                            Controle de Versão com Git <em class="text-muted">(cont.)</em><br>
+                        </h1>
+                    </section>
+                    <section>
                         <h1 class="subtitle">Controle de Versão com Git</h1>
                         <h2>Comandos básicos</h2>
                         <h3><code>git mv</code></h3>
@@ -911,13 +928,6 @@
                         </p>
                         <a href="https://git-scm.com/docs/git-pull/pt_BR" target="_blank" rel="noopener"
                            class="reference mb-2">Documentação oficial: git pull</a>
-                    </section>
-                </section> <!-- Controle de Versão com Git -->
-
-                <section> <!-- Comandos intermediários -->
-                    <section>
-                        <h1 class="mb-0">Controle de Versão com Git</h1>
-                        <p class="mt-0 text-muted">Continuação</p>
                     </section>
                     <section>
                         <h1 class="subtitle">Controle de Versão com Git</h1>
@@ -1119,7 +1129,16 @@
                         <a href="https://git-scm.com/docs/git-blame/pt_BR" target="_blank" rel="noopener"
                            class="reference mb-2">Documentação oficial: git blame</a>
                     </section>
+                </section> <!-- Aula 3 -->
+
+                <section> <!-- Aula 4 -->
                     <section id="aula4">
+                        <p>Aula 4</p>
+                        <h1>
+                            Controle de Versão com Git <em class="text-muted">(cont.)</em><br>
+                        </h1>
+                    </section>
+                    <section>
                         <h1 class="subtitle">Controle de Versão com Git</h1>
                         <h2>Comandos intermediários</h2>
                         <h3><code>git checkout</code></h3>
@@ -1168,31 +1187,28 @@
                         <a href="https://git-scm.com/docs/git-branch/pt_BR" target="_blank" rel="noopener"
                            class="reference mb-2">Documentação oficial: git branch</a>
                     </section>
-                </section> <!-- Comandos intermediários -->
-
-                <section> <!-- Fluxos de Trabalho -->
-                    <section data-auto-animate data-auto-animate-restart>
-                        <h1>Fluxos de Trabalho</h1>
-                    </section>
                     <section>
-                        <h1 class="subtitle">Fluxos de Trabalho</h1>
+                        <h1 class="subtitle">Controle de Versão com Git</h1>
                         <h2>Configuração de um Projeto no GitLab</h2>
                         <p>
-                            Antes de vermos sobre os fluxos, vamos ver algumas configurações possíveis para
-                            gerenciamento dos projetos no GitLab:
+                            Vamos ver algumas configurações possíveis para gerenciamento dos projetos no GitLab:
                         </p>
                         <ul>
-                            <li>Definindo permissões;</li>
-                            <li>Proteção de <em>branches</em>;</li>
                             <li>Arquivos <code>README</code>;</li>
                             <li>Criação de <em>Wikis</em>;</li>
                             <li>Criação de <em>Issues</em>;</li>
                             <li>Abertura e resoluções de <em>Merge requests</em>;</li>
-                            <li>Configurações de CI/CD;</li>
                             <li>Entre outros.</li>
                         </ul>
                     </section>
-                    <section id="aula5" data-auto-animate>
+                </section> <!-- Aula 4 -->
+
+                <section> <!-- Aula 5 -->
+                    <section id="aula5">
+                        <p>Aula 5</p>
+                        <h1>Fluxos de Trabalho</h1>
+                    </section>
+                    <section data-auto-animate>
                         <h1>Fluxos de Trabalho</h1>
                         <p>
                             Para facilitar a colaboração entre pessoas diferentes em um mesmo repositório, é recomendado
@@ -1321,9 +1337,7 @@
                         </p>
                         <img src="img/gitlab-flow.svg" alt="GitLab Flow">
                     </section>
-                </section> <!-- Fluxos de Trabalho -->
 
-                <section> <!-- Gerenciamento de Branches -->
                     <section>
                         <h1>Gerenciamento de Branches</h1>
                     </section>
@@ -1466,12 +1480,12 @@
                             </li>
                         </ul>
                     </section>
-                </section> <!-- Gerenciamento de Branches -->
+                </section> <!-- Aula 5 -->
 
-                <section id="aula6"> <!-- Exercício: Fluxo de Trabalho -->
+                <section id="aula6"> <!-- Aula 6 -->
                     <section>
-                        <h1 class="subtitle">Exercício</h1>
-                        <h2>Fluxo de Trabalho</h2>
+                        <p>Aula 6</p>
+                        <h1>Fluxo de Trabalho: Exercício</h1>
                     </section>
                     <section>
                         <h1 class="subtitle">Exercício</h1>
@@ -1551,12 +1565,15 @@
                             </div>
                         </div>
                     </section>
-                </section> <!-- Exercício: Fluxo de Trabalho -->
+                </section> <!-- Aula 6 -->
 
-                <section id="aula7"> <!-- Mais comandos -->
-                    <section>
-                        <h1 class="subtitle">Controle de Versão com Git</h1>
-                        <h2>Mais comandos</h2>
+                <section> <!-- Aula 7 -->
+                    <section id="aula7">
+                        <p>Aula 7</p>
+                        <h1>
+                            Controle de Versão com Git <em class="text-muted">(cont.)</em><br>
+                            Incorporando Mudanças
+                        </h1>
                     </section>
                     <section>
                         <h1 class="subtitle">Controle de Versão com Git</h1>
@@ -1758,7 +1775,7 @@
                     </section>
                     <section>
                         <h1 class="subtitle">Controle de Versão com Git</h1>
-                        <h2>Incorporando mudanças</h2>
+                        <h2>Incorporando Mudanças</h2>
                         <h3><code>git merge &lt;nome-da-branch&gt;</code></h3>
                         <p>Exercício</p>
                         <div class="d-flex">
@@ -1797,7 +1814,7 @@
                     </section>
                     <section data-auto-animate data-auto-animate>
                         <h1 class="subtitle">Controle de Versão com Git</h1>
-                        <h2>Incorporando mudanças</h2>
+                        <h2>Incorporando Mudanças</h2>
                         <h3><code>git cherry-pick &lt;referência&gt;</code></h3>
                         <p>Busca um <em>commit</em> exato e traz para a sua <em>branch</em></p>
                         <pre><code class="shell" data-trim>
@@ -1814,7 +1831,7 @@
                     </section>
                     <section data-auto-animate>
                         <h1 class="subtitle">Controle de Versão com Git</h1>
-                        <h2>Incorporando mudanças</h2>
+                        <h2>Incorporando Mudanças</h2>
                         <h3><code>git cherry-pick &lt;referência&gt;</code></h3>
                         <p>Exercício</p>
                         <div class="d-flex">
@@ -1851,9 +1868,19 @@
                             </div>
                         </div>
                     </section>
+                </section> <!-- Aula 7 -->
+
+                <section> <!-- Aula 8 -->
+                    <section id="aula8">
+                        <p>Aula 8</p>
+                        <h1>
+                            Incorporando Mudanças <em class="text-muted">(cont.)</em><br>
+                            GitLab: funcionalidades e <em>fork</em>
+                        </h1>
+                    </section>
                     <section data-auto-animate data-auto-animate-restart>
                         <h1 class="subtitle">Controle de Versão com Git</h1>
-                        <h2>Incorporando mudanças</h2>
+                        <h2>Incorporando Mudanças</h2>
                         <h3><code>git rebase &lt;nome-da-branch&gt;</code></h3>
                         <p>
                             "Move" o início da sua <em>branch</em> para outro lugar no histórico de <em>commits</em>,
@@ -1863,7 +1890,7 @@
                     </section>
                     <section data-auto-animate>
                         <h1 class="subtitle">Controle de Versão com Git</h1>
-                        <h2>Incorporando mudanças</h2>
+                        <h2>Incorporando Mudanças</h2>
                         <h3><code>git rebase &lt;nome-da-branch&gt;</code></h3>
                         <p>
                             "Move" o início da sua <em>branch</em> para outro lugar no histórico de <em>commits</em>,
@@ -1873,45 +1900,109 @@
                     </section>
                     <section data-auto-animate>
                         <h1 class="subtitle">Controle de Versão com Git</h1>
-                        <h2>Incorporando mudanças</h2>
+                        <h2>Incorporando Mudanças</h2>
                         <h3><code>git rebase &lt;nome-da-branch&gt;</code></h3>
-                        <p>Exercício</p>
-                        <div class="d-flex">
+                        <p>Exercício <em>(inteiro no terminal, <b>sem</b> usar o GitLab)</em>:</p>
+                        <ol class="margin">
+                            <li>
+                                <span class="badge badge-bg-1">Pessoa 1</span>
+                                Crie uma <em>branch</em> do repositório, altere algo e faça <em>commit</em> e
+                                <em>push</em>
+                            </li>
+                            <li>
+                                <span class="badge badge-bg-1">Pessoa 1</span>
+                                Aguarde a <b>Pessoa 2</b> fazer o trabalho dela
+                            </li>
+                            <li>
+                                <span class="badge badge-bg-2">Pessoa 2</span>
+                                Crie uma <em>branch</em> do repositório, altere algo diferente da
+                                <b>Pessoa 1</b> e faça <em>commit</em> e <em>push</em>
+                            </li>
+                            <li>
+                                <span class="badge badge-bg-2">Pessoa 2</span>
+                                Avise a <b>Pessoa 1</b> que você terminou
+                            </li>
+                            <li>
+                                <span class="badge badge-bg-1">Pessoa 1</span>
+                                Incorpore as mudanças da <b>Pessoa 2</b> executando
+                                <code>git fetch</code> e <code>git rebase branch-da-pessoa-2</code>
+                            </li>
+                            <li>
+                                <span class="badge badge-bg-1">Pessoa 1</span>
+                                Faça o <em>push</em> da sua <em>branch</em>
+                            </li>
+                            <li>
+                                <span class="badge badge-bg-1">Pessoa 1</span>
+                                <span class="badge badge-bg-2">Pessoa 2</span>
+                                Comparem as diferenças entre incorporar mudanças com <em>merge</em> e <em>rebase</em>
+                            </li>
+                        </ol>
+                    </section>
+                    <section data-auto-animate data-visibility="hidden">
+                        <h1 class="subtitle">Controle de Versão com Git</h1>
+                        <h2>Incorporando Mudanças</h2>
+                        <h3><code>git merge</code> vs <code>git rebase</code></h3>
+                        <div class="d-flex cols-2">
                             <div>
-                                <p class="fw-bold">Pessoa 1</p>
-                                <ul>
-                                    <li class="fragment" data-fragment-index="0">
-                                        Crie uma <em>branch</em> do repositório, altere algo e faça <em>commit</em> e
-                                        <em>push</em>
-                                    </li>
-                                    <li class="fragment" data-fragment-index="1">
-                                        Aguarde a <b>Pessoa 2</b> fazer o trabalho dela
-                                    </li>
-                                    <li class="fragment" data-fragment-index="4">
-                                        Incorpore as mudanças da <b>Pessoa 2</b> executando
-                                        <code>git fetch</code> e <code>git rebase branch-da-pessoa-2</code>
-                                    </li>
-                                    <li class="fragment" data-fragment-index="5">
-                                        Faça o <em>push</em> da sua <em>branch</em>
-                                    </li>
-                                </ul>
+                                <p>
+                                    <b class="font-italic">Merge:</b> cria um novo <em>commit</em> trazendo as
+                                    modificações da outra <em>branch</em>
+                                </p>
+                                <img src="img/merge-vs-rebase.svg" alt="Branch com merge" class="Xinsert-svg">
                             </div>
                             <div>
-                                <p class="fw-bold">Pessoa 2</p>
-                                <ul>
-                                    <li class="fragment" data-fragment-index="2">
-                                        Crie uma <em>branch</em> do repositório, altere algo diferente da
-                                        <b>Pessoa 1</b> e faça <em>commit</em> e <em>push</em>
-                                    </li>
-                                    <li class="fragment" data-fragment-index="3">
-                                        Avise a <b>Pessoa 1</b> que você terminou
-                                    </li>
-                                </ul>
+                                <p>
+                                    <b class="font-italic">Rebase:</b> move o início da sua <em>branch</em> para o
+                                    local especificado
+                                </p>
+                                <img src="img/rebase-pos.svg" alt="Branch com rebase" class="Xinsert-svg">
                             </div>
                         </div>
                     </section>
-                    <section>
-                        <h1 class="subtitle">Controle de Versão com Git</h1>
+
+                    <section data-auto-animate data-auto-animate-restart>
+                        <h1 class="subtitle">GitLab</h1>
+                        <h2>Funcionalidades</h2>
+                    </section>
+                    <section data-auto-animate>
+                        <h1 class="subtitle">GitLab</h1>
+                        <h2>Funcionalidades</h2>
+                        <p>
+                            Vamos ver mais funcionalidades que o GitLab nos oferece:
+                        </p>
+                        <ul>
+                            <li>Definindo permissões de acesso ao repositório;</li>
+                            <li>Proteção de <em>branches</em>;</li>
+                            <li>Arquivos <code>README</code>;</li>
+                            <li>Criação de <em>Wikis</em>;</li>
+                            <li>Criação de <em>snippets</em>;</li>
+                            <li>Criação de <em>webhooks</em>;</li>
+                            <li>Entre outros.</li>
+                        </ul>
+                    </section>
+                    <section data-auto-animate>
+                        <h1 class="subtitle">GitLab</h1>
+                        <h2>Funcionalidades</h2>
+                        <p>Exercício</p>
+                        <ul>
+                            <li>Acesse seu repositório pessoal</li>
+                            <li>Navegue até <code>Settings > Webhooks</code></li>
+                            <li>Clique em <code>Add new webhook</code></li>
+                            <li>Preencha em <code>URL</code> o endereço que você recebeu no chat</li>
+                            <li>
+                                Em <code>Trigger</code>, escolha <kbd>Push events</kbd> <em>(pode deixar
+                                <kbd>All branches</kbd> marcado)</em>, <kbd>Issues events</kbd> e
+                                <kbd>Merge request events</kbd>
+                            </li>
+                            <li>Clique em <code>Add webhook</code></li>
+                            <li>
+                                Faça <em>commits</em>, abra <em>merge requests</em> e visite o endereço que você recebeu
+                                para acompanhar as notificações
+                            </li>
+                        </ul>
+                    </section>
+                    <section data-auto-animate data-auto-animate-restart>
+                        <h1 class="subtitle">GitLab</h1>
                         <h2>Fazendo <em>fork</em> do repositório</h2>
                         <p>
                             Cria uma cópia de um repositório para a sua conta, permitindo trabalhar em projetos que você
@@ -1922,11 +2013,14 @@
                             repositório para o do projeto "real"
                         </p>
                     </section>
-                    <section>
-                        <h1 class="subtitle">Controle de Versão com Git</h1>
-                        <h2>Mais comandos</h2>
-                        <h3><code>git remote</code></h3>
-                        <p>Lidando com servidores remotos</p>
+                    <section data-auto-animate>
+                        <h1 class="subtitle">GitLab</h1>
+                        <h2>Fazendo <em>fork</em> do repositório</h2>
+                        <h4><code>git remote</code></h4>
+                        <p>
+                            Já vimos como lidar com servidores remotos com esse comando, que também permite buscarmos
+                            informações de dois lugares distintos
+                        </p>
                         <pre><code class="shell" data-trim>
                             $ git clone https://endereço.de.um.fork/repositorio
                             $ cd repositorio
@@ -1942,9 +2036,69 @@
                             $ git push origin main
                         </code></pre>
                     </section>
-                </section> <!-- Mais comandos -->
+                    <section>
+                        <h1 class="subtitle">GitLab</h1>
+                        <h2>Fazendo <em>fork</em> do repositório</h2>
+                        <p>Exercício</p>
+                        <ol class="margin font-size-sm">
+                            <li>
+                                <span class="badge badge-bg-1">Pessoa 1</span>
+                                <em>(GitLab)</em> Crie uma <em>issue</em> no seu repositório particular com a atividade
+                                <em>"Criar um arquivo de instruções do repositório"</em> e atribua à
+                                <b>Pessoa 2</b>
+                            </li>
+                            <li>
+                                <span class="badge badge-bg-1">Pessoa 1</span>
+                                <em>(GitLab)</em> Navegue até <kbd>Manage > Members</kbd> e altere a permissão da
+                                <b>Pessoa 2</b> para <code>Reporter</code>
+                            </li>
+                            <li>
+                                <span class="badge badge-bg-2">Pessoa 2</span>
+                                <em>(GitLab)</em> Faça o <em>fork</em> do repositório da <b>Pessoa 1</b>
+                            </li>
+                            <li>
+                                <span class="badge badge-bg-2">Pessoa 2</span>
+                                Clone a cópia <em>("fork")</em> do repositório em sua máquina e adicione um
+                                servidor remoto com o nome <code>principal</code> apontando para o repositório
+                                original da <b>Pessoa 1</b>
+                            </li>
+                            <li>
+                                <span class="badge badge-bg-1">Pessoa 1</span>
+                                Crie algum outro arquivo <em>(que não o <code>README.md</code></em>) no seu
+                                repositório e faça o <em>push</em>
+                            </li>
+                            <li>
+                                <span class="badge badge-bg-2">Pessoa 2</span>
+                                Crie uma <em>branch</em> com o número da <em>issue</em> criada e crie um arquivo
+                                <code>README.md</code> com alguma instrução
+                                <ul>
+                                    <li>
+                                        Dica: utilize o <a href="https://stackedit.io/app" target="_blank"
+                                                           rel="noopener">stackedit.io</a> para criar o arquivo e copie
+                                        o código Markdown
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <span class="badge badge-bg-2">Pessoa 2</span>
+                                Atualize o seu repositório buscando os dados da <em>branch</em> <code>master</code> do
+                                servidor remoto <code>principal</code> e confira se o arquivo criado no passo
+                                <kbd>5.</kbd> foi copiado
+                            </li>
+                            <li>
+                                <span class="badge badge-bg-2">Pessoa 2</span>
+                                <em>(GitLab)</em> Abra a <em>merge request</em> para o repositório original
+                            </li>
+                            <li>
+                                <span class="badge badge-bg-1">Pessoa 1</span>
+                                <em>(GitLab)</em> Aprove e faça o <em>merge</em> da <em>merge request</em> da
+                                <b>Pessoa 2</b>
+                            </li>
+                        </ol>
+                    </section>
+                </section> <!-- Aula 8 -->
 
-                <section> <!-- CI/CD -->
+                <section data-visibility="hidden"> <!-- CI/CD -->
                     <section data-auto-animate data-auto-animate-restart>
                         <h1>CI/CD</h1>
                     </section>
