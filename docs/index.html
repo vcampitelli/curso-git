@@ -2234,6 +2234,127 @@
                             qualquer arquivo, execute o <em>amend</em> e compare
                         </p>
                     </section>
+                    <section>
+                        <h1 class="subtitle">Controle de Versão com Git</h1>
+                        <h2>Controle de Dependências</h2>
+                        <p>
+                            Quase toda linguagem de programação possui um modo para gerenciar de dependências, seja
+                            através de bibliotecas externas ou embutido na própria linguagem
+                        </p>
+                        <p>
+                            Nesses casos, as definições de cada dependência são controlados por arquivos, que devem
+                            fazer parte do versionamento para acompanhar o código
+                        </p>
+                        <table class="table">
+                            <caption>Exemplos de arquivos para controle de dependências em algumas linguagens</caption>
+                            <thead>
+                                <tr>
+                                    <th>Linguagem</th>
+                                    <th>Ferramenta</th>
+                                    <th>Arquivo</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Go</td>
+                                    <td><em>Nativo da linguagem</em></td>
+                                    <td><code>go.mod</code></td>
+                                </tr>
+                                <tr>
+                                    <td>Java</td>
+                                    <td>Maven</td>
+                                    <td><code>pom.xml</code></td>
+                                </tr>
+                                <tr>
+                                    <td>Node</td>
+                                    <td>npm</td>
+                                    <td><code>package.json</code> e <code>package.lock</code></td>
+                                </tr>
+                                <tr>
+                                    <td>Node</td>
+                                    <td>yarn</td>
+                                    <td><code>package.json</code> e <code>yarn.lock</code></td>
+                                </tr>
+                                <tr>
+                                    <td>PHP</td>
+                                    <td>Composer</td>
+                                    <td><code>composer.json</code> e <code>composer.lock</code></td>
+                                </tr>
+                                <tr>
+                                    <td>Python</td>
+                                    <td>pip</td>
+                                    <td><code>requirements.txt</code></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </section>
+                    <section data-auto-animate>
+                        <h1 class="subtitle">Controle de Versão com Git</h1>
+                        <h2>Controle de Dependências</h2>
+                        <h3><code>git submodule</code></h3>
+                        <p>
+                            Comando utilizado para "embutir" outro repositório Git dentro do seu projeto
+                        </p>
+                        <pre><code class="shell" data-trim>
+                            // Para adicionar um projeto externo em seu repositório, execute:
+                            $ git submodule add endereco.de.um.repositorio.git pasta/de/destino
+
+                            // Para clonar um repositório e todos seus submódulos (como esta apostila), execute:
+                            $ git clone --recursive endereco.de.um.repositorio.git.com.submodulos
+
+                            // Caso não tenha clonado recursivamente, você pode inicializar os submódulos com:
+                            $ git submodule update --init --recursive
+                        </code></pre>
+                        <a href="https://git-scm.com/book/en/v2/Git-Tools-Submodules" target="_blank" rel="noopener"
+                           class="reference">Git - Submodules</a>
+                    </section>
+                    <section data-auto-animate>
+                        <h1 class="subtitle">Controle de Versão com Git</h1>
+                        <h2>Controle de Dependências</h2>
+                        <h3><code>git submodule</code></h3>
+                        <h4>Exercício</h4>
+                        <p>
+                            No repositório pessoal de vocês, incluam o repositório de exercícios como submódulo em uma
+                            pasta chamada <code>sub-exercicio</code>
+                        </p>
+                    </section>
+                    <section>
+                        <h1 class="subtitle">Controle de Versão com Git</h1>
+                        <h2>Comandos Avançados</h2>
+                        <h3><code>git stash</code></h3>
+                        <p>
+                            Salva as diferenças atuais do projeto (que ainda não estão em um <em>commit</em>) em uma
+                            área à parte, possibilitando rapidamente recuperá-las posteriormente
+                        </p>
+                        <pre><code class="shell" data-trim data-line-numbers="1-8|9-13|14-22">
+                            $ git status
+                            On branch main
+                            Changes not staged for commit:
+                              (use "git add &lt;file&gt;..." to update what will be committed)
+                              (use "git restore &lt;file&gt;..." to discard changes in working directory)
+                                modified:   arquivo
+
+                            no changes added to commit (use "git add" and/or "git commit -a")
+                            $ git stash push
+                            Saved working directory and index state WIP on main: a1d4cfc Criando arquivo
+                            $ git status
+                            On branch main
+                            nothing to commit, working tree clean
+                            $ git stash pop
+                            On branch main
+                            Changes not staged for commit:
+                              (use "git add &lt;file&gt;..." to update what will be committed)
+                              (use "git restore &lt;file&gt;..." to discard changes in working directory)
+                                modified:   arquivo
+
+                            no changes added to commit (use "git add" and/or "git commit -a")
+                            Dropped refs/stash@{0} (66650bc83e829d949d6ba24833962f539de87aa9)
+                        </code></pre>
+                        <a href="https://git-scm.com/docs/git-stash/pt_BR" target="_blank" rel="noopener"
+                           class="reference">Git - git-stash Documentation</a>
+                    </section>
+                </section> <!-- Aula 9 -->
+
                     <section data-auto-animate data-auto-animate-restart>
                         <h1 class="subtitle">Controle de Versão com Git</h1>
                         <h2>Comandos Avançados</h2>
@@ -2429,116 +2550,7 @@
                             <em>branch</em> para mantê-la atualizada (ou use <code>git rebase</code> após)
                         </div>
                     </section>
-                    <section>
-                        <h1 class="subtitle">Controle de Versão com Git</h1>
-                        <h2>Controle de Dependências</h2>
-                        <p>
-                            Quase toda linguagem de programação possui um modo para gerenciar de dependências, seja
-                            através de bibliotecas externas ou embutido na própria linguagem
-                        </p>
-                        <p>
-                            Nesses casos, as definições de cada dependência são controlados por arquivos, que devem
-                            fazer parte do versionamento para acompanhar o código
-                        </p>
-                        <table class="table">
-                            <caption>Exemplos de arquivos para controle de dependências em algumas linguagens</caption>
-                            <thead>
-                                <tr>
-                                    <th>Linguagem</th>
-                                    <th>Ferramenta</th>
-                                    <th>Arquivo</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>Go</td>
-                                    <td><em>Nativo da linguagem</em></td>
-                                    <td><code>go.mod</code></td>
-                                </tr>
-                                <tr>
-                                    <td>Java</td>
-                                    <td>Maven</td>
-                                    <td><code>pom.xml</code></td>
-                                </tr>
-                                <tr>
-                                    <td>Node</td>
-                                    <td>npm</td>
-                                    <td><code>package.json</code> e <code>package.lock</code></td>
-                                </tr>
-                                <tr>
-                                    <td>Node</td>
-                                    <td>yarn</td>
-                                    <td><code>package.json</code> e <code>yarn.lock</code></td>
-                                </tr>
-                                <tr>
-                                    <td>PHP</td>
-                                    <td>Composer</td>
-                                    <td><code>composer.json</code> e <code>composer.lock</code></td>
-                                </tr>
-                                <tr>
-                                    <td>Python</td>
-                                    <td>pip</td>
-                                    <td><code>requirements.txt</code></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </section>
-                    <section>
-                        <h1 class="subtitle">Controle de Versão com Git</h1>
-                        <h2>Controle de Dependências</h2>
-                        <h3><code>git submodule</code></h3>
-                        <p>
-                            Comando utilizado para "embutir" outro repositório Git dentro do seu projeto
-                        </p>
-                        <pre><code class="shell" data-trim>
-                            // Para adicionar um projeto externo em seu repositório, execute:
-                            $ git submodule add endereco.de.um.repositorio.git pasta/de/destino
-
-                            // Para clonar um repositório e todos seus submódulos (como esta apostila), execute:
-                            $ git clone --recursive endereco.de.um.repositorio.git.com.submodulos
-
-                            // Caso não tenha clonado recursivamente, você pode inicializar os submódulos com:
-                            $ git submodule update --init --recursive
-                        </code></pre>
-                        <a href="https://git-scm.com/book/en/v2/Git-Tools-Submodules" target="_blank" rel="noopener"
-                           class="reference">Git - Submodules</a>
-                    </section>
-                    <section>
-                        <h1 class="subtitle">Controle de Versão com Git</h1>
-                        <h2>Comandos Avançados</h2>
-                        <h3><code>git stash</code></h3>
-                        <p>
-                            Salva as diferenças atuais do projeto (que ainda não estão em um <em>commit</em>) em uma
-                            área à parte, possibilitando rapidamente recuperá-las posteriormente
-                        </p>
-                        <pre><code class="shell" data-trim data-line-numbers="1-8|9-13|14-22">
-                            $ git status
-                            On branch main
-                            Changes not staged for commit:
-                              (use "git add &lt;file&gt;..." to update what will be committed)
-                              (use "git restore &lt;file&gt;..." to discard changes in working directory)
-                                modified:   arquivo
-
-                            no changes added to commit (use "git add" and/or "git commit -a")
-                            $ git stash push
-                            Saved working directory and index state WIP on main: a1d4cfc Criando arquivo
-                            $ git status
-                            On branch main
-                            nothing to commit, working tree clean
-                            $ git stash pop
-                            On branch main
-                            Changes not staged for commit:
-                              (use "git add &lt;file&gt;..." to update what will be committed)
-                              (use "git restore &lt;file&gt;..." to discard changes in working directory)
-                                modified:   arquivo
-
-                            no changes added to commit (use "git add" and/or "git commit -a")
-                            Dropped refs/stash@{0} (66650bc83e829d949d6ba24833962f539de87aa9)
-                        </code></pre>
-                        <a href="https://git-scm.com/docs/git-stash/pt_BR" target="_blank" rel="noopener"
-                           class="reference">Git - git-stash Documentation</a>
-                    </section>
-                </section> <!-- Aula 9 -->
+                </section>
 
                 <section data-visibility="hidden"> <!-- CI/CD -->
                     <section data-auto-animate data-auto-animate-restart>
