@@ -75,7 +75,7 @@
                                               class="fill"/>
                                     </svg>
                                     <div>
-                                        <p>Slides</p>
+                                        <p>Site</p>
                                         <a href="https://viniciuscampitelli.com" target="_blank" rel="noopener">
                                             viniciuscampitelli.com
                                         </a>
@@ -229,7 +229,7 @@
                                 <tr>
                                     <td>
                                         <span class="calendar-date">02/10</span>
-                                        <span class="calendar-slot">Aula 9</span>
+                                        <a href="#/aula9" class="calendar-slot">Aula 9</a>
                                     </td>
                                     <td>
                                         <span class="calendar-date">03/10</span>
@@ -1482,8 +1482,8 @@
                     </section>
                 </section> <!-- Aula 5 -->
 
-                <section id="aula6"> <!-- Aula 6 -->
-                    <section>
+                <section> <!-- Aula 6 -->
+                    <section id="aula6">
                         <p>Aula 6</p>
                         <h1>Fluxo de Trabalho: Exercício</h1>
                     </section>
@@ -1968,22 +1968,14 @@
                         <h1 class="subtitle">GitLab</h1>
                         <h2>Funcionalidades</h2>
                         <p>
-                            Vamos ver mais funcionalidades que o GitLab nos oferece:
+                            Vamos ver as funcionalidades de <em>webhooks</em> e de <em>forks</em> que o GitLab nos
+                            oferece
                         </p>
-                        <ul>
-                            <li>Definindo permissões de acesso ao repositório;</li>
-                            <li>Proteção de <em>branches</em>;</li>
-                            <li>Arquivos <code>README</code>;</li>
-                            <li>Criação de <em>Wikis</em>;</li>
-                            <li>Criação de <em>snippets</em>;</li>
-                            <li>Criação de <em>webhooks</em>;</li>
-                            <li>Entre outros.</li>
-                        </ul>
                     </section>
                     <section data-auto-animate>
                         <h1 class="subtitle">GitLab</h1>
                         <h2>Funcionalidades</h2>
-                        <p>Exercício</p>
+                        <p>Exercício de <em>webhooks</em></p>
                         <ul>
                             <li>Acesse seu repositório pessoal</li>
                             <li>Navegue até <code>Settings > Webhooks</code></li>
@@ -2022,11 +2014,11 @@
                             informações de dois lugares distintos
                         </p>
                         <pre><code class="shell" data-trim>
-                            $ git clone https://endereço.de.um.fork/repositorio
+                            $ git clone https://endereco.do.repositorio.forkado/repositorio
                             $ cd repositorio
-                            $ git remote add fork https://endereço.do.repositório.original/repositorio
-                            $ git pull fork main
-                            From endereço.do.repositório.original/repositorio
+                            $ git remote add servidorPrincipal https://endereco.do.repositorio.original/repositorio
+                            $ git pull servidorPrincipal main
+                            From endereco.do.repositorio.original/repositorio
                              * branch            main       -> FETCH_HEAD
                             Updating 4376dc6..4d5f660
                             Fast-forward
@@ -2097,6 +2089,363 @@
                         </ol>
                     </section>
                 </section> <!-- Aula 8 -->
+
+                <section> <!-- Aula 9 -->
+                    <section id="aula9">
+                        <p>Aula 9</p>
+                        <h1>Controle de Versão com Git: Comandos Avançados</h1>
+                    </section>
+                    <section data-auto-animate>
+                        <h1 class="subtitle">Controle de Versão com Git</h1>
+                        <h2>Ignorando arquivos</h2>
+                        <p>
+                            Para ignorar a adição de determinados arquivos (ou pastas inteiras), podemos criar um
+                            arquivo chamado <code>.gitignore</code> e especificar os caminhos que desejamos ignorar
+                        </p>
+                        <pre><code class="gitignore" data-trim>
+                            # Ignora inteiramente as pastas build e dist
+                            build/
+                            dist/
+
+                            # Ignora todos os arquivos .log nessa pasta
+                            *.log
+
+                            # Ignora todos os arquivos .bkp em qualquer pasta
+                            **/*.bkp
+                        </code></pre>
+                        <div class="alert">
+                            Essa funcionalidade não se aplica a arquivos que já estão sendo monitorados pelo Git
+                        </div>
+                        <a href="https://git-scm.com/docs/gitignore" target="_blank" rel="noopener" class="reference"
+                           data-id="reference">
+                            Git - gitignore Documentation
+                        </a>
+                    </section>
+                    <section data-auto-animate>
+                        <h1 class="subtitle">Controle de Versão com Git</h1>
+                        <h2>Ignorando arquivos</h2>
+                        <p>
+                            Dica: confira alguns <em>templates</em> de <code>.gitignore</code> em
+                            <a href="https://github.com/github/gitignore" target="_blank" rel="noopener">
+                                github.com/github/gitignore
+                            </a> e adicione os padrões mais comuns para seu caso de uso através de um arquivo
+                            <code>.gitignore</code> global
+                        </p>
+                        <pre><code class="shell" data-trim>
+                            $ git config core.excludesFile ~/global.gitignore
+                        </code></pre>
+                        <a href="https://git-scm.com/docs/gitignore" target="_blank" rel="noopener" class="reference"
+                            data-id="reference">
+                            Git - gitignore Documentation
+                        </a>
+                    </section>
+                    <section>
+                        <h1 class="subtitle">Controle de Versão com Git</h1>
+                        <h2><em>Releases</em></h2>
+                        <p>
+                            Já vimos anteriormente como criar <em>tags</em> com <code>git tag</code>, mas o GitLab
+                            possui uma funcionalidade para deixar mais amigável as versões do seu projeto para quem
+                            estiver navegando nele
+                        </p>
+                        <a href="https://docs.gitlab.com/ee/user/project/releases/" target="_blank" rel="noopener"
+                           class="reference">Releases | GitLab</a>
+                    </section>
+                    <section>
+                        <h1 class="subtitle">Controle de Versão com Git</h1>
+                        <h2>Comandos Avançados</h2>
+                        <h3><code>git commit --amend</code></h3>
+                        <p>
+                            Substitui o último <em>commit</em> por um novo a partir do estado atual do projeto, fazendo
+                            uma "emenda"
+                        </p>
+                        <pre><code class="shell" data-trim data-line-numbers="1-7|9-13|15-17">
+                            $ git commit -m "Commit antigo sem um certo arquivo"
+                            [main 9be2532] Commit antigo sem um certo arquivo
+                             1 file changed, 100 insertions(+)
+                            ⁣
+                            $ git log --oneline
+                            9be2532 (HEAD -> main) Commit antigo sem um certo arquivo
+                            54d3769 Commit anterior
+                            ⁣
+                            $ git add novo-arquivo
+                            $ git commit --amend -m "Novo commit com o arquivo adicionado"
+                            [main 9fa3283] Novo commit com o arquivo adicionado
+                             2 files changed, 200 insertions(+)
+                             create mode 100644 novo-arquivo
+                            ⁣
+                            $ git log --oneline
+                            9fa3283 (HEAD -> main) Novo commit com o arquivo adicionado
+                            54d3769 Commit anterior
+                        </code></pre>
+                    </section>
+                    <section data-auto-animate>
+                        <h1 class="subtitle">Controle de Versão com Git</h1>
+                        <h2>Comandos Avançados</h2>
+                        <h3><code>git rebase -i &lt;referência-do-commit&gt;</code></h3>
+                        <p>
+                            Utilizamos o comando "original" sem o argumento <kbd>-i</kbd>
+                            <code>git rebase &lt;outra-branch&gt;</code> para levar todos os <em>commits</em> da
+                            <em>branch</em> atual para <code>outra-branch</code>, como se estivéssemos criado aquela
+                            <em>branch</em> a partir dessa <code>outra-branch</code>
+                        </p>
+                        <p>
+                            Também podemos utilizar este comando com o modo interativo através do argumento
+                            <code>-i</code>, permitindo que possamos escolher o que fazer com cada um dos
+                            <em>commits</em>
+                        </p>
+                        <a href="https://docs.github.com/pt/get-started/using-git/using-git-rebase-on-the-command-line"
+                           target="_blank" rel="noopener" class="reference" data-id="github-docs-rebase">
+                            Usar rebase do Git na linha de comando - GitHub Docs
+                        </a>
+                    </section>
+                    <section data-auto-animate>
+                        <h1 class="subtitle">Controle de Versão com Git</h1>
+                        <h2>Comandos Avançados</h2>
+                        <h3><code>git rebase -i &lt;referência-do-commit&gt;</code></h3>
+                        <p>
+                            Isso torna esse comando uma das funções mais complexas do Git, pois a utilizamos para
+                            <b>reescrever o histórico</b> de uma <em>branch</em>, podendo alterá-lo, mesclar com outros
+                            ou até mesmo descartá-lo
+                        </p>
+                        <div class="alert">
+                            Cuidado: os <em>hashs sha-1</em> dos <em>commits</em> serão reescritos. Por isso, não é
+                            muito recomendado usá-lo caso outras pessoas da equipe já tenham baixado as atualizações em
+                            suas máquinas, pois podem perder código!
+                        </div>
+                        <a href="https://docs.github.com/pt/get-started/using-git/using-git-rebase-on-the-command-line"
+                           target="_blank" rel="noopener" class="reference" data-id="github-docs-rebase">
+                            Usar rebase do Git na linha de comando - GitHub Docs
+                        </a>
+                    </section>
+                    <section data-auto-animate>
+                        <h1 class="subtitle">Controle de Versão com Git</h1>
+                        <h2>Comandos Avançados</h2>
+                        <h3><code>git rebase -i &lt;referência-do-commit&gt;</code></h3>
+                        <p>Para reescrever os últimos 5 <em>commits</em>, basta executarmos:</p>
+                        <pre><code class="shell" data-trim>
+                            $ git rebase -i HEAD~5
+                        </code></pre>
+                        <p>
+                            Então, um editor de texto irá abrir com a lista desses 5 <em>commits</em>, prefixados pelo
+                            comando <code>pick</code> (que significa que queremos usar esse <em>commit</em> exatamente
+                            como ele está):
+                        </p>
+                        <pre><code class="shell" data-trim>
+                            pick 8cdd9b63 Mensagem do commit
+                            pick 529f9db2 Mensagem do commit
+                            pick 99769a26 Mensagem do commit
+                            pick d81cefdf Mensagem do commit
+                            pick a3a39d99 Mensagem do commit
+                            pick a85a9d96 Mensagem do commit
+                        </code></pre>
+                        <a href="https://docs.github.com/pt/get-started/using-git/using-git-rebase-on-the-command-line"
+                           target="_blank" rel="noopener" class="reference" data-id="github-docs-rebase">
+                            Usar rebase do Git na linha de comando - GitHub Docs
+                        </a>
+                    </section>
+                    <section data-auto-animate>
+                        <h1 class="subtitle">Controle de Versão com Git</h1>
+                        <h2>Comandos Avançados</h2>
+                        <h3><code>git rebase -i &lt;referência-do-commit&gt;</code></h3>
+                        <p>
+                            Para alterar um <em>commit</em> específico, basta renomearmos <code>pick</code> para os
+                            comandos permitidos <em>(alguns listados abaixo)</em> e salvar o arquivo
+                        </p>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Atalho</th>
+                                    <th>Comando</th>
+                                    <th>Descrição</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>p</code></td>
+                                    <td><code>pick</code></td>
+                                    <td>
+                                        usa o <em>commit</em> como está (padrão)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><code>r</code></td>
+                                    <td><code>reword</code></td>
+                                    <td>
+                                        usa o <em>commit</em> mas edita a mensagem
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><code>e</code></td>
+                                    <td><code>edit</code></td>
+                                    <td>
+                                        usa o <em>commit</em>, mas para o processo para você poder fazer qualquer
+                                        alteração no projeto
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><code>s</code></td>
+                                    <td><code>squash</code></td>
+                                    <td>
+                                        usa o <em>commit</em> mas incorpora no <em>commit</em> anterior, gerando um só
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><code>f</code></td>
+                                    <td><code>fixup</code></td>
+                                    <td>
+                                        como <code>squash</code>, mas descarta a mensagem desse <em>commit</em>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><code>x</code></td>
+                                    <td><code>exec</code></td>
+                                    <td>executa o comando</td>
+                                </tr>
+                                <tr>
+                                    <td><code>d</code></td>
+                                    <td><code>drop</code></td>
+                                    <td>descarta o <em>commit</em></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <a href="https://docs.github.com/pt/get-started/using-git/using-git-rebase-on-the-command-line"
+                           target="_blank" rel="noopener" class="reference" data-id="github-docs-rebase">
+                            Usar rebase do Git na linha de comando - GitHub Docs
+                        </a>
+                    </section>
+                    <section data-auto-animate data-auto-animate-restart>
+                        <h1 class="subtitle">Controle de Versão com Git</h1>
+                        <h2>Comandos Avançados</h2>
+                        <h3><code>git push -f</code></h3>
+                        <p>
+                            Se reescrevemos o histórico com <code>git rebase -i</code>, um simples <code>git push</code>
+                            não será o suficiente para subirmos as modificações, já que os <em>commits</em> em nossa
+                            máquina local estão muito diferentes do que estão no servidor remoto
+                        </p>
+                        <pre><code class="shell" data-trim>
+                            $ git push
+                            To endereco.do.servidor.com:repositorio.git
+                             ! [rejected]        main -> main (non-fast-forward)
+                            error: failed to push some refs to 'endereco.do.servidor.com:repositorio.git'
+                            hint: Updates were rejected because the tip of your current branch is behind
+                            hint: its remote counterpart. Integrate the remote changes (e.g.
+                            hint: 'git pull ...') before pushing again.
+                            hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+                        </code></pre>
+                    </section>
+                    <section data-auto-animate>
+                        <h1 class="subtitle">Controle de Versão com Git</h1>
+                        <h2>Comandos Avançados</h2>
+                        <h3><code>git push -f</code></h3>
+                        <p>
+                            Então, temos que utilizar o parâmetro <code>-f</code> para forçar o envio das atualizações
+                        </p>
+                        <pre><code class="shell" data-trim>
+                            $ git push -f
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h1 class="subtitle">Controle de Versão com Git</h1>
+                        <h2>Comandos Avançados</h2>
+                        <h3>Exercício</h3>
+                        <p>
+                            No repositório de exercícios, crie uma <em>branch</em> com seu nome e utilize o
+                            <code>git rebase</code> para alterar os últimos 7 <em>commits</em> do repositório
+                        </p>
+                        <ul>
+                            <li>
+                                Junte os <em>commits</em> "" e "" em um só com as duas mensagens
+                            </li>
+                            <li>
+                                Descarte o <em>commit</em> ""
+                            </li>
+                            <li>
+                                Altere a mensagem do <em>commit</em> "" para ""
+                            </li>
+                            <li>
+                                Faça o <em>push</em> e abra uma <em>merge request</em>, me colocando como revisor
+                            </li>
+                        </ul>
+                        <div class="alert">
+                            Lembre-se de sempre executar o <code>git pull</code> <b>antes</b> de criar sua
+                            <em>branch</em> para mantê-la atualizada (ou use <code>git rebase</code> após)
+                        </div>
+                    </section>
+                    <section>
+                        <h1 class="subtitle">Controle de Versão com Git</h1>
+                        <h2>Controle de Dependências</h2>
+                        <p>
+                            Quase toda linguagem de programação possui um modo para gerenciar de dependências, seja
+                            através de bibliotecas externas ou embutido na própria linguagem
+                        </p>
+                        <p>
+                            Nesses casos, as definições de cada dependência são controlados por arquivos, que devem
+                            fazer parte do versionamento para acompanhar o código
+                        </p>
+                        <table class="table">
+                            <caption>Exemplos de arquivos para controle de dependências em algumas linguagens</caption>
+                            <thead>
+                                <tr>
+                                    <th>Linguagem</th>
+                                    <th>Ferramenta</th>
+                                    <th>Arquivo</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Go</td>
+                                    <td><em>Nativo da linguagem</em></td>
+                                    <td><code>go.mod</code></td>
+                                </tr>
+                                <tr>
+                                    <td>Java</td>
+                                    <td>Maven</td>
+                                    <td><code>pom.xml</code></td>
+                                </tr>
+                                <tr>
+                                    <td>Node</td>
+                                    <td>npm</td>
+                                    <td><code>package.json</code> e <code>package.lock</code></td>
+                                </tr>
+                                <tr>
+                                    <td>Node</td>
+                                    <td>yarn</td>
+                                    <td><code>package.json</code> e <code>yarn.lock</code></td>
+                                </tr>
+                                <tr>
+                                    <td>PHP</td>
+                                    <td>Composer</td>
+                                    <td><code>composer.json</code> e <code>composer.lock</code></td>
+                                </tr>
+                                <tr>
+                                    <td>Python</td>
+                                    <td>pip</td>
+                                    <td><code>requirements.txt</code></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </section>
+                    <section>
+                        <h1 class="subtitle">Controle de Versão com Git</h1>
+                        <h2>Controle de Dependências</h2>
+                        <h3><code>git submodule</code></h3>
+                        <p>
+                            Comando utilizado para "embutir" outro repositório Git dentro do seu projeto
+                        </p>
+                        <pre><code class="shell" data-trim>
+                            // Para adicionar um projeto externo em seu repositório, execute:
+                            $ git submodule add endereco.de.um.repositorio.git pasta/de/destino
+
+                            // Para clonar um repositório e todos seus submódulos (como esta apostila), execute:
+                            $ git clone --recursive endereco.de.um.repositorio.git.com.submodulos
+
+                            // Caso não tenha clonado recursivamente, você pode inicializar os submódulos com:
+                            $ git submodule update --init --recursive
+                        </code></pre>
+                        <a href="https://git-scm.com/book/en/v2/Git-Tools-Submodules" target="_blank" rel="noopener"
+                           class="reference">Git - Submodules</a>
+                    </section>
+                </section> <!-- Aula 9 -->
 
                 <section data-visibility="hidden"> <!-- CI/CD -->
                     <section data-auto-animate data-auto-animate-restart>

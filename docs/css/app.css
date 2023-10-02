@@ -35,6 +35,7 @@
 /* Código */
 .reveal pre {
   margin-left: 0;
+  width: 100%;
   letter-spacing: -0.5px;
 }
 code:not(.hljs),
@@ -59,11 +60,11 @@ code:not(.hljs) {
   color: var(--background-color-darker);
 }
 kbd {
-  color: var(--subheading-color);
   font-size: 0.9em;
   font-family: var(--r-code-font);
   font-weight: 600;
   letter-spacing: -1.5px;
+  border-bottom: 2px dotted;
 }
 pre code.hljs {
   display: block;
@@ -239,6 +240,13 @@ table.table {
   margin-left: 0;
   width: 100%;
 }
+table.table > caption {
+  margin-top: 0.5em;
+  caption-side: bottom;
+  font-style: italic;
+  font-size: 0.8em;
+  color: var(--subheading-color);
+}
 table.calendar > thead > tr > th,
 table.calendar > tbody > tr > td {
   padding: 0.7em;
@@ -296,4 +304,11 @@ p.mb-1 {
 
 svg {
   letter-spacing: 0;
+}
+.alert {
+  padding: 0.75em 1em;
+  font-size: 0.8em;
+  background: var(--color-purple);
+  color: var(--r-background-color);
+  border-radius: var(--border-radius);
 }
