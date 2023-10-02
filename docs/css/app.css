@@ -93,10 +93,13 @@ code.hljs.shell .language-bash > .hljs-comment {
   user-select: none;
 }
 code.hljs.shell {
-  color: #767e8b;
+  color: #868e9b;
 }
 code.hljs.shell .language-bash {
   color: #d6deeb;
+}
+.reveal .hljs.has-highlights tr:not(.highlight-line) {
+  opacity: 0.25;
 }
 
 /* Quote */
@@ -306,9 +309,13 @@ svg {
   letter-spacing: 0;
 }
 .alert {
+  margin: 1em 0;
   padding: 0.75em 1em;
   font-size: 0.8em;
   background: var(--color-purple);
   color: var(--r-background-color);
   border-radius: var(--border-radius);
+}
+section > .alert:last-child {
+  margin-bottom: 0;
 }

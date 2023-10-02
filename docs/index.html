@@ -2097,6 +2097,32 @@
                     </section>
                     <section data-auto-animate>
                         <h1 class="subtitle">Controle de Versão com Git</h1>
+                        <h2><em>Releases</em></h2>
+                        <p>
+                            Já vimos anteriormente como criar <em>tags</em> com <code>git tag</code>, mas o GitLab
+                            possui uma funcionalidade para deixar mais amigável as versões do seu projeto para quem
+                            estiver navegando nele
+                        </p>
+                        <a href="https://docs.gitlab.com/ee/user/project/releases/" target="_blank" rel="noopener"
+                           class="reference">Releases | GitLab</a>
+                    </section>
+                    <section data-auto-animate>
+                        <h1 class="subtitle">Controle de Versão com Git</h1>
+                        <h2><em>Releases</em></h2>
+                        <h3>Exercício</h3>
+                        <p>
+                            Em seu repositório pessoal, crie uma <em>release</em> <kbd>1.0</kbd> com um simples texto
+                            descrevendo as mudanças daquela versão do seu sistema (<em>"changelog"</em>)
+                        </p>
+                        <div class="alert">
+                            Quando formos trabalhar com CI/CD, veremos como automatizar a geração de <em>releases</em>,
+                            incluindo arquivos de <em>build</em>
+                        </div>
+                        <a href="https://docs.gitlab.com/ee/user/project/releases/" target="_blank" rel="noopener"
+                           class="reference">Releases | GitLab</a>
+                    </section>
+                    <section data-auto-animate data-auto-animate-restart>
+                        <h1 class="subtitle">Controle de Versão com Git</h1>
                         <h2>Ignorando arquivos</h2>
                         <p>
                             Para ignorar a adição de determinados arquivos (ou pastas inteiras), podemos criar um
@@ -2141,16 +2167,36 @@
                     </section>
                     <section>
                         <h1 class="subtitle">Controle de Versão com Git</h1>
-                        <h2><em>Releases</em></h2>
+                        <h2>Comandos Avançados</h2>
+                        <h3><code>git clean</code></h3>
                         <p>
-                            Já vimos anteriormente como criar <em>tags</em> com <code>git tag</code>, mas o GitLab
-                            possui uma funcionalidade para deixar mais amigável as versões do seu projeto para quem
-                            estiver navegando nele
+                            Remove os arquivos não-rastreados da sua área de trabalho
                         </p>
-                        <a href="https://docs.gitlab.com/ee/user/project/releases/" target="_blank" rel="noopener"
-                           class="reference">Releases | GitLab</a>
+                        <pre><code class="shell" data-trim>
+                            $ git status
+                            On branch main
+
+                            Untracked files:
+                              (use "git add &lt;file&gt;..." to include in what will be committed)
+                                arquivo1
+                                arquivo2
+                                arquivo3
+                                arquivo4
+
+                            nothing added to commit but untracked files present (use "git add" to track)
+
+                            $ git clean -n
+                            Would remove arquivo1
+                            Would remove arquivo2
+                            Would remove arquivo3
+                            Would remove arquivo4
+                        </code></pre>
+                        <div class="alert">
+                            Dica: use o parâmetro <code>-n</code> (ou <code>--dry-run</code>) para apenas exibir o que
+                            seria feito e então o <code>-i</code> para trabalhar de forma interativa
+                        </div>
                     </section>
-                    <section>
+                    <section data-auto-animate data-auto-animate-restart>
                         <h1 class="subtitle">Controle de Versão com Git</h1>
                         <h2>Comandos Avançados</h2>
                         <h3><code>git commit --amend</code></h3>
@@ -2181,6 +2227,16 @@
                     <section data-auto-animate>
                         <h1 class="subtitle">Controle de Versão com Git</h1>
                         <h2>Comandos Avançados</h2>
+                        <h3><code>git commit --amend</code></h3>
+                        <h4>Exercício</h4>
+                        <p>
+                            Faça um <em>commit</em> (sem <em>push</em>) em seu repositório, altere alguma coisa em
+                            qualquer arquivo, execute o <em>amend</em> e compare
+                        </p>
+                    </section>
+                    <section data-auto-animate data-auto-animate-restart>
+                        <h1 class="subtitle">Controle de Versão com Git</h1>
+                        <h2>Comandos Avançados</h2>
                         <h3><code>git rebase -i &lt;referência-do-commit&gt;</code></h3>
                         <p>
                             Utilizamos o comando "original" sem o argumento <kbd>-i</kbd>
@@ -2208,7 +2264,7 @@
                             ou até mesmo descartá-lo
                         </p>
                         <div class="alert">
-                            Cuidado: os <em>hashs sha-1</em> dos <em>commits</em> serão reescritos. Por isso, não é
+                            Cuidado: os <em>hashes sha-1</em> dos <em>commits</em> serão reescritos. Por isso, não é
                             muito recomendado usá-lo caso outras pessoas da equipe já tenham baixado as atualizações em
                             suas máquinas, pois podem perder código!
                         </div>
@@ -2350,17 +2406,19 @@
                         <h3>Exercício</h3>
                         <p>
                             No repositório de exercícios, crie uma <em>branch</em> com seu nome e utilize o
-                            <code>git rebase</code> para alterar os últimos 7 <em>commits</em> do repositório
+                            <code>git rebase</code> para alterar os últimos 5 <em>commits</em> do repositório
                         </p>
                         <ul>
                             <li>
-                                Junte os <em>commits</em> "" e "" em um só com as duas mensagens
+                                Junte os <em>commits</em> <code>d6f0837</code> e <code>222e66c</code> em um só e com
+                                apenas uma mensagem
                             </li>
                             <li>
-                                Descarte o <em>commit</em> ""
+                                Descarte o <em>commit</em> <code>454d09a</code>
                             </li>
                             <li>
-                                Altere a mensagem do <em>commit</em> "" para ""
+                                Altere a mensagem do <em>commit</em> <code>ec3b926</code> para
+                                <em>"Movendo arquivos anteriores para uma pasta chamada antigos"</em>
                             </li>
                             <li>
                                 Faça o <em>push</em> e abra uma <em>merge request</em>, me colocando como revisor
@@ -2444,6 +2502,41 @@
                         </code></pre>
                         <a href="https://git-scm.com/book/en/v2/Git-Tools-Submodules" target="_blank" rel="noopener"
                            class="reference">Git - Submodules</a>
+                    </section>
+                    <section>
+                        <h1 class="subtitle">Controle de Versão com Git</h1>
+                        <h2>Comandos Avançados</h2>
+                        <h3><code>git stash</code></h3>
+                        <p>
+                            Salva as diferenças atuais do projeto (que ainda não estão em um <em>commit</em>) em uma
+                            área à parte, possibilitando rapidamente recuperá-las posteriormente
+                        </p>
+                        <pre><code class="shell" data-trim data-line-numbers="1-8|9-13|14-22">
+                            $ git status
+                            On branch main
+                            Changes not staged for commit:
+                              (use "git add &lt;file&gt;..." to update what will be committed)
+                              (use "git restore &lt;file&gt;..." to discard changes in working directory)
+                                modified:   arquivo
+
+                            no changes added to commit (use "git add" and/or "git commit -a")
+                            $ git stash push
+                            Saved working directory and index state WIP on main: a1d4cfc Criando arquivo
+                            $ git status
+                            On branch main
+                            nothing to commit, working tree clean
+                            $ git stash pop
+                            On branch main
+                            Changes not staged for commit:
+                              (use "git add &lt;file&gt;..." to update what will be committed)
+                              (use "git restore &lt;file&gt;..." to discard changes in working directory)
+                                modified:   arquivo
+
+                            no changes added to commit (use "git add" and/or "git commit -a")
+                            Dropped refs/stash@{0} (66650bc83e829d949d6ba24833962f539de87aa9)
+                        </code></pre>
+                        <a href="https://git-scm.com/docs/git-stash/pt_BR" target="_blank" rel="noopener"
+                           class="reference">Git - git-stash Documentation</a>
                     </section>
                 </section> <!-- Aula 9 -->
 
