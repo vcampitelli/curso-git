@@ -2360,6 +2360,51 @@
                         <a href="https://git-scm.com/docs/git-stash/pt_BR" target="_blank" rel="noopener"
                            class="reference">Git - git-stash Documentation</a>
                     </section>
+                    <section>
+                        <h1 class="subtitle">Controle de Versão com Git</h1>
+                        <h2>Comandos Avançados</h2>
+                        <h3><code>git reflog</code></h3>
+                        <pre><code class="shell" data-trim data-line-numbers="1-6|8-17|19-24|26-29|31-35">
+                            $ echo "Conteúdo antigo do arquivo" > arquivo
+                            $ git add arquivo
+                            $ git commit -m "Criando arquivo"
+                            [main (root-commit) ed2ad40] Criando arquivo
+                             1 file changed, 1 insertion(+)
+                             create mode 100644 arquivo
+                            ⁣
+                            $ echo "Melhorei o arquivo" > arquivo
+                            $ git commit -am "Melhorei o arquivo"
+                            [main d160187] Melhorei o arquivo
+                             1 file changed, 1 insertion(+), 1 deletion(-)
+                            $ git log --oneline
+                            d160187 (HEAD -> main) Melhorei o arquivo
+                            ed2ad40 Criando arquivo
+                            $ git reflog
+                            d160187 (HEAD -> main) HEAD@{0}: commit: Melhorei o arquivo
+                            ed2ad40 HEAD@{1}: commit (initial): Criando arquivo
+                            ⁣
+                            $ git reset --hard HEAD~1
+                            HEAD is now at ed2ad40 Criando arquivo
+                            $ cat arquivo
+                            Conteúdo antigo do arquivo
+                            $ git log
+                            ed2ad40 (HEAD -> main) Criando arquivo
+                            ⁣
+                            $ git reflog
+                            ed2ad40 (HEAD -> main) HEAD@{0}: reset: moving to ed2ad40835f5f06e7e61317d2aa2e6c898332ffc
+                            d160187 HEAD@{1}: commit: Melhorei o arquivo
+                            ed2ad40 (HEAD -> main) HEAD@{2}: commit (initial): Criando arquivo
+                            ⁣
+                            $ git reset HEAD@{1}
+                            Unstaged changes after reset:
+                            M	arquivo
+                            $ git restore arquivo
+                            $ cat arquivo
+                            Melhorei o arquivo
+                        </code></pre>
+                        <a href="https://git-scm.com/docs/git-reflog/pt_BR" target="_blank" rel="noopener"
+                           class="reference">Git - git-reflog Documentation</a>
+                    </section>
                     <section data-auto-animate data-auto-animate-restart>
                         <h1 class="subtitle">Controle de Versão com Git</h1>
                         <h2>Comandos Avançados</h2>
@@ -2554,49 +2599,6 @@
                             Lembre-se de sempre executar o <code>git pull</code> <b>antes</b> de criar sua
                             <em>branch</em> para mantê-la atualizada (ou use <code>git rebase</code> após)
                         </div>
-                    </section>
-                    <section>
-                        <h1 class="subtitle">Controle de Versão com Git</h1>
-                        <h2>Comandos Avançados</h2>
-                        <h3><code>git reflog</code></h3>
-                        <pre><code class="shell" data-trim data-line-numbers="1-4|6-15|17-22|24-27|29-34">
-                            $ git commit -m "Criando arquivo"
-                            [main (root-commit) ed2ad40] Criando arquivo
-                             1 file changed, 1 insertion(+)
-                             create mode 100644 arquivo
-                            ⁣
-                            $ echo "Melhorei o arquivo" > arquivo
-                            $ git commit -am "Melhorei o arquivo"
-                            [main d160187] Melhorei o arquivo
-                             1 file changed, 1 insertion(+), 1 deletion(-)
-                            $ git log --oneline
-                            d160187 (HEAD -> main) Melhorei o arquivo
-                            ed2ad40 Criando arquivo
-                            $ git reflog
-                            d160187 (HEAD -> main) HEAD@{0}: commit: Melhorei o arquivo
-                            ed2ad40 HEAD@{1}: commit (initial): Criando arquivo
-                            ⁣
-                            $ git reset --hard ed2ad40835f5f06e7e61317d2aa2e6c898332ffc
-                            HEAD is now at ed2ad40 Criando arquivo
-                            $ cat arquivo
-                            Conteúdo antigo do arquivo
-                            $ git log
-                            ed2ad40 (HEAD -> main) Criando arquivo
-                            ⁣
-                            $ git reflog
-                            ed2ad40 (HEAD -> main) HEAD@{0}: reset: moving to ed2ad40835f5f06e7e61317d2aa2e6c898332ffc
-                            d160187 HEAD@{1}: commit: Melhorei o arquivo
-                            ed2ad40 (HEAD -> main) HEAD@{2}: commit (initial): Criando arquivo
-                            ⁣
-                            $ git reset HEAD@{1}
-                            Unstaged changes after reset:
-                            M	arquivo
-                            $ git restore arquivo
-                            $ cat arquivo
-                            Melhorei o arquivo
-                        </code></pre>
-                        <a href="https://git-scm.com/docs/git-reflog/pt_BR" target="_blank" rel="noopener"
-                           class="reference">Git - git-reflog Documentation</a>
                     </section>
                     <section>
                         <h1 class="subtitle">Controle de Versão com Git</h1>
