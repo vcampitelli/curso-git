@@ -316,6 +316,13 @@ svg {
   color: var(--r-background-color);
   border-radius: var(--border-radius);
 }
+.alert > a {
+  color: var(--color-green);
+}
+.alert > a:is(:hover, :focus) {
+  color: var(--color-green);
+  opacity: 0.8;
+}
 section > .alert:last-child {
   margin-bottom: 0;
 }
