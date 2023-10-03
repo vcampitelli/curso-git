@@ -2620,10 +2620,34 @@
                             <li>
                                 Crie um <a
                                     href="https://docs.gitlab.com/16.3/ee/user/project/deploy_tokens/index.html#create-a-deploy-token"
-                                    target="_blank" rel="noopener"><em>Deploy token</em></a> com a permissão
-                                <kbd>write_package_registry</kbd> e qualquer nome
+                                    target="_blank" rel="noopener"><em>Deploy token</em></a> para o seu projeto no
+                                GitLab com a permissão <kbd>write_package_registry</kbd> e qualquer nome
                             </li>
                             <li>Guarde o valor exibido da senha (que não poderá ser visualizado depois)</li>
+                            <li>
+                                Execute as instruções abaixo:<br>
+                                <pre><code class="shell" data-trim>
+                                    $ USUARIO="nome do usuário do deploy token"
+                                    $ SENHA="senha do deploy token"
+                                    $ ID_PROJETO="id do seu projeto no gitlab"
+                                    $ touch arquivo-executavel
+                                    $ curl -X PUT -u "$USUARIO:$SENHA" \
+                                        --upload-file arquivo-executavel \
+                                        "https://gitlab.viniciuscampitelli.com/api/v4/projects/$ID_PROJETO/packages/generic/artefatos/1.0.0/arquivo-executavel"
+                                </code></pre>
+                            </li>
+                            <li>
+                                Em seu projeto no GitLab, navegue até <kbd>Deploy > Package Registry</kbd> e clique no
+                                pacote com o nome <kbd>artefatos</kbd>. Clique com o botão direito em
+                                <kbd>arquivo-executavel</kbd> e copie o link daquele arquivo
+                            </li>
+                            <li>
+                                Edite a <em>release</em> que você criou ontem (ou crie uma nova), adicione o link que
+                                copiou como <em>asset</em> e salve
+                            </li>
+                            <li>
+                                Veja na tela de <em>releases</em> o link para download do arquivo executável
+                            </li>
                         </ul>
                     </section>
                     <section data-auto-animate>
