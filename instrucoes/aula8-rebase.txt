@@ -1,0 +1,50 @@
+Branch: main
+Commit Segunda-feira
+Commit Terça-feira
+
+Branch: minha-feature
+    Ponto inicial:
+        Commit Terça-feira
+
+    Commits específicos da minha branch:
+        Commit X
+
+Branch: main
+Commit Quarta-feira
+
+Branch: outra-feature
+    Ponto inicial:
+        Commit Quarta-feira
+
+    Commits específicos da outra-feature:
+        Commit Y
+        Commit Z
+
+Branch: main
+    Merge outra-feature
+
+    O que tinha antes?
+        Commit segunda
+        Commit terça
+        Commit quarta
+        Commit Y
+        Commit Z
+
+Checkout Branch: minha-feature
+    Ponto inicial:
+        Commit Terça-feira
+
+    Commits específicos da minha branch:
+        Commit X1
+        Commit X2
+        Commit X3
+        Commit X4
+
+    git rebase main
+    Ponto inicial:
+        Commit Z
+        +
+        Commit X1
+        Commit X2
+        Commit X3
+        Commit X4
