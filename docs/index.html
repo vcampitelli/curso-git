@@ -219,7 +219,7 @@
                                     </td>
                                     <td>
                                         <span class="calendar-date">28/09</span>
-                                        <a href="#/aula10" class="calendar-slot calendar-slot-empty">&nbsp;</a>
+                                        <span class="calendar-slot calendar-slot-empty">&nbsp;</span>
                                     </td>
                                     <td>
                                         <span class="calendar-date">29/09</span>
@@ -233,7 +233,7 @@
                                     </td>
                                     <td>
                                         <span class="calendar-date">03/10</span>
-                                        <a href="#/aula10" class="calendar-slot">Aula 10</span>
+                                        <a href="#/aula10" class="calendar-slot">Aula 10</a>
                                     </td>
                                     <td>
                                         <span class="calendar-date">04/10</span>
@@ -277,11 +277,11 @@
                                     </td>
                                     <td>
                                         <span class="calendar-date">17/10</span>
-                                        <span class="calendar-slot">Aula 11</span>
+                                        <a href="#/aula11" class="calendar-slot">Aula 11</a>
                                     </td>
                                     <td>
                                         <span class="calendar-date">18/10</span>
-                                        <span class="calendar-slot">Aula 12</span>
+                                        <a href="#/aula12" class="calendar-slot">Aula 12</a>
                                     </td>
                                     <td>
                                         <span class="calendar-date">19/10</span>
@@ -2601,57 +2601,24 @@
                             <em>branch</em> para mantê-la atualizada (ou use <code>git rebase</code> após)
                         </div>
                     </section>
-                    <section>
-                        <h1 class="subtitle">Controle de Versão com Git</h1>
-                        <h2>Versionamento de Documentação</h2>
-                        <h3>Exercício</h3>
-                        <p>
-                            Crie um arquivo <code>README.md</code> em seu repositório pessoal com algumas instruções de
-                            como utilizar o seu sistema. Encare como se realmente fosse um projeto real!
-                        </p>
-                        <div class="alert">
-                            Dica: utilize o <a href="https://stackedit.io/app" target="_blank"
-                                               rel="noopener">stackedit.io</a> para criar o arquivo e copie o código em
-                            Markdown
-                        </div>
+                </section>
+
+                <section> <!-- Aula 11 -->
+                    <section data-auto-animate data-auto-animate-restart>
+                        <p>Aula 11</p>
+                        <h1>Relembrando conceitos</h1>
                     </section>
-                    <section>
-                        <h1 class="subtitle">Controle de Versão com Git</h1>
-                        <h2>Gerenciamento de Artefatos</h2>
-                        <h3>Exercício</h3>
-                        <ul>
-                            <li>
-                                Crie um <a
-                                    href="https://docs.gitlab.com/16.3/ee/user/project/deploy_tokens/index.html#create-a-deploy-token"
-                                    target="_blank" rel="noopener"><em>Deploy token</em></a> para o seu projeto no
-                                GitLab com a permissão <kbd>write_package_registry</kbd> e qualquer nome
-                            </li>
-                            <li>Guarde o valor exibido da senha (que não poderá ser visualizado depois)</li>
-                            <li>
-                                Execute as instruções abaixo:<br>
-                                <pre><code class="shell" data-trim>
-                                    $ USUARIO="nome do usuário do deploy token"
-                                    $ SENHA="senha do deploy token"
-                                    $ ID_PROJETO="id do seu projeto no gitlab"
-                                    $ touch arquivo-executavel
-                                    $ curl -X PUT -u "$USUARIO:$SENHA" \
-                                        --upload-file arquivo-executavel \
-                                        "https://gitlab.viniciuscampitelli.com/api/v4/projects/$ID_PROJETO/packages/generic/artefatos/1.0.0/arquivo-executavel"
-                                </code></pre>
-                            </li>
-                            <li>
-                                Em seu projeto no GitLab, navegue até <kbd>Deploy > Package Registry</kbd> e clique no
-                                pacote com o nome <kbd>artefatos</kbd>. Clique com o botão direito em
-                                <kbd>arquivo-executavel</kbd> e copie o link daquele arquivo
-                            </li>
-                            <li>
-                                Edite a <em>release</em> que você criou ontem (ou crie uma nova), adicione o link que
-                                copiou como <em>asset</em> e salve
-                            </li>
-                            <li>
-                                Veja na tela de <em>releases</em> o link para download do arquivo executável
-                            </li>
-                        </ul>
+                    <section data-auto-animate>
+                        <p>Aula 11</p>
+                        <h1>Relembrando conceitos</h1>
+                        <p>Revimos os principais comandos do Git</p>
+                    </section>
+                </section> <!-- Aula 11 -->
+
+                <section> <!-- Aula 12 -->
+                    <section id="aula12">
+                        <p>Aula 12</p>
+                        <h1>Mais Comandos e CI/CD</h1>
                     </section>
                     <section data-auto-animate>
                         <h1 class="subtitle">Controle de Versão com Git</h1>
@@ -2661,7 +2628,7 @@
                             Busca por um texto nos arquivos da área de trabalho (ou em outros <em>branches</em>)
                         </p>
                         <pre data-id="pre"><code class="shell" data-trim>
-                            $ git grep stash
+                            $ git grep "stash"
                             docs/index.html: &lt;h3>&lt;code>git stash&lt;/code>&lt;/h3>
                             docs/index.html:     $ git stash push
                             docs/index.html:     $ git stash pop
@@ -2681,7 +2648,7 @@
                         </p>
                         <p>O parâmetro <code>-n</code> mostra o número da linha:</p>
                         <pre data-id="pre"><code class="shell" data-trim>
-                            $ git grep -n stash
+                            $ git grep -n "stash"
                             docs/index.html:2331: &lt;h3>&lt;code>git stash&lt;/code>&lt;/h3>
                             docs/index.html:2345:     $ git stash push
                             docs/index.html:2350:     $ git stash pop
@@ -2704,7 +2671,7 @@
                             arquivo:
                         </p>
                         <pre data-id="pre"><code class="shell" data-trim>
-                            $  git grep -c stash
+                            $ git grep -c "stash"
                             docs/index.html:20
                         </code></pre>
                         <a href="https://git-scm.com/docs/git-grep/pt_BR" target="_blank" rel="noopener"
@@ -2724,9 +2691,200 @@
                              - [deleted]         (none)     -> origin/fix/cookie-incorreto
                         </code></pre>
                     </section>
-                </section>
+                    <section data-auto-animate>
+                        <h1 class="subtitle">Controle de Versão com Git</h1>
+                        <h2>Comandos Avançados</h2>
+                        <h3><code>git bisect</code></h3>
+                        <p data-id="intro">
+                            Encontra o <em>commit</em> em que um <em>bug</em> foi introduzido no projeto
+                        </p>
 
-                <section data-visibility="hidden"> <!-- CI/CD -->
+                        <ol>
+                            <li data-id="li">
+                                Comece executando <code>git bisect start</code> para iniciar a investigação
+                            </li>
+                        </ol>
+                        <pre><code class="shell" data-trim>
+                            $ git bisect start
+                            status: waiting for both good and bad commits
+
+                            $ git status
+                            On branch main
+                            Your branch is up to date with 'origin/main'.
+
+                            You are currently bisecting, started from branch 'main'.
+                              (use "git bisect reset" to get back to the original branch)
+
+                            nothing to commit, working tree clean
+                        </code></pre>
+                        <a href="https://git-scm.com/docs/git-bisect/pt_BR" target="_blank" rel="noopener"
+                           class="reference" data-id="reference">Documentação oficial: git bisect</a>
+                    </section>
+                    <section data-auto-animate>
+                        <h1 class="subtitle">Controle de Versão com Git</h1>
+                        <h2>Comandos Avançados</h2>
+                        <h3><code>git bisect</code></h3>
+                        <p data-id="intro">
+                            Encontra o <em>commit</em> em que um <em>bug</em> foi introduzido no projeto
+                        </p>
+
+                        <ol start="2">
+                            <li data-id="li">
+                                Teste sua aplicação e marque o <em>commit</em> atual como bom ou ruim com
+                                <code>git bisect good</code> ou <code>git bisect bad</code>
+                            </li>
+                        </ol>
+                        <pre><code class="shell" data-trim>
+                            $ git bisect bad
+                            status: waiting for good commit(s), bad commit known
+                        </code></pre>
+                        <a href="https://git-scm.com/docs/git-bisect/pt_BR" target="_blank" rel="noopener"
+                           class="reference" data-id="reference">Documentação oficial: git bisect</a>
+                    </section>
+                    <section data-auto-animate>
+                        <h1 class="subtitle">Controle de Versão com Git</h1>
+                        <h2>Comandos Avançados</h2>
+                        <h3><code>git bisect</code></h3>
+                        <p data-id="intro">
+                            Encontra o <em>commit</em> em que um <em>bug</em> foi introduzido no projeto
+                        </p>
+
+                        <ol start="3">
+                            <li data-id="li">
+                                Encontre algum <em>commit</em> anterior que você saiba que estava funcionando e marque-o
+                                com <code>git bisect good</code>
+                            </li>
+                        </ol>
+                        <pre><code class="shell" data-trim>
+                            $ git bisect good 4229cee31dac9c0a6d6ea6e420861c01eaede4a4
+                            Bisecting: 0 revisions left to test after this (roughly 1 step)
+                            [0f80cdc281324cd118e9f3c065096627d1258d6b] Alguma alteração
+
+                            $ git status
+                            HEAD detached at 0f80cdc
+                            You are currently bisecting, started from branch 'main'.
+                              (use "git bisect reset" to get back to the original branch)
+
+                            nothing to commit, working tree clean
+                        </code></pre>
+                        <a href="https://git-scm.com/docs/git-bisect/pt_BR" target="_blank" rel="noopener"
+                           class="reference" data-id="reference">Documentação oficial: git bisect</a>
+                    </section>
+                    <section data-auto-animate>
+                        <h1 class="subtitle">Controle de Versão com Git</h1>
+                        <h2>Comandos Avançados</h2>
+                        <h3><code>git bisect</code></h3>
+                        <p data-id="intro">
+                            Encontra o <em>commit</em> em que um <em>bug</em> foi introduzido no projeto
+                        </p>
+
+                        <ol start="4">
+                            <li data-id="li">
+                                Execute o mesmo procedimento de marcar com <code>git bisect good</code> ou
+                                <code>git bisect bad</code>
+                            </li>
+                        </ol>
+                        <pre><code class="shell" data-trim>
+                            $ git bisect bad
+                            Bisecting: 0 revisions left to test after this (roughly 0 steps)
+                            [66facecc2ec5eedf8f3f248318b4b61e16d0a54c] Outra alteração
+
+                            $ git status
+                            HEAD detached at 66facec
+                            You are currently bisecting, started from branch 'main'.
+                              (use "git bisect reset" to get back to the original branch)
+
+                            nothing to commit, working tree clean
+                        </code></pre>
+                        <a href="https://git-scm.com/docs/git-bisect/pt_BR" target="_blank" rel="noopener"
+                           class="reference" data-id="reference">Documentação oficial: git bisect</a>
+                    </section>
+                    <section data-auto-animate>
+                        <h1 class="subtitle">Controle de Versão com Git</h1>
+                        <h2>Comandos Avançados</h2>
+                        <h3><code>git bisect</code></h3>
+                        <p data-id="intro">
+                            Encontra o <em>commit</em> em que um <em>bug</em> foi introduzido no projeto
+                        </p>
+
+                        <ol start="5">
+                            <li data-id="li">
+                                Você eventualmente vai chegar até o <em>commit</em> que introduziu o <em>bug</em>
+                            </li>
+                        </ol>
+                        <pre><code class="shell" data-trim>
+                            $ git bisect good
+                            552da6fa8f6fad69197b56a8666a8262b692f403 is the first bad commit
+                            commit 552da6fa8f6fad69197b56a8666a8262b692f403
+                            Author: ...
+                            Date:   ...
+
+                            Mensagem do commit
+
+                            arquivo | 10 +++++
+                            1 file changed, 10 insertions(+)
+                        </code></pre>
+                        <a href="https://git-scm.com/docs/git-bisect/pt_BR" target="_blank" rel="noopener"
+                           class="reference" data-id="reference">Documentação oficial: git bisect</a>
+                    </section>
+                    <section data-auto-animate data-auto-animate-restart>
+                        <h1 class="subtitle">Controle de Versão com Git</h1>
+                        <h2>Comandos Avançados</h2>
+                        <h3><code>git bisect</code></h3>
+                        <h4>Exercício</h4>
+                        <p data-id="intro">
+                            No repositório de exercícios, encontre qual <em>commit</em> introduziu um <em>bug</em> que
+                            permite cadastrar produtos sem preço
+                        </p>
+                        <ol>
+                            <li>Atualize seu repositório de exercícios</li>
+                            <li>
+                                Execute o <em>script</em> <code>run</code> que está na pasta <kbd>bisect</kbd>
+                                <pre><code class="shell" data-trim>
+                                    $ cd bisect
+                                    $ ./run
+                                    Uso:
+                                      ./run -n "Nome do produto" -d "Descrição do produto" -p Preço
+
+                                    Opções:
+                                      -n &lt;nome do produto&gt;  Fornece o nome do produto
+                                      -d &lt;descrição&gt;        Forneça a descrição do produto
+                                      -p &lt;preço do produto&gt; Fornece o preço do produto
+                                </code></pre>
+                            </li>
+                        </ol>
+                    </section>
+                    <section data-auto-animate>
+                        <h1 class="subtitle">Controle de Versão com Git</h1>
+                        <h2>Comandos Avançados</h2>
+                        <h3><code>git bisect</code></h3>
+                        <h4>Exercício</h4>
+                        <p data-id="intro">
+                            Encontre qual <em>commit</em> introduziu um <em>bug</em> que permite cadastrar produtos sem
+                            preço
+                        </p>
+                        <ol start="3">
+                            <li>
+                                Passe os argumentos de nome e descrição para o <em>script</em> mas não o de preço e veja
+                                que ele reclama o erro mas permite cadastrar mesmo assim
+                                <pre><code class="shell" data-trim>
+                                    $ ./run -n "Meu produto" -d "Descrição do produto"
+                                    Erro: você deve informar um preço
+                                    Criando produto...
+                                     [🛈] Nome:      Meu produto
+                                     [🛈] Descrição: Descrição do produto
+                                     [🛈] Preço:     R$ 0,00
+
+                                    Produto criado com sucesso!
+                                </code></pre>
+                            </li>
+                            <li>
+                                Use o <code>git bisect</code> para descobrir qual <em>commit</em> criou o <em>bug</em>,
+                                executando o comando acima e vendo quando estava funcionando (ou seja, se não passar o
+                                preço, não cria o produto)
+                            </li>
+                        </ol>
+                    </section>
                     <section data-auto-animate data-auto-animate-restart>
                         <h1>CI/CD</h1>
                     </section>
@@ -2861,7 +3019,189 @@
                             </div>
                         </div>
                     </section>
-                </section> <!-- CI/CD -->
+                    <section>
+                        <h1 class="subtitle">CI/CD</h1>
+                        <h2>Exemplos</h2>
+                        <ul class="margin">
+                            <li class="fragment">
+                                Executar o comando <code>sqlfluff</code> sempre que uma <em>merge request</em> for
+                                aberta para garantir que os <em>scripts</em> SQL estão formatados de acordo com o padrão
+                                desejado
+                            </li>
+                            <li class="fragment">
+                                Executar o comando <code>python -m unittest</code> sempre que uma <em>merge request</em>
+                                for aberta para rodar os testes da sua aplicação e verificar se o que foi feito não irá
+                                quebrar nada
+                            </li>
+                            <li class="fragment">
+                                Executar o comando <code>mvn compile</code> para compilar sua aplicação Java em um
+                                arquivo executável
+                            </li>
+                            <li class="fragment">
+                                Subir os arquivos compilados (chamados de "artefatos") no
+                                <a href="https://docs.gitlab.com/ee/user/packages/package_registry/index.html"
+                                   target="_blank" rel="noopener">Package Registry</a>
+                                do GitLab
+                            </li>
+                            <li class="fragment">
+                                Criar uma nova <em>release</em> e adicionar os artefatos gerados
+                            </li>
+                            <li class="fragment">
+                                Invocar um <em>webhook</em> externo para avisar que um novo <em>script</em> SQL foi
+                                criado
+                            </li>
+                        </ul>
+                        <a href="https://docs.gitlab.com/ee/ci/" target="_blank" rel="noopener" class="reference">Get
+                            started with GitLab CI/CD | GitLab</a>
+                    </section>
+                    <section>
+                        <h1 class="subtitle">CI/CD</h1>
+                        <h2>GitLab CI</h2>
+                        <h3>Conceitos</h3>
+                        <dl>
+                            <dt><em>Jobs</em></dt>
+                            <dd>
+                                Cada ação que será executada, por exemplo os comandos para testar sua aplicação ou fazer
+                                <em>deploy</em> em algum servidor
+                            </dd>
+                            <dt><em>Stages</em></dt>
+                            <dd>
+                                "Estágios" para agrupar seus <em>jobs</em>, por exemplo <kbd>build</kbd>,
+                                <kbd>test</kbd> e <kbd>deploy</kbd>
+                            </dd>
+                            <dt><em>Pipelines</em></dt>
+                            <dd>
+                                Conjunto de <em>jobs</em> e <em>stages</em> em uma esteira para controle do fluxo de
+                                execução
+                            </dd>
+                            <dt><em>Runners</em></dt>
+                            <dd>
+                                Ambiente onde as <em>pipelines</em> são executadas (por exemplo, <em>containers</em>
+                                Docker)
+                            </dd>
+                        </dl>
+                    </section>
+                    <section>
+                        <h1 class="subtitle">CI/CD</h1>
+                        <h2>GitLab CI</h2>
+                        <p>
+                            É configurado a partir de um arquivo <code>.gitlab-ci.yml</code> na raiz do seu repositório,
+                            onde você irá definir tudo que deseja executar de acordo com alguns gatilhos (eventos)
+                        </p>
+                        <a href="https://docs.gitlab.com/ee/ci/yaml/index.html" target="_blank" rel="noopener"
+                           class="reference">.gitlab-ci.yml keyword reference | GitLab</a>
+                    </section>
+                    <section>
+                        <h1 class="subtitle">CI/CD</h1>
+                        <h2>GitLab CI</h2>
+                        <p>
+                            Ative a configuração que requer que as <em>pipelines</em> tenham sucesso antes de poder
+                            realizar o <em>merge</em> em <kbd>Settings</kbd> → <kbd>Merge requests</kbd> →
+                            <kbd>Merge checks</kbd> → <kbd>Pipelines must succeed</kbd>
+                        </p>
+                        <a href="https://docs.gitlab.com/ee/user/project/merge_requests/merge_when_pipeline_succeeds.html#require-a-successful-pipeline-for-merge"
+                           target="_blank" rel="noopener" class="reference">Require a successful pipeline for merge |
+                            GitLab</a>
+                    </section>
+                    <section>
+                        <h1 class="subtitle">CI/CD</h1>
+                        <h2>GitLab CI</h2>
+                        <p>Exemplo:</p>
+                        <pre><code class="yaml" data-trim>
+                            image: java:8
+
+                            stages:
+                              - build
+                              - deploy
+
+                            build:
+                              stage: build
+                              script: ./mvnw package
+                              artifacts:
+                                paths:
+                                  - target/demo-0.0.1-SNAPSHOT.jar
+
+                            production:
+                              stage: deploy
+                              script:
+                              - curl --location "https://cli.run.pivotal.io/stable?release=linux64-binary&source=github" | tar zx
+                              - ./cf login -u $CF_USERNAME -p $CF_PASSWORD -a api.run.pivotal.io
+                              - ./cf push
+                              only:
+                              - master
+                        </code></pre>
+                        <a href="https://docs.gitlab.com/ee/ci/examples/" target="_blank" rel="noopener"
+                           class="reference">GitLab CI/CD examples | GitLab</a>
+                    </section>
+                    <section>
+                        <h1 class="subtitle">CI/CD</h1>
+                        <h2>GitLab CI</h2>
+                        <p>Exercício 1:</p>
+                        <ul>
+                            <li>
+                                Em uma nova <em>branch</em> em seu repositório pessoal, crie um arquivo
+                                <code>.gitlab-ci.yml</code>
+                            </li>
+                            <li>
+                                Crie um novo <em>job</em> para rodar o comando abaixo no <em>stage</em> <kbd>test</kbd>:
+                                <pre><code class="bash" data-trim>
+                                    sqlfluff lint --dialect oracle
+                                </code></pre>
+                            </li>
+                            <li>
+                                Crie um arquivo <code>.sql</code> com algum código
+                            </li>
+                            <li>
+                                Abra uma <em>merge request</em> e acompanhe o resultado do CI, arrumando os arquivos até
+                                que passe
+                            </li>
+                            <li>
+                                Faça o <em>merge</em> para a <em>branch</em> principal
+                            </li>
+                        </ul>
+                        <div class="alert">
+                            Não se esqueça de atualizar seu repositório <b>antes</b> de criar a <em>branch</em>!
+                        </div>
+                    </section>
+                    <section>
+                        <h1 class="subtitle">CI/CD</h1>
+                        <h2>GitLab CI</h2>
+                        <p>
+                            Exercício 2: Altere seu CI para adicionar os <em>jobs</em> abaixo em um <em>stage</em>
+                            <kbd>deploy</kbd> somente nos eventos de <em>tags</em>...
+                        </p>
+                        <ul>
+                            <li>
+                                Criar
+                                <a href="https://docs.gitlab.com/ee/ci/yaml/index.html#artifacts" target="_blank"
+                                    rel="noopener">um artefato</a> a partir de todos os arquivos <code>.sql</code> do
+                                seu repositório
+                            </li>
+                            <li>
+                                Criar <a href="https://docs.gitlab.com/ee/ci/yaml/index.html#release" target="_blank"
+                                    rel="noopener">uma <em>release</em></a> e adicionar o artefato gerado anteriormente
+                            </li>
+                        </ul>
+                        <p>
+                            Então, crie uma <em>tag</em> (com qualquer versão) em seu código e acompanhe o resultado
+                        </p>
+                    </section>
+                    <section>
+                        <h1 class="subtitle">CI/CD</h1>
+                        <h2>GitLab CI</h2>
+                        <p>
+                            Dica: se quiser rodar os <em>jobs</em> apenas em <em>merge requests</em>, adicione no
+                            começo o seu arquivo:
+                        </p>
+                        <pre><code class="yaml" data-trim>
+                            workflow:
+                              rules:
+                                - if: $CI_PIPELINE_SOURCE == 'merge_request_event'
+                        </code></pre>
+                        <a href="https://docs.gitlab.com/ee/ci/pipelines/merge_request_pipelines.html#use-rules-to-add-jobs"
+                           target="_blank" rel="noopener" class="reference">Merge request pipelines | GitLab</a>
+                    </section>
+                </section> <!-- Aula 12 -->
 
                 <section> <!-- Referências -->
                     <section data-auto-animate data-auto-animate-restart>

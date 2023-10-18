@@ -158,6 +158,9 @@ a.reference:after {
 }
 
 /* Listas */
+.reveal ul {
+  display: block;
+}
 .margin > li + li {
   margin-top: 0.75em;
 }
@@ -325,4 +328,7 @@ svg {
 }
 section > .alert:last-child {
   margin-bottom: 0;
+}
+dd + dt {
+  margin-top: 1em;
 }
