@@ -3173,6 +3173,39 @@
                                target="_blank" rel="noopener">apenas em <em>merge requests</em></a>
                         </div>
                     </section>
+                    <section data-auto-animate>
+                        <h1 class="subtitle">CI/CD</h1>
+                        <h2>GitLab CI</h2>
+                        <p>
+                            Exercício 2: Altere seu CI para adicionar os <em>jobs</em> abaixo em um <em>stage</em>
+                            <kbd>deploy</kbd> somente nos eventos de <em>tags</em>...
+                        </p>
+                        <ol>
+                            <li>
+                                Crie
+                                <a href="https://docs.gitlab.com/ee/ci/yaml/index.html#artifacts" target="_blank"
+                                    rel="noopener">um artefato</a> a partir de todos os arquivos <code>.sql</code>,
+                                usando como nome a <em>tag</em>
+                            </li>
+                            <li>
+                                Crie <a href="https://docs.gitlab.com/ee/ci/yaml/index.html#release" target="_blank"
+                                    rel="noopener">uma <em>release</em></a> usando o nome da <em>tag</em>
+                            </li>
+                            <li>
+                                Adicione o artefato no passo 1 como um <em>asset</em> na <em>release</em>
+                            </li>
+                        </ol>
+                        <p>
+                            Então, crie uma <em>tag</em> (com qualquer versão) em seu código e acompanhe o resultado
+                        </p>
+
+                        <div class="alert">
+                            Dica: é possível usar
+                            <a href="https://docs.gitlab.com/ee/ci/variables/predefined_variables.html"
+                               target="_blank" rel="noopener">algumas variáveis</a> para representar valores como o
+                            <em>hash</em> do <em>commit</em> ou a <em>tag</em>
+                        </div>
+                    </section>
                 </section> <!-- Aula 13 -->
 
                 <section> <!-- Referências -->
