@@ -285,7 +285,7 @@
                                     </td>
                                     <td>
                                         <span class="calendar-date">19/10</span>
-                                        <span class="calendar-slot">Aula 13</span>
+                                        <a href="#/aula13" class="calendar-slot">Aula 13</a>
                                     </td>
                                     <td>
                                         <span class="calendar-date">20/10</span>
@@ -3054,7 +3054,14 @@
                         <a href="https://docs.gitlab.com/ee/ci/" target="_blank" rel="noopener" class="reference">Get
                             started with GitLab CI/CD | GitLab</a>
                     </section>
-                    <section>
+                </section> <!-- Aula 12 -->
+
+                <section> <!-- Aula 13 -->
+                    <section id="aula13">
+                        <p>Aula 13</p>
+                        <h1>CI/CD <em class="text-muted">(cont.)</em></h1>
+                    </section>
+                    <section data-auto-animate>
                         <h1 class="subtitle">CI/CD</h1>
                         <h2>GitLab CI</h2>
                         <h3>Conceitos</h3>
@@ -3081,7 +3088,7 @@
                             </dd>
                         </dl>
                     </section>
-                    <section>
+                    <section data-auto-animate>
                         <h1 class="subtitle">CI/CD</h1>
                         <h2>GitLab CI</h2>
                         <p>
@@ -3091,7 +3098,7 @@
                         <a href="https://docs.gitlab.com/ee/ci/yaml/index.html" target="_blank" rel="noopener"
                            class="reference">.gitlab-ci.yml keyword reference | GitLab</a>
                     </section>
-                    <section>
+                    <section data-auto-animate>
                         <h1 class="subtitle">CI/CD</h1>
                         <h2>GitLab CI</h2>
                         <p>
@@ -3103,7 +3110,7 @@
                            target="_blank" rel="noopener" class="reference">Require a successful pipeline for merge |
                             GitLab</a>
                     </section>
-                    <section>
+                    <section data-auto-animate>
                         <h1 class="subtitle">CI/CD</h1>
                         <h2>GitLab CI</h2>
                         <p>Exemplo:</p>
@@ -3133,7 +3140,7 @@
                         <a href="https://docs.gitlab.com/ee/ci/examples/" target="_blank" rel="noopener"
                            class="reference">GitLab CI/CD examples | GitLab</a>
                     </section>
-                    <section>
+                    <section data-auto-animate>
                         <h1 class="subtitle">CI/CD</h1>
                         <h2>GitLab CI</h2>
                         <p>Exercício 1:</p>
@@ -3160,48 +3167,13 @@
                             </li>
                         </ul>
                         <div class="alert">
-                            Não se esqueça de atualizar seu repositório <b>antes</b> de criar a <em>branch</em>!
+                            Não se esqueça de atualizar seu repositório <b>antes</b> de criar a <em>branch</em> e veja
+                            como rodar <em>jobs</em>
+                            <a href="https://docs.gitlab.com/ee/ci/pipelines/merge_request_pipelines.html#use-rules-to-add-jobs"
+                               target="_blank" rel="noopener">apenas em <em>merge requests</em></a>
                         </div>
                     </section>
-                    <section>
-                        <h1 class="subtitle">CI/CD</h1>
-                        <h2>GitLab CI</h2>
-                        <p>
-                            Exercício 2: Altere seu CI para adicionar os <em>jobs</em> abaixo em um <em>stage</em>
-                            <kbd>deploy</kbd> somente nos eventos de <em>tags</em>...
-                        </p>
-                        <ul>
-                            <li>
-                                Criar
-                                <a href="https://docs.gitlab.com/ee/ci/yaml/index.html#artifacts" target="_blank"
-                                    rel="noopener">um artefato</a> a partir de todos os arquivos <code>.sql</code> do
-                                seu repositório
-                            </li>
-                            <li>
-                                Criar <a href="https://docs.gitlab.com/ee/ci/yaml/index.html#release" target="_blank"
-                                    rel="noopener">uma <em>release</em></a> e adicionar o artefato gerado anteriormente
-                            </li>
-                        </ul>
-                        <p>
-                            Então, crie uma <em>tag</em> (com qualquer versão) em seu código e acompanhe o resultado
-                        </p>
-                    </section>
-                    <section>
-                        <h1 class="subtitle">CI/CD</h1>
-                        <h2>GitLab CI</h2>
-                        <p>
-                            Dica: se quiser rodar os <em>jobs</em> apenas em <em>merge requests</em>, adicione no
-                            começo o seu arquivo:
-                        </p>
-                        <pre><code class="yaml" data-trim>
-                            workflow:
-                              rules:
-                                - if: $CI_PIPELINE_SOURCE == 'merge_request_event'
-                        </code></pre>
-                        <a href="https://docs.gitlab.com/ee/ci/pipelines/merge_request_pipelines.html#use-rules-to-add-jobs"
-                           target="_blank" rel="noopener" class="reference">Merge request pipelines | GitLab</a>
-                    </section>
-                </section> <!-- Aula 12 -->
+                </section> <!-- Aula 13 -->
 
                 <section> <!-- Referências -->
                     <section data-auto-animate data-auto-animate-restart>
