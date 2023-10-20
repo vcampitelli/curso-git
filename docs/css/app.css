@@ -132,6 +132,9 @@ code.hljs.shell .language-bash {
 .font-italic {
   font-style: italic;
 }
+.align-middle {
+  vertical-align: middle;
+}
 section > section:first-child > h1 {
   margin-top: 0;
 }
@@ -319,10 +322,10 @@ svg {
   color: var(--r-background-color);
   border-radius: var(--border-radius);
 }
-.alert > a {
+.alert a {
   color: var(--color-green);
 }
-.alert > a:is(:hover, :focus) {
+.alert a:is(:hover, :focus) {
   color: var(--color-green);
   opacity: 0.8;
 }
